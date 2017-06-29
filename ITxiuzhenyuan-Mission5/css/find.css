@@ -1,0 +1,154 @@
+/*iconfont font*/
+@font-face {font-family: "iconfont";
+  src: url('../images/iconfont.eot?t=1497762729545'); /* IE9*/
+  src: url('../images/iconfont.eot?t=1497762729545#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('../images/iconfont.woff?t=1497762729545') format('woff'), /* chrome, firefox */
+  url('../images/iconfont.ttf?t=1497762729545') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+  url('../images/iconfont.svg?t=1497762729545#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+*{
+	margin: 0;
+	padding: 0;
+	font-size: 12px;
+	font-family:"iconfont"; 
+  	font-style:normal;
+  	-webkit-font-smoothing: antialiased;
+ 	-moz-osx-font-smoothing: grayscale;
+}
+html,body{
+  height: 100%;
+}
+.header{
+  width: 100%;
+  height: 5rem;
+  background: #5fc0cd;
+  position: fixed;
+  top: 0;
+}
+.header span{
+  color: #fff;
+  font-size: 2rem;
+  position: absolute;
+  top: 1rem;
+  right: 2rem;
+}
+.header button{
+  display: inline-block;
+  width: 6rem;
+  height: 3rem;
+  border: none;
+  font-size: 1.5rem;
+  border-radius: 0.5rem;
+}
+.find{
+  padding: 1rem 0 ;
+  text-align: center;
+}
+.find .find-r{
+  margin-left: -1rem;
+  color: #5fc0cd;
+  background: #fff;
+}
+.find .find-l{
+  color: #fff;
+  background: #55a8b3;
+}
+/*nav area*/
+li{
+  list-style: none;
+}
+.nav{
+  overflow: hidden;
+  position: fixed;
+  top: 5.1rem;
+  width: 100%;
+}
+.nav ul{
+  margin-right: -1px;
+  width: 100%;
+}
+.nav ul li{
+  float: left;
+  width: 33.33%;
+  height: 4rem;
+  box-sizing: border-box;
+  padding: 1rem;
+  text-align: center;
+  font-size: 1.2rem;
+  color: #afbac0;
+  border-bottom: 1px solid #eee;
+  border-right: 1px solid #eee;
+  background: #fff;
+}
+.nav ul li i{
+  float: right;
+  padding-top: 0.5rem;
+}
+/*content area*/
+.content{
+  margin-top: 8rem;
+}
+.content ul{
+  padding: 1.5rem;
+}
+.content ul li{
+  border-bottom: 1px solid #eee;
+  line-height: 2rem;
+  padding: 0 0 1rem 0;
+  margin-top: 0.4rem;
+}
+.content span{
+  color: #afbac0;
+  font-size: 1.2rem;
+}
+.content ul li p{
+  font-size: 1.5rem;
+}
+.content .prize{
+  display: inline-block;
+  float: right;
+  margin-top: -2rem;
+  color: #900;
+}
+/*footer area*/
+.footer{
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 5rem;
+  background: #009;
+}
+.footer button{
+  border: none;
+  background: #f8fafb;
+  width: 50%;
+  height: 5rem;
+}
+.footer .homepage{
+  z-index: -1;
+  position: absolute;
+  width: 50%;
+  left: 0;
+  color: #5fc0cd;
+  font-size: 1.2rem;
+}
+.footer .mine{
+  z-index: -1;
+  position: absolute;
+  width: 50%;
+  right: 0;
+  color: #999;
+  font-size: 1.2rem;
+}
+.footer .write{
+  width: 4rem;
+  height: 4rem;
+  line-height: 4rem;
+  border-radius: 4rem;
+  text-align: center;
+  background: #5fc0cd;
+  color: #fff;
+  font-size: 1.2rem;
+  margin: 0.5rem auto;
+}
