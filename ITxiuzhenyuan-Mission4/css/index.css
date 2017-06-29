@@ -1,0 +1,71 @@
+*{
+	margin: 0;
+	padding: 0;
+
+}
+html,body{
+	width: 100%;
+	height: 100%;
+	font-size: 12px;
+	background: #eff0f4;
+}
+a{
+	color: #fff;
+	text-decoration: none;
+}
+.header{
+	width: 100%;
+	height: 80px;
+	background: #5fc0cd;
+	text-align: center;
+	font-size: 3rem;
+	line-height: 80px;
+	color: #fff;
+	overflow: hidden;
+}
+.header .left{
+	float: left;
+	margin-left: 3%;
+	font-size: 2rem;
+}
+.header .right{
+	float: right;
+	margin-right: 3%;
+	font-size: 2rem;
+}
+input{
+	width: 100%;
+	height:80px;
+	padding: 0 70px ;
+	font-size: 2rem;
+	margin-top: 1%;
+	box-sizing: border-box;
+	border: 1px solid #ddd;
+}
+.id{
+	background:#fff url(../images/phone.png) no-repeat 27px center;
+}
+.passport{
+	background:#fff url(../images/lock.png) no-repeat 27px center;
+}
+.login{
+	width: 100%;
+	height: 60px;
+	margin-top: 10%;
+	background: #5fc0cd;
+	border: none;
+	color: #fff;
+	font-size: 2rem;
+}
+.forget{
+	width: 100%;
+	height: 10%;
+}
+.forget a{
+	color: #83ccd7;
+	font-size: 2rem;
+	text-align: right;
+	display: inline-block;
+	float: right;
+	margin-top: 1%;
+}
