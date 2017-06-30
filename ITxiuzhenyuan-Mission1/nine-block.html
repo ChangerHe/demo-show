@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Nine-Block Layout</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		html,body{
+			width: 100%;
+			height: 100%;
+		}
+		.container{
+			height:100%;
+			width: 100%;
+		}
+		.box{
+			height:29%;
+			width: 29%;
+			background: #ff0;
+			float:left;
+			margin:2%;
+			border-radius: 10px;
+		}
+	</style>
+	<script>
+	window.onload=function(){
+
+		var con=document.getElementsByClassName('container')[0]; //获取容器
+		var box=document.getElementsByClassName('box');  //获取小盒子
+		//console.log(con.offsetHeight>con.offsetWidth);
+		var cWidth=document.body.clientWidth;  //设置cWidth值为屏幕宽度
+		//console.log(cWidth)
+		function compare(){  //比较大盒子宽高大小，取小值
+			if (con.offsetHeight>con.offsetWidth) {
+			return con.offsetWidth;
+		} else {
+			return con.offsetHeight;
+		}}
+		con.style.height=con.style.width=compare()+'px';  //将大盒子的宽高设置为较小值
+		con.style.marginLeft=cWidth/2-con.offsetWidth/2+'px';  //将坐外边距设置为屏幕宽减去大盒子宽度的一半
+		//console.log(con.style.width);
+		//console.log(con.style.height);
+		
+		
+		
+	}
+		
+	</script>
+</head>
+<body>
+<div class="container">
+	<div class="box"></div>
+	<div class="box"></div>
+	<div class="box"></div>
+	<div class="box"></div>
+	<div class="box"></div>
+	<div class="box"></div>
+	<div class="box"></div>
+	<div class="box"></div>
+	<div class="box"></div>
+</div>
+</body>
+</html>
