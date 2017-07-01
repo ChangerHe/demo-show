@@ -1,6 +1,12 @@
 body{
 	background: #f0f0f0;
 }
+a{
+	text-decoration: none;
+}
+a:hover{
+	text-decoration: none;
+}
 /*头部公共区域*/
 .header{
 	width: 100%;
