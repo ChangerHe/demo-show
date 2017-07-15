@@ -484,11 +484,13 @@ a:hover{
     width: 80px;
     height: 160px;
 }
-.float-area .clickup,.float-area .clickdown{
-    display: block;
+.floatcontainer{
     margin: 10px;
     width: 60px;
     height: 60px;
+}
+.float-area .clickup,.float-area .clickdown{
+    display: block;
     background: rgba(0,0,190,.4)
 }
 .float-area .clickup i,.float-area .clickdown i{
