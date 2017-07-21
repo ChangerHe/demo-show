@@ -1,0 +1,280 @@
+/* 整体样式设置 */
+* {
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    color: #999;
+}
+.smallArrow {
+    display: block;
+    float: left ;
+    margin: 16px 0 0 6px;
+    width: 10px;
+    height: 5px;
+    background: url(../img/icon.png) -60px 0;
+}
+.smallTag {
+    position: absolute;
+    right: 3px;
+    width: 20px;
+    height: 10px;
+    background: url(../img/newTag.jpg);
+}
+ul {
+    list-style: none;
+}
+.beCenter {
+    width: 1190px;
+    margin: 0 auto;
+}
+/* 头部导航栏样式设置 */
+.g-container {
+    width: 1366px;
+    margin: 0 auto;
+}
+.g-header {
+    height: 80px;
+    position: relative;
+}
+.g-header .logo {
+    position: absolute;
+    top: 23px;
+    left: 30px;
+    width: 150px;
+    height: 34px;
+    background: url(../img/logo.jpg) no-repeat;
+}
+.g-header .navgation {
+    display: block;
+    float: left;
+    height: 100%;
+    vertical-align: middle;
+    line-height: 80px;
+}
+.navgation i{
+    display: inline-block;
+    margin: 0 0 0 210px;
+    width: 16px;
+    height: 16px;
+    background: url(../img/icon.png) -117px -254px;
+}
+.navgation:hover {
+    color: #f62000;
+}
+.navgation:hover  i{
+    background: url(../img/icon.png) -134px -254px;
+}
+.g-header .firstUl{
+    float: left;
+    margin: 21px 0 0 30px;
+}
+.g-header ul .headerLink {
+    float: left;
+    display: block;
+    width: 62px;
+    height: 38px;
+    border: 1px solid #2fb3ff;
+    text-align: center;
+    line-height: 38px;
+    color: #2fb3ff;
+}
+.g-header .secondUl {
+    float: left;
+    display: block;
+    margin: 20px 0 0  30px;
+}
+.g-header .secondUl .headerLogin {
+    float: left;
+    display: inline-block;
+    margin-left: 5px;
+    width: 40px;
+    line-height: 40px;
+}
+.headerLogin .icon1{
+    display: block;
+    float: left;
+    margin: 11px 0 0  ;
+    width: 18px;
+    height: 18px;
+    background: url(../img/icon.png) -97px -237px;
+}
+.headerLogin .icon1:hover {
+    background: url(../img/icon.png) -117px -237px;
+}
+.headerLogin .icon2 {
+    display: block;
+    float: left;
+    margin: 11px 0 0 0 ;
+    width: 18px;
+    height: 18px;
+    background: url(../img/icon.png) -20px 0;
+}
+.headerLogin .icon2:hover {
+    background: url(../img/icon.png) -120px -217px;
+}
+.headerLogin .icon3 {
+    display: block;
+    float: left;
+    margin: 11px 0 0 0 ;
+    width: 18px;
+    height: 18px;
+    background: url(../img/icon.png) -40px 0;
+}
+.headerLogin .icon3:hover {
+    background: url(../img/icon.png) -98px -217px;
+}
+.searchBlock {
+    display: block;
+    float: left;
+    position: relative;
+}
+.searchBlock .mirror {
+    display: block;
+    float: left;
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    top: 30px;
+    left: 50px;
+    background: url(../img/icon.png) -132px -189px;
+}
+.searchBlock .search {
+    display: block;
+    float: left;
+    margin: 16px 0 0  30px;
+    width: 330px;
+    height: 40px;
+    border: 1px solid #2fb3ff;
+    padding-left: 40px;
+    background: #fff url(../img/hotICON.png) no-repeat center right;
+}
+.searchBlock .btn {
+    display: block;
+    float: left;
+    margin-top: 16px;
+    width: 80px;
+    height: 42px;
+    border: none;
+    background: #2fb3ff;
+    color: #fff;
+}
+/* 主体大nav区域 */
+.g-nav {
+    height: 50px;
+    padding-left: 25px;
+    border-top: 2px solid #e3e7e8;
+    border-bottom: 2px solid #e3e7e8;
+}
+.g-nav ul .navLeft {
+    float: left;
+    text-align: center;
+    display: inline-block;
+    line-height: 50px;
+    width: 44px;
+
+}
+.g-nav ul .navLeft:hover {
+    color: #2fb3ff;
+    box-sizing: border-box;
+    border-bottom: 2px solid #2fb3ff;
+}
+.g-nav ul .active {
+    color: #2fb3ff;
+    box-sizing: border-box;
+    border-bottom: 2px solid #2fb3ff;
+}
+#navLeftJustice {
+    margin: -26px 0 0 40px;
+}
+.g-nav ul .navRgiht {
+    float: right;
+    margin-right: 30px;
+    text-align: center;
+    display: inline-block;
+    line-height: 50px;
+    width: 44px;
+}
+/* 下方小导航栏区域 */
+.g-smallNav {
+    height: 80px;
+}
+.g-smallNav .navLeft {
+    position: relative;
+    float: left;
+    text-align: center;
+    display: inline-block;
+    line-height: 50px;
+    padding: 8px;
+
+}
+.g-smallNav ul {
+    margin-left: 30px;
+}
+.g-smallNav ul li:hover {
+    color: #2fb3ff;
+}
+/* banner区域 */
+
+.banner {
+    height: 410px;
+    overflow: hidden;
+}
+.banner img {
+    display: block;
+    float: left;
+}
+/* taglist区域 */
+.tagList {
+    clear: both;
+    margin-top: 20px;
+}
+.tagLists {
+    float: left;
+    margin-right: 280px;
+}
+.tagListsNoMargin {
+    float: right;
+}
+.tagList{
+    height: 22px;
+    background: #f5f5f5;
+}
+.tagList .head {
+    display: inline-block;
+    width: 80px;
+    height: 22px;
+    background: #909090;
+    line-height: 22px;
+    text-align: center; 
+    color: #fff;
+}
+.tagList ul {
+    width: 210px;
+    height: 50px;
+}
+.tagList ul li {
+    float: left;
+    margin-top: 12px;
+    width: 70px;
+}
+.tagList ul li:hover {
+    color: #2fb3ff;
+}
+/* 小图片区域 */
+.smallBanner {
+    margin-top: 70px;
+    height: 190px;
+    border-top: 2px solid #e6e6e6;
+}
+.smallBanner img {
+    margin-right: 47px;
+    padding-top: 40px;
+    display: block;
+    float: left;
+    width: 200px;
+    height: 110px;
+    
+}
+#noMargin {
+    margin-right: 0;
+}
