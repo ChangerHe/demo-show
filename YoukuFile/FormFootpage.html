@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<style>
+		#box{
+			-webkit-border-radius: 40px;
+			-moz-border-radius: 40px;
+			border-radius: 40px;
+		}
+	</style>
+</head>
+<body>
+</div>
+<script>
+function inherit(p) {
+	if(p == null) throw TypeError();
+	if(Object.create) {
+		return Object.create(p);
+	}
+	var t = typeof p;
+	if(t !== "object" && t !== "function") {
+		throw TypeError();
+	}
+	function f () {};
+	f.prototype = p;
+	return new f();
+}
+var a = {x:1,y:2};
+a = inherit({z:3});
+console.log(a.__proto__.z)
+
+for ( x in a ) {
+	console.log(a[x])
+}                   
+console.log(x)
+// var string = "hello, world"
+// console.log(string.lastIndexOf("l"))
+// console.log(string.split(", "))
+// console.log(func2(10));
+
+	// function Person(name, age, job) {
+	// 	this.name = name;
+	// 	this.age = age;
+	// 	this.job = job;
+	// }
+	// var person1 = new Person("changer",18, "Software Engineer");
+	// console.log(window.name)
+	// console.log(person1.name)
+
+
+	// var book = {
+	// 	"title": "Professionaal JavaScript",
+	// 	"authors": ["Nicholas","Zakas"],
+	// 	edition: 3,
+	// 	year: 2011,
+	// 	releaseDate: new Date(2011, 11, 1),
+	// 	toJSON: function() {
+	// 		return this;
+	// 	}
+	// };
+	// var jsonText = JSON.stringify(book, function(key, value) {
+	// 	switch(key) {
+	// 		case "authors": return value.join(",");
+	// 		case "year": return 5000;
+	// 		case "edition": return undefined;
+	// 		default: return value;
+	// 	}
+	// },4)
+	// console.log(jsonText)
+</script>
+</body>
+</html>

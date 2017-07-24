@@ -220,8 +220,8 @@ ul {
     overflow: hidden;
 }
 .banner img {
-    display: block;
-    float: left;
+    display: inline-block;
+    white-space: nowrap;
 }
 /* taglist区域 */
 .tagList {
