@@ -1,0 +1,186 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+body{
+	background: #eee;
+	overflow:scroll;
+	overflow-x:hidden;
+}
+nav{
+	background: #555;
+	height: 50px;
+}
+.mian-txt{
+	float: left;
+	margin-left: 30px;
+}
+header ul li{
+	float: right;
+	list-style-type: none;
+}
+header ul li a{
+	display: inline-block;
+	padding: 0 15px;
+	line-height:50px;
+	color: #fff;
+	text-decoration: none;
+	font-family: "微软雅黑"，sans-serif；
+	font-size:1.6em;
+
+}
+header ul li a:hover{
+	background: #900;
+}
+.main-banner{
+	background: url(../images/banner.jpg) no-repeat center;
+	background-attachment: fixed;
+	height: 500px;
+}
+.banner{
+	width: 300px;
+	text-align: center;
+	font-size: 12px;
+	margin: 0 auto;
+	position: relative;
+	top: 150px;
+	line-height: 24px;
+	letter-spacing: 1px;
+	color: #fff;
+}
+.banner h1{
+	margin-bottom: 20px;
+}
+button{
+	width: 120px;
+	height: 40px;
+	border: none;
+	background: rgb(225,55,55);
+	border-radius: 10px;
+	margin: 30px;
+	color: #fff;
+}
+.more a{
+	display: block;
+	margin-top: 80px;
+	text-decoration: none;
+	color: #444;
+}
+.blue-section{
+	height: 350px;
+	background: rgb(21,180,173);
+}
+.blue-section-contain{
+	width: 600px;
+	color: #fff;
+	text-align: center;
+	line-height: 25px;
+	margin: 0 auto;
+	position: relative;
+	top: 50px;
+}
+.blue-section-contain h2{
+	padding-bottom: 20px;
+	border-bottom: 2px solid #fff;
+}
+.blue-section-contain p{
+	padding-top: 10px;
+}
+.blue-section-contain span{
+	display: inline-block;
+	width: 70px;
+	height: 70px;
+	margin:30px;
+	background: rgb(31,190,190);
+	transform: rotate(45deg);
+}
+/*img and p contain*/
+
+.gray-section{
+	background: #000;
+	color: #fff;
+}
+.gray-section .img-section{
+	width: 45%;
+
+}
+.img-section img{
+	width: 100%;
+}
+.text-section{
+	width: 55%;
+}
+.article-preview:nth-child(odd){
+	background: rgba(255,255,255,0.05);
+}
+.article-preview img{
+	display: block;
+}
+.article-preview > div{
+	float: left;
+}
+.article-preview:after{
+	content: "";
+	display: block;
+	clear: both;
+}
+.text-section{
+	position: relative;
+	top:100px;
+	left: 50px;
+	line-height: 50px;
+	letter-spacing: 1px;
+}
+.purple-section{
+	height: 1000px;
+	background: rgb(63,54,99);
+	color: #fff;
+	text-align:center;
+	line-height: 60px;
+}
+.purple-section-context{
+	width: 800px;
+	margin: 0 auto;
+	padding: 40px 0 50px 0;
+}
+.line{
+	width: 500px;
+	height: 5px;
+	background: #009;
+	margin: 0 auto;
+}
+.context{
+	line-height: 30px;
+	width: 50%;
+	float: left;
+	padding: 5%;
+	margin: 
+	font-size: 12px;
+	box-sizing: border-box;
+}
+.context:nth-child(4){
+	background:  rgba(0,0,0,0.04)
+}
+.context:nth-child(5){
+	background:  rgba(0,0,0,0.08)
+}
+.context:nth-child(6){
+	background:  rgba(0,0,0,0.12)
+}
+.context:nth-child(7){
+	background:  rgba(0,0,0,0.16)
+}
+.item{
+	height: 200px;
+	background: #222;
+	text-align: center;
+}
+.item ul li{
+	display: inline-block;
+	margin: 0 auto;
+	padding: 50px 30px;
+	color: #fff;
+}
+.copy{
+	color: #fff;
+}
