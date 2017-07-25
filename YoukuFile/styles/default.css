@@ -1,0 +1,113 @@
+@charset "utf-8";
+/*public style*/
+a {
+	color: #3f3f40;
+}
+a:hover {
+	color: #f62000;
+	text-decoration: none;
+}
+.fl  {
+	float: left;
+}
+.fr {
+	float: right;
+}
+.icon {
+	float: left;
+	display: block;
+	width: 18px;
+	height: 18px;
+}
+.arrow {
+	display: block;
+	float: left;
+	margin: 7px 0 0 7px;
+	width: 0px;
+	height: 0px;
+	border: 6px solid transparent;
+	border-top: 6px solid #878787;
+}
+
+/*header area*/
+.g-header {
+	width: 100%;
+	height: 80px;
+	border-bottom: 1px solid #e3e7e8;
+}
+.g-header .logo {
+	display: block;
+	width: 150px;
+	height: 34px;
+	background: url(../images/logo.jpg) right bottom no-repeat;
+	padding: 23px 0 0 25px;
+}
+.g-header .navigation {
+	margin: 30px 0 0 10px;
+}
+.g-header .navigation .icon-threeLine {
+	background: url(../images/icon.png) -115px -256px;
+}
+.g-header .navigation:hover .icon-threeLine{
+	background: url(../images/icon.png) -132px -256px;
+}
+
+.g-header .topUl {
+	margin: 20px 0 0 25px;
+}
+.g-header .topUl li{
+	float: left;
+	margin-left: -1px;
+	line-height: 38px;
+	padding: 0 17px;
+	border: 1px solid #2fb3ff;
+}
+.g-header .loginArea {
+	margin: 30px 0 0 20px;
+}
+.loginArea .clock .icon-clock {
+	margin-left: 13px;
+	background: url(../images/icon.png) -98px -236px;
+}
+.loginArea .clock:hover .icon-clock {
+	background: url(../images/icon.png) -118px -236px;
+}
+.loginArea .msg .icon-msg {
+	margin-left: 13px;
+	background: url(../images/icon.png) -18px 1px;
+}
+.loginArea .msg:hover .icon-msg {
+	background: url(../images/icon.png) -117px -216px;
+}
+.loginArea .upLoad .icon-upLoad {
+	margin-left: 13px;
+	background: url(../images/icon.png) -39px 1px;
+}
+.loginArea .upLoad:hover .icon-upLoad {
+	background: url(../images/icon.png) -97px -216px;
+}
+.g-header .searchArea {
+
+}
+.searchArea .textArea {
+	width:340px;
+	height: 38px;
+	padding-left: 30px;
+	border: 1px solid #3893d3;
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
