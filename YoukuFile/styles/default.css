@@ -7,19 +7,38 @@ a:hover {
 	color: #f62000;
 	text-decoration: none;
 }
+.hidden {
+	display: none;
+}
+.box1300 {      /*1300px container*/
+	width: 96%;
+	max-width: 1346px;
+	min-width: 1260px;
+	margin: 0 auto;
+} 
+.box1190 {     /*1190px container*/
+	width: 1190px;
+	margin: 0 auto;
+}
 .fl  {
 	float: left;
 }
 .fr {
 	float: right;
 }
-.icon {
+.icon {       /*for icon container*/
 	float: left;
 	display: block;
 	width: 18px;
 	height: 18px;
 }
-.arrow {
+.smallIcon {   /*for smallicon container*/
+	display: block;
+	float: left;
+	width: 20px;
+	height: 10px;
+}
+.arrow {     /*small arrow css img*/
 	display: block;
 	float: left;
 	margin: 7px 0 0 7px;
@@ -28,19 +47,38 @@ a:hover {
 	border: 6px solid transparent;
 	border-top: 6px solid #878787;
 }
+.smallHead {   /*smallhead tag for next tips*/
+	font-size: 24px;
+	color: #909090;
+}
+.g-smallBanner { /* small banner for all small images*/
+	position: relative;
+	white-space: nowrap;
+	overflow: hidden;
+}
+.imgCon {
+	position: absolute;
+}
 
 /*header area*/
 .g-header {
+	position: fixed;
+	z-index: 999;
+	top: 0;
+	left: 0;
+	right: 0;
 	width: 100%;
+	margin: 0 auto;
 	height: 80px;
 	border-bottom: 1px solid #e3e7e8;
+	background: #fff;
 }
 .g-header .logo {
 	display: block;
 	width: 150px;
 	height: 34px;
 	background: url(../images/logo.jpg) right bottom no-repeat;
-	padding: 23px 0 0 25px;
+	padding: 23px 0 0 0;
 }
 .g-header .navigation {
 	margin: 30px 0 0 10px;
@@ -87,27 +125,314 @@ a:hover {
 	background: url(../images/icon.png) -97px -216px;
 }
 .g-header .searchArea {
-
+	margin: 19px 0 0 0 ;
 }
 .searchArea .textArea {
 	width:340px;
 	height: 38px;
 	padding-left: 30px;
 	border: 1px solid #3893d3;
+	background: url(../images/icon.png) -118px -280px no-repeat;
+}
+.searchArea .btnArea {
+	width: 80px;
+	height: 40px;
+	border: 1px solid #3893d3;
+	background: #3893d3;
+	color: #FFF;
+}
+.searchArea img {
+	display: block;
+	float: left;
+	width: 25px;
+	height: 25px;
+	margin: 5px 0 0 -113px;
+}
+/*nav area*/
+.g-nav {
+	position: fixed;
+	z-index: 999;
+	top: 0;
+	margin-top: 81px;
+	height: 50px;
+	width: 100%;
+	border-bottom: 1px solid #e3e7e8;
+	background: #fff;
+}
+.g-nav ul {
+	float: left;
+}
+.g-nav li {
+	
+	float: left;
+	line-height: 50px;
+	padding: 0 8px;
+}
+.g-nav ul .active {
+	border-bottom: 2px solid #3893d3;
+}
+.g-nav ul .more span{
+	display: block;
+	float: left;
+}
+.g-nav ul .more .arrow {
+	margin: 23px -10px 0 5px ;
+}
+.g-nav .download {
+	margin: 17px 0 0 0;
+}
+.g-subNav {
+	margin-top: 130px;
+}
+.g-subNav ul {
+	float: left;
+}
+.g-subNav li {
+	position: relative;
+	float: left;
+	line-height: 60px;
+	padding: 0 8px;
+}
+.g-subNav li .smallIcon {
+	position: absolute;
+	top: 6px;
+	right: 5px;
+	background: url(../images/newTag.jpg);
+}
+/*banner area*/
+.g-banner {
+	padding: 60px 0 0 0 ;
+}
+.g-banner img {
+	position: absolute;
+	display: block;
+
+}
+.g-menu {
+	margin-top: 430px;
+	height: 22px;
+	background: #f5f5f5;
+	/*border-bottom: 3px solid #e6e6e6;*/
+}
+.g-menu .menuItem {
+
+	width: 295px;
+	height: 90px;
+}
+.g-menu .menuItem .top {
+	width: 80px;
+	height: 22px;
+	line-height: 22px;
+	text-align: center;
+	background: #909090;
+	color: #fff;
+}
+.g-menu .menuItem li {
+	float: left;
+	padding: 12px 26px 0 0;
+}
+/*g-smallBanner area*/
+
+body > .g-smallBanner {
+	margin-top: 70px;
+	padding-top: 40px;
+	border-top: 3px solid #e6e6e6;
+}
+.g-smallBanner a {
+	color: rgba(255,255,255,.3);
+	font: bold 40px/44px "sans-serif";
+}
+.g-smallBanner .leftTag {
+	position: absolute;
+	left: 0px;
+	top: 70px;
+	width: 30px;
+	height: 50px;
+	/*background: #eee;*/
+	
 	
 }
+.g-smallBanner .rightTag {
+	position: absolute;
+	right: 0px;
+	top: 70px;
+	width: 30px;
+	height: 50px;
+}
+.g-smallBanner .rightTag:hover,.g-smallBanner .leftTag:hover {
+	background: rgba(0,0,0,.3);
+	
+}
+.g-smallBanner img {
+	padding-right: 20px;
+	width: 200px;
+	height: 110px;
+}
+/*g-preNews area*/
+.g-preNews {
+	margin-top: 40px;
+}
+.g-preNews .preShow {
+	width: 885px;
+	height: 300px;
+}
+.preShow .topText {
 
+}
+.topText  .texts {
+	float: left;
+	display: block;
+	width: 120px;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+}
+.topText  .texts a{
+	font-size: 18px;
+}	
+.topText .active {
+	background: #06a7e1;
+}
+.topText .active a {
+	color: #fff;
 
+}
+.g-preNews .pics {
+	margin-top: 30px;
+}
+.g-preNews .pics .pic {
+	position: relative;
+	overflow: hidden;
+	padding: 20px 20px 0 0;
+	width: 200px;
+	height: 110px;
+	
+}
+.pics .pic a {
 
+}
+.pics .pic img {
+	width: 200px;
+	height: 110px;
+	overflow: hidden;
+}
+.pics .pic span {
+	display: block;
+	position: absolute;
+	width: 190px;
+	bottom: -15px;
+	padding-left: 10px;
+	background: rgba(0,0,0,.3);
+	color: #bbbbbb;
+}
+.pics .pic:hover span {
+	bottom: 2px;
+}
+.pics .pic span b {
+	color: #fff;
+}
+.g-preNews .iWatched {
+	width: 300px;
+	height: 300px;
+}
+.iWatched .topText {
+	height: 45px;
+}
+.iWatched .topText .more a {
+	color: #555555;
+	line-height: 24px;
+}
+.iWatched .playRecord {
+	width: 100%;
+	height: 243px;
+	font: 12px/243px "sans-serif";
+	color: #909090;
+	text-align: center;
+}
+.iWatched .playRecord:hover {
+	border: 1px solid #f23e10;
+}
+/*guess you like area*/
+.g-guessYouLike {
+	margin-top: 360px;
+}
+.g-guessYouLike .g-smallBanner {
+	position: relative;
+	padding-top: 20px;
+	white-space: nowrap;
+	overflow: hidden;
+}
+.g-guessYouLike .g-smallBanner .leftTag ,.g-guessYouLike .g-smallBanner .rightTag{
+	top: 50px;
+}
+/*g-firstPlay area*/
+.g-firstPlay {
+	margin-top: 30px;
+}
+.g-firstPlay .topText {
+	margin-bottom: 20px;
+}
+.g-firstPlay .g-smallBanner img{
+	height: 300px;
+}
 
+/*g-linkUpArea*/
+.g-linkUpArea {
+	margin-top: 30px;
+}
+.g-linkUpArea .linkUp {
+	height: 240px;
+	width: 860px;
+}
+.g-linkUpArea .linkUp .topText, .g-linkUpArea .publicFree .topText {
+	margin: 10px 0;
+}
+.linkUp .leftWeek {
+	width: 200px;
+	height: 100%;
+	background: #f5f5f5;
+}
+.linkUp .leftWeek li {
+	height: 34px;
+}
+.linkUp .leftWeek li a{
+	line-height: 34px;
+	padding-left: 20px;
+	color: #555555;
+}
+.linkUp .leftWeek .active {
+	background: #06a7e1;
+}
+.linkUp .leftWeek .active a {
+	color: #fff;
 
-
-
-
-
-
-
-
+}
+.linkUp .leftPic1 {
+	width: 420px;
+	height: 100%;
+	margin-left: 20px;
+}
+.linkUp .leftPic3 {
+	margin-top: 20px;
+}
+.g-linkUpArea .publicFree {
+	width: 310px;
+}
+.publicFree .playTips {
+	margin-top: 13px
+}
+.publicFree .playTips img {
+	width: 140px;
+	height: 70px;
+}
+.publicFree .playTips .fr {
+	display: block;
+	margin-right: 20px; 
+}
+.publicFree .playTips .fr a{
+	line-height: 20px;
+	padding-right: 20px; 
+}
 
 
 
