@@ -1,0 +1,91 @@
+@charset "utf-8";
+
+.nav > ul > li #baiyeGoodProject .arrow {
+    margin-top: -11px;
+    display: block; 
+}
+
+/* projectMsg area start */
+.g-projectMsg .head .subTitle {
+    width: 1000px;
+    height: 34px;
+    background: #fafafa;
+}
+
+.g-projectMsg .head .subTitle span {
+    display: block;
+    float: left;
+    width: 323px;
+    height: 40px;
+    font-size: 14px;
+    text-align: center;
+    color: #333;
+    line-height: 35px;
+}
+
+.g-projectMsg .head .subTitle .active {
+    background: url(../images/tapbg.png) no-repeat;
+    background-size: contain;
+}
+
+.g-projectMsg .head .subTitle span:hover {
+    background: url(../images/tapbg.png) no-repeat;
+    background-size: contain;
+}
+
+.g-projectMsg .head .subTitle span:first-child {
+    margin: 0 5px;
+}
+
+.g-projectMsg {
+    height: 400px;
+}
+
+.g-projectMsg .projectTxt {
+    width: 720px;
+    height: 180px;
+    margin-top: 50px; 
+    border: 1px solid #d6d6d6;
+    color: #666;
+}
+
+.projectTxt img {
+    display: block;
+    float: left;
+    margin: 30px;
+}
+
+.projectTxt p {
+    padding: 30px 10px 10px;
+}
+
+.projectTxt p:first-line {
+    font: bold 16px/36px "Microsoft Yahei";
+}
+
+.projectTxt div {
+    margin-top: 16px;
+}
+
+.projectTxt .view {
+    padding-left: 20px;
+    background: url(../images/eye.png) left no-repeat;
+}
+
+.projectTxt .readMsg {
+    margin-right: 10px; 
+    float: right;
+    color: #666;
+}
+
+.g-projectMsg .projectRecom {
+    width: 250px;
+    height: 100px;
+    border: 1px solid #d6d6d6;
+    margin-top: 50px; 
+    
+}
+.g-projectMsg .projectRecom img {
+    margin: 17px 20px;
+}
+

@@ -4,21 +4,27 @@
     width: 1000px;
     margin: 0 auto;
 }
+
 .fl {
     float: left;
 }
+
 .fr {
     float: right;
 }
+
 a:hover {
     text-decoration: none;
+    color: #d43b33;
 }
+
 .arrow {
     display: block;
     display: none;
     width: 100%;
     height: 8px;
 }
+
 .arrow:before {
     content: "";
     display: block;
@@ -28,6 +34,7 @@ a:hover {
     border: 4px solid transparent;
     border-bottom: 4px solid #fff;
 }
+
 .arrow:after {
     content: "";
     display: block;
@@ -35,9 +42,161 @@ a:hover {
     width: 100%;
     background: #fff;
 }
-body {
-    /* background: #000; */
+
+/* turn page before and next */
+/* <div class="page width1000">
+    <a href=""><span class="pageArrow pageArrowL">&lt;</span></a>
+    <a href=""><span class="pageNum">1</span></a>
+    <a href=""><span class="pageArrow pageArrowR">&gt;</span></a>
+</div> */
+ .page {
+     margin-bottom: 96px;
+ }
+
+ .page .pageArrow {
+     display: block;
+     float: left;
+     width: 42px;
+     height: 36px;
+     background: #d8d8d8;
+     text-align: center;
+     line-height: 36px;
+     color: #fff;
+     font: bold 14px/36px "Microsoft Yahei";
+     
+ }
+
+ .page .pageArrowL {
+     border-top-left-radius: 5px;
+     border-bottom-left-radius: 5px;
+ }
+ .page .pageArrowR {
+     border-top-right-radius: 5px;
+     border-bottom-right-radius: 5px;
+ }
+
+ .page .pageNum {
+     display: block;
+     float: left;
+     width: 38px;
+     height: 36px;
+     text-align: center;
+     line-height: 36px;
+     color: #fff;
+     background: #b50900;
+ }
+
+
+
+/* public head area for reusable */
+.head {
+    margin-top: 45px;
+    height:　60px;
 }
+
+.head .headTitle {
+    margin: 0 auto;
+    text-align: center;
+    font: bold 18px/20px "Microsoft Yahei";
+    color: black;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.head .headTitle:first-line {
+    font-weight: normal;
+}
+
+/* public long left or right tag */
+/* <div class="m-LorR">
+    <span class="btn">&lt;</span>
+    <span class="btn">&gt;</span>
+</div> */
+.m-LorR {
+     margin: 40px 0 75px 210px; 
+}
+
+.m-LorR span {
+    display: block;
+    float: left;
+    width: 264px;
+    height: 32px;
+    padding: 0 10px;
+    background: #d43b33;
+    line-height: 32px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;    
+}
+
+.m-LorR span:first-child {
+    background: #e5e5e5;
+    text-align: right;
+    margin-right: 16px;
+}
+
+
+
+/* bottom navigate pageUp and pagedown area */
+/* <div class="navgate">
+    <span>上一篇：<a href="">没有了</a></span>&emsp;&emsp;
+    <span>下一篇：<a href="">没有了</a></span>
+</div> */
+.navgate {
+    margin: 40px 0 90px 0;
+}
+
+.navgate span,.navgate a {
+    color: #d53b33;
+}
+
+
+/* public crumb navigator style */
+/* <div class="g-crumb width1000">
+    当前位置： <a href="index.html">主页</a>&nbsp;&gt;&nbsp;<a href="">百业好项目</a>&nbsp;&gt;&nbsp;<a href="">融资中</a>
+</div> */
+.g-crumb {
+     margin: 50px auto 0 ; 
+     height: 100px;
+}
+
+/* public title for all detail page */
+/* <div class="title">
+    <h1>品一·思格成第十届“百业好项目”将于5月13日隆重启幕</h1>
+    <h3>作者：<span class="author">admin</span> 信息来源：<span class="msgFrom">未知</span> 发布时间： <span class="date">2015-06-12 15:35</span> 点击： <span class="click">131次</span></h3>
+</div> */
+.title {
+    width: 100%;
+    height: 80px;
+    border-bottom : 1px solid #cbcbcb;
+}
+
+.title h1 {
+    font: bold 24px/44px "Microsft Yahei";
+    color: #d53b33;
+    text-align: center;
+}
+
+.title h3 {
+    font: normal 12px/16px "Microsft Yahei";
+    color: #666666;
+    text-align: center;
+}
+
+/* public Article set area */
+/* <div class="m-detail width1000">
+</div> */
+.m-detail .content p {
+    padding: 10px;
+    line-height: 26px;
+    color: #333;
+}
+
+.m-detail .content img {
+    display: block;
+    margin: 0 auto;
+}
+
 
 
 /* the style of head area */
@@ -45,32 +204,35 @@ body {
     height: 72px;
     background: #d43b33;
 }
+
 .g-header .logo {
     width: 118px;
     height: 72px;
 }
-.g-header .nav {
-    
-}
+
 .nav > ul > li {
     float: left;
     position: relative;
     margin: 0 17px;
 }
+
 .nav > ul > li div > a {
     line-height: 72px;
     text-align: center;
     font-size: 14px;
     color: #fff;
 }
+
 .nav > ul > li:hover .arrow {
     margin-top: -11px;
     display: block; 
 }
+
 .nav > ul > li:hover .subNav {
     display: block;
 
 }
+
 .nav > ul > li .subNav {
     position: absolute;
     display: none;
@@ -78,26 +240,26 @@ body {
     top: 72px;
     left: -6px;
 }
+
 .nav > ul > li .subNav li {
     width: 70px;
     height: 24px;
     border-bottom: 1px solid #fff;
     line-height: 24px;
-    background: #d43b33;
+     background: #d43b33; 
     text-align: center;
     
 }
+
 .nav > ul > li .subNav li a {
     color: #fff;
 }
 
-
-
 /* banner area */
 .g-banner {
     width: 100%;
-    height: 279px;
 }
+
 .g-banner img {
     width: 100%;
 }
@@ -107,38 +269,33 @@ body {
     width: 100%;
     height: 264px;
     background: #2d2d2d url(../images/footer_bg.png);
-    padding-top: 54px;
+    padding-top: 54px; 
+    margin-top: 20px;
 }
-.g-footer .footText {
-}
+
 .g-footer .width1000 .img {
     width: 136px;
     height: 91px;
     background: url(../images/logo2.png);
 }
+
 .g-footer .footText {
     margin-left: 80px;  
     color: #fff;
 }
+
 .g-footer .footText h3 {
     font-size: 16px;
     padding-bottom: 22px;
     color: #fcf8f8;
 }
+
 .g-footer .footText p {
     line-height: 28px;
 }
+
 .g-footer .footText p:last-child {
     padding-top: 50px;
     color: #979797;
 }
-
-
-
-
-
-
-
-
-
 

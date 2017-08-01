@@ -1,1 +1,317 @@
 @charset "utf-8";
+
+.nav > ul > li #homePage .arrow {
+    margin-top: -11px;
+    display: block; 
+}
+
+/* aboutus area */
+.g-aboutUs {
+    position: relative;
+    margin-top: 90px;
+}
+
+.g-aboutUs .head {
+    position: absolute;
+    top: -66px;
+    left: 410px;
+    margin: 0 auto;
+    height: 100px;
+    width: 180px;
+    background: #fff;
+}
+
+.g-aboutUs .head span {
+    display: block;
+    text-align: center;
+    padding-top: 20px;
+    font: bold 16px/30px "Microsoft YaHei";
+    color: #d43b33;
+    text-transform: uppercase;
+}
+
+.g-aboutUs .head span:first-line {
+    font-weight: normal;
+    color: #626262;
+}
+
+.g-aboutUs .contents {
+    padding-top: 40px;
+    line-height: 28px;
+    color: #626262;
+    text-align: center;
+}
+
+.g-aboutUs .contents span{
+    font-weight: bold;
+}
+
+.g-aboutUs .contents input {
+    border: none;
+    height: 38px;
+    width: 106px;
+    background: url(../images/more_bg.png);
+    margin: 30px auto;
+}
+
+/* companyMsg head area */
+.g-companyMsg {
+    position: relative;
+    margin-top: 60px;
+    border-top: 1px solid #cbcbcb;
+}
+
+.g-companyMsg .head {
+    position: absolute;
+    width: 400px;
+    top: -78px;
+    left: 344px;
+}
+
+.g-companyMsg .head li {
+    float: left;
+    padding: 8px 22px;
+    margin: 0 5px;
+    border: 1px solid #cbcbcb;
+    border-bottom: 1px solid #fff;
+    background: #626262;
+}
+
+.g-companyMsg .head .active {
+    background: #fff;
+} 
+
+.g-companyMsg .head .active a {
+    color: #d43b33;
+}
+
+.g-companyMsg .head li a {
+    color: #fff;
+}
+
+/* g-companyMsg content area */
+.g-companyMsg .content {
+    margin: 40px auto 0 ;
+    height: 280px;
+    display: none;
+}
+.g-companyMsg #show {
+    display: block;
+}
+
+.g-companyMsg .content img {
+    height: 185px;
+    width: 339px;
+
+}
+
+.g-companyMsg .content .contentL {
+    height: 185px;
+    width: 339px;
+    margin-left: 110px;
+}
+.g-companyMsg .content .contentR {
+    width: 400px;
+    margin-left: 40px;
+    line-height: 24px;
+    font-weight: bold;
+    color: #626262;
+}
+
+.g-companyMsg .content .contentR P::first-line {
+    font-weight: normal;
+}
+
+/* g-projectIntro area */
+.g-projectIntro {
+    width: 100%;
+    height: 339px;
+    background: url(../images/index_02.png)
+}
+
+  .g-projectIntro .head {
+    padding: 42px 0;
+}  
+
+.g-projectIntro .head:first-line {
+    font-weight: normal;
+}
+
+/* g-projectIntro area btnBanner area*/
+.g-projectIntro .btnBanner {
+
+}
+
+.g-projectIntro .btnBanner input {
+    width: 20px;
+    height: 148px;
+    border: none;
+}
+.g-projectIntro .btnBanner .btn1 {
+    cursor: pointer;
+    margin-right: 10px;
+    background: url(../images/btnleft.png)
+}
+
+.g-projectIntro .btnBanner .btn2 {
+    cursor: pointer;
+    margin-left: 10px;
+    background: url(../images/btnright.png)
+}
+
+.g-projectIntro .btnBanner .subBanner {
+    overflow: hidden;
+    width: 940px;
+    height: 148px;
+}
+
+#bannerCon {
+    position: relative;
+    width: 1890px;
+    height: 148px;
+     -webkit-transition: left 1s;
+    -moz-transition: left 1s;
+    -ms-transition: left 1s;
+    -o-transition: left 1s;
+    transition: left 1s; 
+}
+
+#bannerCon .banner {
+    float: left;
+    margin-right: 5px;
+}
+
+#bannerCon .banner img {
+    width: 310px;
+    height: 150px;
+}
+
+#bannerCon .banner span {
+    position: absolute;
+    display: block;
+    box-sizing: border-box;
+    padding: 5px 10px 40px 10px;
+    margin-top: -30px;
+    width: 310px;
+    text-align: justify;
+    background: rgba(0,0,0,.4);
+    color: #fff;
+}
+
+#bannerCon a:hover span {
+    margin-top: -153px;
+}
+
+/* g-newsAndMsg area */
+.g-newsAndMsg {
+    margin-top: 36px;
+    height: 460px;
+}
+
+.g-newsAndMsg .head p{
+    font-size: 18px;
+    text-transform: uppercase;
+    line-height: 22px;
+    font-weight: bold;
+    color: #d43b33;
+}
+
+.g-newsAndMsg .head p::first-line {
+    font-weight: normal;
+    color: #000;
+}
+
+.g-newsAndMsg .news {
+    width: 460px;
+    margin: 0 24px 20px 0;
+}
+
+.news .newsContent ul {
+    margin-top: 20px;
+}
+
+.news .newsContent li {
+    height: 36px;
+    border-bottom: 1px dotted #cacaca;
+}
+
+.news .newsContent li a {
+    line-height: 36px;
+    color: #332c2b;
+}
+
+.news .newsContent li a:hover {
+    color: #d43b33;
+}
+
+.news .newsContent li span {
+    float: right;
+    line-height: 36px;
+    color: #cccbca;
+}
+
+.newsContent .more {
+    display: block;
+    width: 75px;
+    margin-top: 24px;
+    text-transform: uppercase;
+    border-bottom: 1px solid #efefef;
+}
+
+.newsContent .more a {
+    color: #332c2b;
+    font-style: italic;
+}
+
+.msg {
+    width: 514px;
+}
+
+.msg .getMsg {
+    margin-top: 20px;
+}
+
+.msg .getMsg .giveMsg {
+    width: 230px;
+    height: 38px;
+    margin: 0 10px 10px 0;
+    padding-left: 13px;
+    border: 1px solid #d5d5d4;
+}
+
+.msg .getMsg .identifyCode {
+    width: 90px;
+}
+
+.msg .getMsg .identify {
+    display: block;
+    float: right;
+    margin: 8px 60px 0 0;
+    width: 68px;
+    height: 24px;
+}
+
+.msg .getMsg #textareaMsg {
+    width: 480px;
+    height: 165px;
+    border: 1px solid #d5d5d4;
+    font-size: 14px;
+    padding: 10px;
+}
+
+.msg .getMsg .mention {
+    font: bold 14px/54px "Microsoft YaHei";
+}
+
+.msg .getMsg .mention span {
+    color: red;
+}
+
+.msg .getMsg #submit {
+    width: 130px;
+    height: 33px;
+    border: none;
+    margin: 10px 10px 0 0;
+    background: #d43b33;
+    color: #fff;
+}

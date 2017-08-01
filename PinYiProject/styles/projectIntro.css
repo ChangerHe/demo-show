@@ -1,0 +1,135 @@
+@charset "utf-8";
+
+.nav > ul > li #projectIntro .arrow {
+    margin-top: -11px;
+    display: block; 
+}
+
+.g-courseCenter {
+    margin-top: 50px;
+}
+
+/* aboutus area */
+.g-aboutUs {
+    position: relative;
+    margin: 90px auto 60px;
+}
+
+.g-aboutUs .head {
+    position: absolute;
+    top: -66px;
+    left: 410px;
+    margin: 0 auto;
+    height: 100px;
+    width: 180px;
+    background: #fff;
+}
+
+.g-aboutUs .head span {
+    display: block;
+    text-align: center;
+    padding-top: 20px;
+    font: bold 16px/30px "Microsoft YaHei";
+    color: #d43b33;
+    text-transform: uppercase;
+}
+
+.g-aboutUs .head span:first-line {
+    font-weight: normal;
+    color: #626262;
+}
+
+.g-aboutUs .content {
+    padding-top: 40px;
+    line-height: 28px;
+    color: #626262;
+    text-align: center;
+}
+
+.g-aboutUs .content span{
+    font-weight: bold;
+}
+
+/* corporateCul area */
+.g-corporateCul {
+    width: 100%;
+    height: 394px;
+    padding: 70px 0;
+    background: url(../images/index_02.png);
+}
+
+.g-corporateCul .head {
+    margin: 0
+}
+
+.g-corporateCul .head .newsTitle {
+    text-align: left;
+    color: #d43b33;
+}
+
+.g-corporateCul .head .newsTitle:first-line {
+    color: #000;
+}
+
+.g-corporateCul .ourMsg {
+    width: 380px;
+}
+
+.g-corporateCul .ourMsg li {
+    width: 100%;
+    line-height: 30px;
+    border-bottom: 1px solid #bebebe;
+}
+
+.g-corporateCul .ourMsg li:hover a{
+    color: #d43b33;
+}
+
+.g-corporateCul .ourMsg li:first-line {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/* bigProject area */
+.bigProject .head p {
+    line-height: 80px;
+    text-align: center;
+    color: #424242;
+}
+
+.bigProject .projectBlocks {
+    height: 470px;
+}
+
+.bigProject .projectBlocks .projectBlock {
+    width: 500px;
+    height: 175px;
+    float: left;
+    background: #4b4b4b;
+}
+
+.projectBlocks .projectBlock img {
+    display: block;
+}
+
+.projectBlocks .projectBlock span {
+    display: block;
+    width: 210px;
+    padding: 20px;
+    color: #fff;
+}
+
+.projectBlocks .projectBlock span:first-line {
+    font-size: 14px;
+    line-height: 60px;
+}
+
+.projectBlocks .projectContinue {
+    width: 100%;
+    height: 50px;
+    clear: both;
+    background: #d43b33;
+    color: #fff;
+    font: 16px/50px "Microsoft Yahei";
+    text-align: center;
+}

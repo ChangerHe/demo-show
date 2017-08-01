@@ -1,0 +1,88 @@
+@charset "utf-8";
+
+.nav > ul > li #lessonsCenter .arrow {
+    margin-top: -11px;
+    display: block; 
+}
+
+.g-courseCenter {
+    margin-top: 50px;
+}
+
+/* projects area */
+
+.g-courseCenter .projects {
+    margin-left: 50px;
+    height: 600px;
+}
+
+.g-courseCenter .projects .project {
+    position: relative;
+    float: left;
+    width: 400px;
+    height: 240px;
+    overflow: hidden;
+    margin: 30px 25px;
+    cursor: pointer;
+} 
+
+.projects .project img {
+    display: block;
+    width: inherit;
+    height: inherit;
+}
+
+.projects .project span {
+    position: absolute;
+    top: 200px;
+    display: block;
+    width: 380px;
+    height: 240px;
+    padding: 0 10px;
+    font-size: 14px;
+    text-align: center;
+    background: rgba(0,0,0,.7);
+    color: #fff;
+    
+}
+
+.projects .project:hover span {
+    top: 0;
+}
+
+.projects .project span::first-line {
+    font-size: 16px;
+    line-height: 38px;
+}
+
+/* moreCourse area */
+.g-moreCourse {
+    height: 462px;
+    background: #f7f7f7;
+}
+
+.g-moreCourse .head {
+    padding: 50px 0;
+}
+
+.g-moreCourse .videos {
+    height: 180px;
+}
+
+.g-moreCourse .videos .video {
+    float: left;
+    width: 242px;
+    margin: 0 4px;
+}
+
+.g-moreCourse .videos .video img {
+    width: 242px;
+    height: 130px;
+}
+
+.g-moreCourse .videos .video p {
+    padding-top: 15px;
+    font-weight: bold;
+    color: #222222;
+    text-align: center;
+}

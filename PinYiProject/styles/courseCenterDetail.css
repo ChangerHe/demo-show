@@ -1,0 +1,34 @@
+@charset "utf-8";
+
+.nav > ul > li #lessonsCenter .arrow {
+    margin-top: -11px;
+    display: block; 
+}
+
+.g-courseCenter {
+    margin-top: 50px;
+}
+
+/* videoPlayer area  */
+.g-video {
+    margin: 20px auto 0;
+    height: 560px;
+}
+
+.g-video .videoTitle h1 {
+    font-size: 24px;
+    line-height: 80px;
+    color: #d43b33;
+    text-align: center;
+    font-weight: normal;
+}
+
+.g-video .videoPlayer {
+    width: 870px;
+    height: 474px;
+    margin: 0 auto 80px;
+}
+
+.g-footer {
+    margin-top: 80px;
+}
