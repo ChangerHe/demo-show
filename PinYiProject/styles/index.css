@@ -164,7 +164,7 @@
     width: 1890px;
     height: 148px;
     top: 0px;
-      -webkit-transition: left 1s;
+    -webkit-transition: left 1s;
     -moz-transition: left 1s;
     -ms-transition: left 1s;
     -o-transition: left 1s;
