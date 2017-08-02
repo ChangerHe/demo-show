@@ -2,14 +2,13 @@
 
 /* aboutus area */
 .g-aboutUs {
-    position: relative;
+    border-top: 1px solid #cbcbcb;
     margin-top: 90px;
 }
 
 .g-aboutUs .head {
-    position: absolute;
+    position: relative;
     top: -66px;
-    left: 410px;
     margin: 0 auto;
     height: 100px;
     width: 180px;
@@ -20,7 +19,7 @@
     display: block;
     text-align: center;
     padding-top: 20px;
-    font: bold 16px/30px "Microsoft YaHei";
+    font: bold 18px/30px "Microsoft YaHei";
     color: #d43b33;
     text-transform: uppercase;
 }
@@ -119,11 +118,14 @@
 /* g-projectIntro area */
 .g-projectIntro {
     width: 100%;
+    min-width: 1000px;
+    max-width: 1366px;
+    margin: 0 auto;
     height: 339px;
     background: url(../images/index_02.png)
 }
 
-  .g-projectIntro .head {
+.g-projectIntro .head {
     padding: 42px 0;
 }  
 
@@ -162,12 +164,11 @@
     width: 1890px;
     height: 148px;
     top: 0px;
-    left: 0px;
-     /* -webkit-transition: left 1s;
+      -webkit-transition: left 1s;
     -moz-transition: left 1s;
     -ms-transition: left 1s;
     -o-transition: left 1s;
-    transition: left 1s;  */
+    transition: left 1s;  
 }
 
 #bannerCon .banner {
@@ -185,13 +186,10 @@
 
 #bannerCon .banner div {
     position: absolute;
-    left: 0px;
-    bottom: 0px;
-    display: block;
     /* box-sizing: border-box; */
     padding: 5px 10px 40px 10px;
     margin-top: -30px;
-    width: 310px;
+    width: 290px;
     text-align: justify;
     background: rgba(0,0,0,.4);
     color: #fff;
