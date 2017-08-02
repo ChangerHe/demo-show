@@ -18,6 +18,7 @@ a:hover {
     color: #d43b33;
 }
 
+/* arrow for head nav */
 .arrow {
     display: block;
     display: none;
@@ -43,17 +44,80 @@ a:hover {
     background: #fff;
 }
 
+.activeArrow {    /* for active arrow */
+    margin-top: -11px;
+    display: block; 
+}
+
+
+/* test code for side service online */
+.m-onlineService {
+    position: fixed; 
+    top: 300px;
+    right: -36px;
+    width: 72px; 
+    background: #d43b33;
+    cursor: pointer; 
+    transition: right 1s;
+}
+
+.m-onlineService #text {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 72px;
+    height: 304px;
+    font: bold 24px/23px "sans-serif";
+    color: #fff;
+    background: #d43b33;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.m-onlineService .hoverAfter {
+    position: relative;
+    background: #d43b33;
+}
+
+.m-onlineService .wxImg .wx {
+    position: absolute;
+    display: none;
+    top: 30px;
+    right: 90px;
+    width: 160px;
+    height: 160px;
+    background: url(../images/code2.png);
+}
+
+.m-onlineService:hover {
+    right: 0;
+}
+
+.m-onlineService .wxImg:hover .wx {
+    display: block;
+}
+
+ .m-onlineService:hover #text {
+    z-index: -1;
+} 
+
+
+
 /* turn page before and next */
-/* <div class="page width1000">
-    <a href=""><span class="pageArrow pageArrowL">&lt;</span></a>
-    <a href=""><span class="pageNum">1</span></a>
-    <a href=""><span class="pageArrow pageArrowR">&gt;</span></a>
-</div> */
- .page {
+     /* <!-- html doc page area start -->
+    <div class="m-page width1000">
+        <ul>
+            <li class="pageArrow pageArrowL"><a href="">&lt;</a></li>
+            <li class="pageNum"><a href="">1</a></li>
+            <li class="pageArrow pageArrowR"><a href="">&gt;</a></li>
+        </ul>
+    </div>
+    <!-- html doc page area end -->  */
+ .m-page {
      margin-bottom: 96px;
  }
 
- .page .pageArrow {
+ .m-page .pageArrow {
      display: block;
      float: left;
      width: 42px;
@@ -66,26 +130,27 @@ a:hover {
      
  }
 
- .page .pageArrowL {
+ .m-page .pageArrowL {
      border-top-left-radius: 5px;
      border-bottom-left-radius: 5px;
  }
- .page .pageArrowR {
+ .m-page .pageArrowR {
      border-top-right-radius: 5px;
      border-bottom-right-radius: 5px;
  }
 
- .page .pageNum {
+ .m-page .pageNum {
      display: block;
      float: left;
      width: 38px;
      height: 36px;
      text-align: center;
      line-height: 36px;
-     color: #fff;
      background: #b50900;
  }
-
+ .m-page a {
+     color: #fff;
+ }
 
 
 /* public head area for reusable */

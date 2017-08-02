@@ -1,10 +1,5 @@
 @charset "utf-8";
 
-.nav > ul > li #homePage .arrow {
-    margin-top: -11px;
-    display: block; 
-}
-
 /* aboutus area */
 .g-aboutUs {
     position: relative;
@@ -56,16 +51,15 @@
 
 /* companyMsg head area */
 .g-companyMsg {
-    position: relative;
     margin-top: 60px;
     border-top: 1px solid #cbcbcb;
 }
 
 .g-companyMsg .head {
-    position: absolute;
-    width: 400px;
-    top: -78px;
-    left: 344px;
+    position: relative;
+    width: 300px;
+    margin: 0 auto;
+    top: -33px;
 }
 
 .g-companyMsg .head li {
@@ -138,9 +132,6 @@
 }
 
 /* g-projectIntro area btnBanner area*/
-.g-projectIntro .btnBanner {
-
-}
 
 .g-projectIntro .btnBanner input {
     width: 20px;
@@ -163,22 +154,28 @@
     overflow: hidden;
     width: 940px;
     height: 148px;
+    position: relative;
 }
 
 #bannerCon {
-    position: relative;
+    position: absolute;
     width: 1890px;
     height: 148px;
-     -webkit-transition: left 1s;
+    top: 0px;
+    left: 0px;
+     /* -webkit-transition: left 1s;
     -moz-transition: left 1s;
     -ms-transition: left 1s;
     -o-transition: left 1s;
-    transition: left 1s; 
+    transition: left 1s;  */
 }
 
 #bannerCon .banner {
-    float: left;
+     float: left; 
     margin-right: 5px;
+    width: 310px;
+    position: relative;
+    /* height: 150px; */
 }
 
 #bannerCon .banner img {
@@ -186,10 +183,12 @@
     height: 150px;
 }
 
-#bannerCon .banner span {
+#bannerCon .banner div {
     position: absolute;
+    left: 0px;
+    bottom: 0px;
     display: block;
-    box-sizing: border-box;
+    /* box-sizing: border-box; */
     padding: 5px 10px 40px 10px;
     margin-top: -30px;
     width: 310px;
@@ -198,14 +197,14 @@
     color: #fff;
 }
 
-#bannerCon a:hover span {
+#bannerCon a:hover div {
     margin-top: -153px;
 }
 
 /* g-newsAndMsg area */
 .g-newsAndMsg {
     margin-top: 36px;
-    height: 460px;
+    height: 560px;
 }
 
 .g-newsAndMsg .head p{
@@ -216,7 +215,7 @@
     color: #d43b33;
 }
 
-.g-newsAndMsg .head p::first-line {
+.g-newsAndMsg .head p:first-line {
     font-weight: normal;
     color: #000;
 }
@@ -272,6 +271,8 @@
 }
 
 .msg .getMsg .giveMsg {
+    display: block;
+    float: left;
     width: 230px;
     height: 38px;
     margin: 0 10px 10px 0;
@@ -285,7 +286,7 @@
 
 .msg .getMsg .identify {
     display: block;
-    float: right;
+    float: left;
     margin: 8px 60px 0 0;
     width: 68px;
     height: 24px;
@@ -300,6 +301,7 @@
 }
 
 .msg .getMsg .mention {
+    float: left;
     font: bold 14px/54px "Microsoft YaHei";
 }
 

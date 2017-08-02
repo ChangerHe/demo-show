@@ -7,7 +7,8 @@
     <link rel="stylesheet" href="styles/reset.css">
     <link rel="stylesheet" href="styles/headAndFoot.css">
     <link rel="stylesheet" href="styles/projectGoodIntro.css">
-    <title>品一思格成-百业好项目</title>
+    <script src="scripts/projectGoodIntro.js"></script>
+    <title>百业好项目|项目|产融结合-品一思格成</title>
 </head>
 <body>
     <!-- html doc header area start -->
@@ -41,7 +42,7 @@
                     <li>
                         <div id="baiyeGoodProject">
                             <a href="projectGoodIntro.html">百业好项目</a>
-                            <i class="arrow"></i>
+                            <i class="arrow activeArrow"></i>
                         </div>
                     </li>
                     <li>
@@ -94,31 +95,57 @@
     <div class="g-projectMsg width1000">
         <div class="head">
             <div class="headTitle">news <br>新闻动态</div><br>
-            <div class="subTitle">
-                <a href=""><span class="active">融资中</span></a>
-                <a href=""><span>已运营</span></a>
-                <a href=""><span>天使期</span></a>
+            <div id="subTitle" class="subTitle">
+                <span class="active"><a href="javascript:void(0)">融资中</a></span>
+                <span class=""><a href="javascript:void(0)">已运营</a></span>
+                <span class=""><a href="javascript:void(0)">天使期</a></span>
             </div>
         </div>
-        <div class="projectTxt fl">
-            <img src="images/listpic.png" alt="">
-            <p>品一思格成第二届“中国好项目”现场<br>
-            【会议目的】 1、通过本届高峰论坛，了解“企业产融结合”最新资讯，帮助企业驶入快速发展之道。 2、通过本届“中国好项目•落地展示会”，为你的项目或产品快速对接上下游及合...</p>
-            <div><span class="date">2015-06-02</span>&emsp;&emsp;<span class="view">118 views</span><a href=""><span class="readMsg">阅读详情&nbsp;&gt;</span></a></div>
+        <div class="hide" id="show">
+            <div class="projectTxt fl">
+                <img src="images/listpic.png" alt="">
+                <p>品一思格成第二届“中国好项目”现场<br>
+                【会议目的】 1、通过本届高峰论坛，了解“企业产融结合”最新资讯，帮助企业驶入快速发展之道。 2、通过本届“中国好项目•落地展示会”，为你的项目或产品快速对接上下游及合...</p>
+                <div><span class="date">2015-06-02</span>&emsp;&emsp;<span class="view">118 views</span><a href=""><span class="readMsg">阅读详情&nbsp;&gt;</span></a></div>
+            </div>
+            <div class="projectRecom fr">
+                <img src="images/recombg.png" alt="">
+            </div>
         </div>
-        <div class="projectRecom fr">
-            <img src="images/recombg.png" alt="">
+        <div class="hide" id="">
+            <div class="projectTxt fl">
+                <img src="images/projectdetails.png" alt="">
+                <p>品一思歌城创始人李蟠先生莅临贵阳国际大数据产业博览会<br>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae, voluptatem repellendus ullam! Commodi, cumque ullam? Quos, eum explicabo necessitatibus debitis cum.</p>
+                <div><span class="date">2015-06-02</span>&emsp;&emsp;<span class="view">118 views</span><a href=""><span class="readMsg">阅读详情&nbsp;&gt;</span></a></div>
+            </div>
+            <div class="projectRecom fr">
+                <img src="images/recombg.png" alt="">
+            </div>
         </div>
+        <div class="hide" id="">
+            <div class="projectTxt fl">
+                <img src="images/courmore.png" alt="">
+                <p>品一思格成第二届“中国好项目”现场<br>
+                【会议目的】 1、通过本届高峰论坛，了解“企业产融结合”最新资讯，帮助企业驶入快速发展之道。 2、通过本届“中国好项目•落地展示会”，为你的项目或产品快速对接上下游及合...</p>
+                <div><span class="date">2015-06-02</span>&emsp;&emsp;<span class="view">118 views</span><a href=""><span class="readMsg">阅读详情&nbsp;&gt;</span></a></div>
+            </div>
+            <div class="projectRecom fr">
+                <img src="images/recombg.png" alt="">
+            </div>
+        </div>
+        
     </div>
     <!-- html doc projectMsg area end -->
-    <!-- html doc page area start -->
-    <div class="page width1000">
-        <a href=""><span class="pageArrow pageArrowL">&lt;</span></a>
-        <a href=""><span class="pageNum">1</span></a>
-        <a href=""><span class="pageArrow pageArrowR">&gt;</span></a>
+     <!-- html doc page area start -->
+    <div class="m-page width1000">
+        <ul>
+            <li class="pageArrow pageArrowL"><a href="">&lt;</a></li>
+            <li class="pageNum"><a href="">1</a></li>
+            <li class="pageArrow pageArrowR"><a href="">&gt;</a></li>
+        </ul>
     </div>
-    <!-- html doc page area end -->
-
+    <!-- html doc page area end --> 
     <!-- html doc footer area start -->
     <div class="g-footer">
         <div class="width1000">
@@ -131,5 +158,18 @@
             </div>
         </div>
     </div>
+    <!-- sidebar onlineService area start -->
+    <div class="m-onlineService">
+        <div class="hoverAfter">
+            <img src="images/r_qq.png" alt="">
+            <div class="wxImg">
+                <img src="images/r_wx.png" alt="">
+                <span class="wx"></span></div>
+                <img src="images/r_phone.png" alt="">
+                <a href="#"><img src="images/r_top.png" alt=""></a>
+            </div>
+        <p id="text">o&emsp;&nbsp;<br>n&emsp;&nbsp;<br>l&emsp;&nbsp;<br>i&emsp;&nbsp;<br>n&emsp;&nbsp;<br>e&emsp;&nbsp;<br>S&emsp;&nbsp;<br>e&emsp;&nbsp;<br>r&emsp;&nbsp;<br>v&emsp;&nbsp;<br>i&emsp;&nbsp;<br>c&emsp;&nbsp;<br>e&emsp;&nbsp;</p>
+    </div>
+    <!-- sidebar onlineService area end -->
 </body>
 </html>

@@ -1,10 +1,5 @@
 @charset "utf-8";
 
-.nav > ul > li #lessonsCenter .arrow {
-    margin-top: -11px;
-    display: block; 
-}
-
 .g-courseCenter {
     margin-top: 50px;
 }

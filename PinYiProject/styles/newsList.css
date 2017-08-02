@@ -1,11 +1,5 @@
 @charset "utf-8";
 
-/* set the arrow of head navigator */
-.nav > ul > li #newsCenter .arrow {
-    margin-top: -11px;
-    display: block; 
-}
-
 .g-newsMsg {
     margin-top: 50px;
 }
@@ -37,7 +31,7 @@
 }
 
 .g-newsMsg .head .subTitle span:first-child {
-    margin-right:    10px;
+    margin-right: 10px;
 }
 
 .g-newsMsg .news {

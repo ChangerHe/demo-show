@@ -1,10 +1,5 @@
 @charset "utf-8";
 
-.nav > ul > li #baiyeGoodProject .arrow {
-    margin-top: -11px;
-    display: block; 
-}
-
 /* projectMsg area start */
 .g-projectMsg .head .subTitle {
     width: 1000px;
@@ -67,6 +62,11 @@
     margin-top: 16px;
 }
 
+.projectTxt img {
+    width: 200px;
+    height: 125px;
+}
+
 .projectTxt .view {
     padding-left: 20px;
     background: url(../images/eye.png) left no-repeat;
@@ -76,6 +76,15 @@
     margin-right: 10px; 
     float: right;
     color: #666;
+}
+
+/* projectMsg area start */
+.g-projectMsg .hide {
+    display: none;
+}
+
+.g-projectMsg #show {
+    display: block;
 }
 
 .g-projectMsg .projectRecom {
