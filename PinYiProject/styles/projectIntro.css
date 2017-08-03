@@ -6,14 +6,13 @@
 
 /* aboutus area */
 .g-aboutUs {
-    position: relative;
-    margin: 90px auto 60px;
+    border-top: 1px solid #cbcbcb;
+    margin-top: 90px;
 }
 
 .g-aboutUs .head {
-    position: absolute;
+    position: relative;
     top: -66px;
-    left: 410px;
     margin: 0 auto;
     height: 100px;
     width: 180px;
@@ -24,7 +23,7 @@
     display: block;
     text-align: center;
     padding-top: 20px;
-    font: bold 16px/30px "Microsoft YaHei";
+    font: bold 18px/30px "Microsoft YaHei";
     color: #d43b33;
     text-transform: uppercase;
 }
@@ -35,7 +34,6 @@
 }
 
 .g-aboutUs .content {
-    padding-top: 40px;
     line-height: 28px;
     color: #626262;
     text-align: center;
