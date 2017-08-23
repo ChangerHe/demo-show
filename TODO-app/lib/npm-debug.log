@@ -1,0 +1,28 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'D:\\Program Files\\nodejs\\node.exe',
+1 verbose cli   'C:\\Users\\Administrator\\AppData\\Roaming\\npm\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'install',
+1 verbose cli   'jquery' ]
+2 info using npm@3.6.0
+3 info using node@v8.1.0
+4 verbose stack Error: Cannot find module 'internal/fs'
+4 verbose stack     at Function.Module._resolveFilename (module.js:485:15)
+4 verbose stack     at Function.Module._load (module.js:437:25)
+4 verbose stack     at Module.require (module.js:513:17)
+4 verbose stack     at require (internal/module.js:11:18)
+4 verbose stack     at evalmachine.<anonymous>:40:20
+4 verbose stack     at Object.<anonymous> (C:\Users\Administrator\AppData\Roaming\npm\node_modules\npm\node_modules\cmd-shim\node_modules\graceful-fs\fs.js:11:1)
+4 verbose stack     at Module._compile (module.js:569:30)
+4 verbose stack     at Object.Module._extensions..js (module.js:580:10)
+4 verbose stack     at Module.load (module.js:503:32)
+4 verbose stack     at tryModuleLoad (module.js:466:12)
+5 verbose cwd D:\WorkSpace\My-Code\TODO-app\lib
+6 error Windows_NT 6.1.7601
+7 error argv "D:\\Program Files\\nodejs\\node.exe" "C:\\Users\\Administrator\\AppData\\Roaming\\npm\\node_modules\\npm\\bin\\npm-cli.js" "install" "jquery"
+8 error node v8.1.0
+9 error npm  v3.6.0
+10 error code MODULE_NOT_FOUND
+11 error Cannot find module 'internal/fs'
+12 error If you need help, you may report this error at:
+12 error     <https://github.com/npm/npm/issues>
+13 verbose exit [ 1, true ]
