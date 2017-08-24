@@ -1,0 +1,203 @@
+*{
+	margin: 0;
+	padding: 0;
+	font-size: 12px;
+}
+a{
+	color: #888;
+	text-decoration: none;
+}
+.ALL{
+	width: 100%;
+	height: 100%;
+	background:#f5f5f5;
+}
+/*顶部导航*/
+.index-container{
+	width: 1000px;
+	margin: 0 auto;
+	background: #eee;
+}
+.index-top{
+	height: 27px;
+	background: url(./images/top_bg.jpg) repeat-x;
+	margin: 0 auto;
+}
+.index-top ul li{
+	float: right;
+	width: 70px;
+	line-height: 27px;
+	list-style-image: url(../images/li_bg.gif);
+}
+
+.index-top ul li a:hover{
+	color: #900;
+}
+/*头部*/
+.index-header{
+	background: #fff;
+	position: relative;
+}
+.index-header-tel{
+	position: absolute;
+	top: 0;
+	right: 0;
+	line-height: 100px;
+	color: #888;
+	font-size: 14px;
+}
+.index-header-tel img{
+	width: 16px;
+	vertical-align: -3px;
+}
+.index-header-tel span b{
+	font-size: 16px;
+	color: #900;
+	margin: 10px;
+	vertical-align: -1px;
+}
+.index-nav{
+	width: 1000px;
+	height: 40px;
+	background: #777;
+	border-radius: 3px;
+	position: relative;
+}
+.index-nav ul{
+	list-style-type: none;
+
+}
+.index-nav ul li{
+	display: block;
+
+	float: left;
+	font-style: "微软雅黑"；
+}
+.index-nav ul li a{
+	font-size: 16px;
+	font-weight: bold;
+	color: #fff;
+	line-height: 40px;
+	padding: 9px 30px;
+}
+.index-nav ul li a:hover{
+	background: #900;
+	overflow: hidden;
+}
+.index-nav input{
+	width: 175px;
+	height: 25px;
+	border: 1px solid #fff;
+	margin: 7px 0 0 30px;
+/*	background: url(../images/search.jpg) no-repeat right center;
+*/	background-color: #fff;
+	padding-right: 25px;
+}
+.index-nav form a{
+	position: absolute;
+	right: 60px;
+	top: 10px;
+}
+/*banner area*/
+.ad{
+	height: 310px;
+	overflow: hidden;
+	margin-top: 5px;
+}
+/*news area*/
+.news-area{
+min-height: 350px;
+_height:350px;
+}
+.news-area-left{
+width: 220px;
+height: 350px;
+border: 1px solid #e8e8e8;
+background: #fff;
+float: left;
+}
+.news-area-left h2{
+	line-height: 35px;
+	font-size: 14px;
+	color: #999;
+	background: url(../images/titile_bg.gif) repeat-x;
+	padding-left: 20px;
+}
+.news-area-left li{
+	list-style-type: none;
+	margin-left: 3px;
+}
+.news-area-left li a{
+	display: block;
+	line-height: 30px;
+	padding-left: 15px;
+	list-style-type: none;
+	background: url(../images/li_bg.gif) no-repeat center left;
+}
+.news-area-left li a:hover{
+	color: #009cdf;
+	background: url(../images/li_bg2.gif) no-repeat center left;
+	background-color: #f2f2f2;
+	
+
+}
+.news-area-right{
+width: 770px;
+min-height: 350px;
+_height:350px;
+background: #fff;
+border: 1px solid #e8e8e8;
+float: right;
+}
+.newsBox{
+	margin: 10px;
+}
+.newsTitle{
+	font-size: 20px;
+	text-align: center;
+}
+.newsInfo{
+	text-align: center;
+	color: #999;
+	border-bottom: 1px dotted #999;
+	padding: 5px 0;
+}
+.newsContent{
+	text-indent: 2em;
+	font-size: 16px;
+	line-height: 24px;
+	margin: 10px 0;
+}
+.newsContent img{
+	display: block;
+	margin: 0 auto;
+}
+/*buttom area*/
+.index-buttom{
+	background: #e8e8e8;
+	height: 200px;	
+	padding-top: 20px;
+	clear: both;
+}
+.index-buttom-container{
+	height: 200px;
+	margin-top: 10px;
+	padding-top: 50px;
+}
+.index-buttom ul{
+	margin-top:10px;
+}
+.index-buttom ul li{
+	float: left;
+	width: 200px;
+	list-style-type: none;
+	text-align: center;
+	margin-top: 8px;
+	background: url(../images/line.png) no-repeat right center;
+}
+.index-buttom ul li a{
+	font-size: 18px;
+}
+.index-buttom ul li ul li a{
+	font-size: 14px;
+}
