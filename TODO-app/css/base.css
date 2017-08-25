@@ -1,165 +1,165 @@
 * {
-	margin: 0;
-	padding: 0;
-	/*background: rgba(0,0,0,.1);*/
+    margin: 0;
+    padding: 0;
+    /*background: rgba(0,0,0,.1);*/
 }
 
 body {
-	background: #00484b;
+    background: #00484b;
 }
 
 h1 {
-	text-align: center;
-	color: #fff;
+    text-align: center;
+    color: #fff;
+    font-family: Georgia, sans-serif;
+    font-size: 50px;
 }
 
 input[type=text],
 input[type=date] {
-	display: block;
-	width: 100%;
-	border: 0;
-	padding: 10px;
-	margin-bottom: 2px;
-	border-radius: 3px;
-	background: #eee;
-	outline: none;
+    display: block;
+    width: 100%;
+    border: 0;
+    padding: 10px;
+    margin-bottom: 2px;
+    border-radius: 3px;
+    background: #eee;
+    outline: none;
 }
 
 input[type=text]:hover,
 input[type=date]:hover,
 input[type=text]:focus,
 input[type=date]:focus {
-	background: #fff;
+    background: #fff;
 }
 
 .container {
-	position: relative;
-	max-width: 900px;
-	min-width: 700px;
-	margin: 60px auto;
-	padding: 0 10px;
+    position: relative;
+    max-width: 900px;
+    min-width: 700px;
+    margin: 60px auto;
+    padding: 0 10px;
 }
-
-
 
 .add-task {
-	height: 40px;
+    height: 40px;
 }
 
-.task-list > * {
-	margin: 5px 0;
+.task-list>* {
+    margin: 5px 0;
 }
 
-.task-item .delete,.task-item .detail {
-	display: block;
-	float: right;
-	color: #fff;
-	margin-top: -5px;
-	padding: 5px 8px;
-	border-radius: 3px;
+.task-item .delete,
+.task-item .detail {
+    display: block;
+    float: right;
+    color: #fff;
+    margin-top: -5px;
+    padding: 5px 8px;
+    border-radius: 3px;
 }
 
 .task-item .delete {
-	background: #955;
+    background: #955;
 }
 
 .task-item .delete:hover {
-	background: #900;
+    background: #900;
 }
 
 .task-item .detail {
-	margin-right: 5px;
-	background: #595;
+    margin-right: 5px;
+    background: #595;
 }
 
 .task-item .detail:hover {
-	background: #090;
+    background: #090;
 }
-
 
 .task-content {
-	padding-left: 5px;
+    padding-left: 5px;
 }
 
-button{
-	display: inline-block;
-	border: 0;
-	cursor: pointer;
-	float: right;
-	width: 15%;
-	padding: 10px;
-	color: #fff;
-	background: #10a9af;
-	margin-bottom: 2px;
-	border-radius: 3px;
+button {
+    display: inline-block;
+    border: 0;
+    cursor: pointer;
+    float: right;
+    width: 15%;
+    padding: 10px;
+    color: #fff;
+    background: #10a9af;
+    margin-bottom: 2px;
+    border-radius: 3px;
 }
 
-.add-task input[type=text]{
-	float: left;
-	width: 81%;
-	margin-right: 1%;
+.add-task input[type=text] {
+    float: left;
+    width: 81%;
+    margin-right: 1%;
 }
 
 .task-list {
-	margin: 5px 0;
+    margin: 5px 0;
 }
 
 .task-item {
-	padding: 10px;
-	background: #fff;
-	color: #333;
-	margin-bottom: 2px;
-	border-radius: 3px;
-	-webkit-box-shadow: 0 2px 3px rgba(0,0,0,.4);
-	box-shadow: 0 2px 3px rgba(0,0,0,.4);
-	cursor: pointer;
-	-webkit-transition: background .1s;
-	-o-transition: background .1s;
-	transition: background .1s;
+    padding: 10px;
+    background: #fff;
+    color: #333;
+    margin-bottom: 2px;
+    border-radius: 3px;
+    -webkit-box-shadow: 0 2px 3px rgba(0, 0, 0, .4);
+    box-shadow: 0 2px 3px rgba(0, 0, 0, .4);
+    cursor: pointer;
+    -webkit-transition: background .1s;
+    -o-transition: background .1s;
+    transition: background .1s;
 }
 
 .task-item:hover {
-	background: #eee;
+    background: #eee;
 }
 
 .task-detail {
-	position: absolute;
-	width: 50%;
-	height: 250px;
-	top: 58px;
-	bottom: 0;
-	right: 0;
-	padding: 10px;
-	background: #fff;
-	display: none;
+    position: absolute;
+    width: 50%;
+    height: 250px;
+    top: 58px;
+    bottom: 0;
+    right: 0;
+    padding: 10px;
+    background: #fff;
+    display: none;
 }
 
 .remind input[type=date] {
-	height: 18px;
-	width: 95%;
-	margin-bottom: 10px;
+    height: 18px;
+    width: 95%;
+    margin-bottom: 10px;
 }
 
 .remind textarea {
-	width: 100%;
-	height: 100px;
-	background: #eee;
-	border-radius: 3px;
-	border: none;
+    width: 100%;
+    height: 100px;
+    background: #eee;
+    border-radius: 3px;
+    border: none;
 }
 
 .task-detail-mask {
-	position: fixed;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
-	background: rgba(0,0,0,.3);
-	display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, .3);
+    display: none;
 }
 
 .desc {
-	font-size: 20px;
-	color: #333;
-	margin: 10px;
+    font-size: 20px;
+    color: #333;
+    margin: 10px;
 }
