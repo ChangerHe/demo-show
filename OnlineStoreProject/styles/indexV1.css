@@ -1,0 +1,226 @@
+.header {
+    position: relative;
+    height: 28px;
+    background: #101010;
+    color: #e6e6e6;
+}
+
+.topBar {}
+
+.logo {
+    position: absolute;
+    width: 176px;
+    /* width: 260px; */
+    height: 82px;
+    background: #ff6600;
+    padding-left: 24px;
+}
+
+.leftText {
+    margin-left: 204px;
+    font-size: 14px;
+    line-height: 28px;
+    font-family: Arial, Helvetica, sans-serif;
+    letter-spacing: 2px;
+}
+
+.rightText {
+    float: right;
+    font-size: 14px;
+    line-height: 28px;
+    letter-spacing: 1px;
+}
+
+.rightText a {
+    color: #ff6600;
+}
+
+.logo .title1,
+.logo .title2 {
+    display: block;
+    position: absolute;
+    font-size: 22px;
+    color: #fff;
+    text-align: center;
+    width: 60px;
+    left: 118px;
+}
+
+.logo .title1 {
+    border-bottom: 2px solid #fff;
+    top: 8px;
+}
+
+.logo .title2 {
+    top: 34px;
+}
+
+.logo .title {
+    display: block;
+    position: absolute;
+    font-size: 22px;
+    color: #fff;
+    text-align: center;
+    left: 124px;
+    top: 22px;
+}
+
+
+/* search area */
+
+.search {
+    margin-top: 4px;
+}
+
+.search .searchItem input[type=text] {
+    width: 390px;
+    height: 30px;
+    border: 2px solid #ff6600;
+    text-indent: 16px;
+    outline: none;
+    color: #808080;
+}
+
+.search .searchItem input[type=submit] {
+    width: 50px;
+    height: 36px;
+    margin-right: 36px;
+    background: #ff6600;
+    border: 2px solid #ff6600;
+}
+
+.search div {
+    width: 98px;
+    height: 34px;
+    border: 1px solid #ccc;
+    line-height: 36px;
+    text-align: center;
+    background: #ebebeb;
+}
+
+.search div a {
+    font-size: 14px;
+    color: #808080;
+}
+
+.search .active {
+    background: #ff6600;
+}
+
+.search .active a {
+    color: #fff;
+}
+
+
+/* navbar area */
+
+.navBar .allItem {
+    margin-top: 50px;
+    height: 30px;
+    width: 200px;
+    background: #ff6600;
+    text-align: center;
+    line-height: 30px;
+}
+
+.navBar .allItem a {
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+}
+
+.navBar .nav {
+    margin: 14px 70px 0 0;
+    ;
+}
+
+.navBar .nav li {
+    float: left;
+    height: 30px;
+    margin: 0 15px;
+}
+
+.navBar .nav li:hover a {
+    color: #ff6600;
+}
+
+.navBar .nav li a {
+    font-size: 16px;
+    color: #323232;
+    font-weight: bold;
+    line-height: 30px;
+    text-align: center;
+}
+
+
+/* bannerAndItem area */
+
+.bannerAndItem {
+    margin-top: 84px;
+}
+
+.bannerAndItem .item {
+    width: 200px;
+    position: relative;
+    background: #f3f3f3;
+}
+
+.bannerAndItem .item>li {
+    position: relative;
+    height: 30px;
+    text-align: center;
+}
+
+.bannerAndItem .item li a {
+    font-size: 14px;
+    line-height: 30px;
+    color: #323232;
+}
+
+.bannerAndItem .item .hoverLi {
+    left: 1px;
+    height: 28px;
+    background: #fff;
+    border: 1px solid #ff6600;
+    border-right: none;
+}
+
+.bannerAndItem .item .hoverLi>a {
+    color: #ff6600;
+}
+
+
+/* content area */
+
+.bannerAndItem .content {
+    display: none;
+    width: 580px;
+    padding: 0 70px 45px 40px;
+    border: 1px solid #ff6600;
+}
+
+.bannerAndItem .content a {
+    color: #525252;
+    line-height: 24px;
+    padding: 0 3px;
+}
+
+.bannerAndItem .content a:hover {
+    color: #ff6600;
+}
+
+.bannerAndItem .content .library {
+    line-height: 30px;
+}
+
+.bannerAndItem .content .library a {
+    padding-right: 34px;
+}
+
+.content .first {
+    border-bottom: 1px solid #eee;
+}
+
+.content .first a {
+    color: #ff6600;
+}

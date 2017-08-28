@@ -17,6 +17,10 @@ a {
     color: #808080;
 }
 
+a:hover {
+    color: #ff6600;
+}
+
 .width1200 {
     width: 1200px;
     margin: 0 auto;
@@ -32,4 +36,154 @@ a {
 
 .fr {
     float: right;
+}
+
+
+/* 抽取了标签的headtitle部分，标题的导航栏 */
+
+.headTitle {
+    color: #323232;
+    font-size: 18px;
+    line-height: 34px;
+    font-weight: bold;
+    border-bottom: 6px solid #ff6600;
+}
+
+.headTitle span {
+    display: block;
+    float: right;
+    width: 100px;
+    height: 34px;
+    line-height: 34px;
+    text-align: center;
+    font-size: 16px;
+    color: #323232;
+    cursor: pointer;
+}
+
+.headTitle .active {
+    background: #ff6600;
+    color: #fff;
+}
+
+
+/* 对barPrice的抽取，有三个公共部分 */
+
+.barPrice {
+    width: 238px;
+    height: 436px;
+    background: #f9f9f9;
+}
+
+.barPrice li {
+    float: left;
+    width: 79px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+}
+
+
+/* sevenCOUNT 部分 作为轮播图的抽取 */
+
+.sevenCount {
+    position: relative;
+    width: 330px;
+    height: 216px;
+    border: 1px solid #ccc;
+    overflow: hidden;
+}
+
+.sevenCount img {
+    width: 330px;
+    height: 216px;
+}
+
+.sevenCount .innerwrapper {
+    width: 990px;
+    height: 216px;
+    position: relative;
+}
+
+.sevenCount .innerwrapper li {
+    float: left;
+}
+
+.sevenCount .controls {
+    width: 60px;
+}
+
+.sevenCount .controls ul {
+    position: absolute;
+}
+
+.sevenCount .controls li {
+    float: left;
+    margin: 0 3px;
+    background: #000;
+}
+
+.sevenCount .btn {
+    position: absolute;
+    display: block;
+    width: 36px;
+    height: 70px;
+    background: #ccc;
+}
+
+.sevenCount .btnleft {
+    background-position: -10px 15px;
+    background-image: url(../images/arrowBG.png);
+    background-repeat: no-repeat;
+}
+
+.sevenCount .btnright {
+    right: 0;
+    background-position: -42px 15px;
+    background-image: url(../images/arrowBG.png);
+    background-repeat: no-repeat;
+}
+
+
+/* 衣服及户外运动的类目的抽取 */
+
+.barPrice {
+    height: 500px;
+}
+
+.barPrice img {
+    height: 348px;
+    width: 237px;
+    overflow: hidden;
+}
+
+.sevenCount {
+    border: 1px solid #ccc;
+}
+
+.longItem {
+    width: 176px;
+    height: 338px;
+    border: 1px solid #ccc;
+}
+
+.longlongItem {
+    width: 428px;
+}
+
+.shortItem {
+    border: 1px solid #ccc;
+    width: 176px;
+    height: 158px;
+    overflow: hidden;
+}
+
+.brands {
+    margin-top: 10px;
+    clear: both;
+    float: left;
+}
+
+.brands img {
+    width: 130px;
 }
