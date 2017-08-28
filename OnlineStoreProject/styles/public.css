@@ -4,11 +4,17 @@
 
 * {
     font-size: 12px;
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    list-style: none;
 }
 
 a {
     text-decoration: none;
-    color: #1a1a1a;
+    color: #808080;
 }
 
 .width1200 {
@@ -18,4 +24,12 @@ a {
 
 .allWidth {
     width: 100%;
+}
+
+.fl {
+    float: left;
+}
+
+.fr {
+    float: right;
 }

@@ -19,13 +19,6 @@ html {
 }
 
 
-/* pretend to get the x overflow */
-
-html {
-    overflow-x: hidden;
-}
-
-
 /**
  * Remove the margin in all browsers (opinionated).
  */
