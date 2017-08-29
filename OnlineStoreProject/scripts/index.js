@@ -113,7 +113,6 @@ $('.btnContent .item').hover(function() {
 })
 
 $(window).on('scroll', function() {
-    console.log($(this).scrollTop())
     var a = $(this).scrollTop()
     if (a >= 600) {
         $('.searchFxedBar').slideDown('slow')
@@ -148,4 +147,12 @@ $('.leftFloor li').hover(function() {
     $(this).stop(true, true).animate({
         width: '40px'
     }, 100)
+})
+
+// 定义楼层的滚动效果
+$('.leftFloor li').on('click', function() {
+    var a = 1100;
+    $('html,body').animate({
+        scrollTop: a + $(this).index() * 610
+    }, 1000)
 })
