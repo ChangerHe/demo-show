@@ -7,7 +7,7 @@
 
 .topBar {}
 
-.logo {
+.topBar .logo {
     position: absolute;
     width: 176px;
     /* width: 260px; */
@@ -16,7 +16,7 @@
     padding-left: 24px;
 }
 
-.leftText {
+.topBar .leftText {
     margin-left: 204px;
     font-size: 14px;
     line-height: 28px;
@@ -24,19 +24,19 @@
     letter-spacing: 2px;
 }
 
-.rightText {
+.topBar .rightText {
     float: right;
     font-size: 14px;
     line-height: 28px;
     letter-spacing: 1px;
 }
 
-.rightText a {
+.topBar .rightText a {
     color: #ff6600;
 }
 
-.logo .title1,
-.logo .title2 {
+.topBar .logo .title1,
+.topBar .logo .title2 {
     display: block;
     position: absolute;
     font-size: 22px;
@@ -74,7 +74,7 @@
 
 .search .searchItem input[type=text] {
     width: 390px;
-    height: 30px;
+    height: 32px;
     border: 2px solid #ff6600;
     text-indent: 16px;
     outline: none;
@@ -105,6 +105,7 @@
 
 .search .active {
     background: #ff6600;
+    border: 1px solid #ff6600;
 }
 
 .search .active a {
@@ -169,6 +170,9 @@
 .bannerAndItem .item>li {
     height: 30px;
     text-align: center;
+    border: 1px solid transparent;
+    border-right: none;
+    line-height: 28px;
 }
 
 .item li>a {
@@ -179,7 +183,6 @@
 
 .bannerAndItem .item .hoverLi {
     left: 1px;
-    height: 28px;
     background: #fff;
     border: 1px solid #ff6600;
     border-right: none;
@@ -197,7 +200,7 @@
     display: none;
     position: absolute;
     top: 0;
-    left: 198px;
+    left: 199px;
     width: 580px;
     padding: 0 70px 16px 40px;
     background: #fff;
@@ -275,7 +278,6 @@
     background-image: url(../images/arrowBG.png);
     background-position: -10px 4px;
     cursor: pointer;
-    z-index: 100;
 }
 
 .bannerAndItem .btnright {
@@ -460,6 +462,10 @@
     height: 670px;
 }
 
+.home {
+    height: 600px;
+}
+
 .home .leftBigPic {
     border: 2px solid #ccc;
     display: block;
@@ -489,4 +495,133 @@
     border: 1px solid #ccc;
     width: 176px;
     height: 162px;
+}
+
+
+/* popularize area */
+
+.popularize {
+    /* margin-top: 20px; */
+}
+
+.popularize .headTitle {
+    color: #ff6600;
+}
+
+.popularize .headTitle .dot {
+    float: right;
+    width: 36px;
+    margin-top: 14px;
+}
+
+.popularize .headTitle span {
+    width: 14px;
+    height: 14px;
+    margin-right: 4px;
+    border-radius: 7px;
+    background: #ccc;
+}
+
+.popularize .headTitle .active {
+    background: #ff6600;
+}
+
+.popularize .items {
+    width: 1170px;
+    height: 650px;
+    margin: 0 auto;
+}
+
+.popularize .items .item {
+    width: 154px;
+    height: 252px;
+    padding: 24px 30px;
+    margin: 10px;
+}
+
+.popularize .items .active {
+    background: #f2f2f2;
+}
+
+.popularize .items .item img {
+    display: block;
+    width: 148px;
+    height: 148px;
+    margin: 0 auto;
+}
+
+.popularize .items .item .descripe {
+    font-size: 14px;
+    padding: 10px 0;
+}
+
+.popularize .items .item .price {
+    color: red;
+    font-size: 24px;
+}
+
+.popularize .items .item .intro {}
+
+.popularize .items .item .intro span {
+    color: red;
+}
+
+
+/* .footer area */
+
+.footer {
+    border-top: 6px solid #ff6600;
+    height: 90px;
+    background: #eee;
+}
+
+.footer .promise {
+    width: 771px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.footer .promise .logo {
+    position: absolute;
+    top: 140px;
+    right: -170px;
+    width: 162px;
+    height: 86px;
+}
+
+.footer .promise img {
+    width: 130px;
+    height: 50px;
+    margin: 20px 30px;
+}
+
+.footer .shopIntro {
+    width: 720px;
+    height: 170px;
+    margin: 40px auto 0;
+}
+
+.footer .shopIntro ul {
+    float: left;
+    width: 140px;
+    text-align: center;
+    line-height: 28px;
+}
+
+.footer .shopIntro ul .first a {
+    font-size: 14px;
+    color: #000;
+}
+
+.footer .componyIntro {
+    text-align: center;
+    line-height: 30px;
+}
+
+.footer .componyIntro a {
+    padding: 0 10px;
+}
+
+.footer .componyIntro p {
+    color: ##808080;
 }
