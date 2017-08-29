@@ -54,18 +54,7 @@ $("#ruibikaSell,#outDoorBanner,#childrensBanner").tyslide({
     paddingNum: 6
 });
 
-// $("#outDoorBanner").tyslide({
-//     boxh: 338, //盒子的高度
-//     w: 426, //盒子的宽度
-//     h: 338, //图片的高度
-//     isShow: true, //是否显示控制器
-//     isShowBtn: true, //是否显示左右按钮
-//     controltop: 10, //控制按钮上下偏移的位置,要将按钮向下移动   首先保证boxh 高度>图片 h
-//     controlsW: 14, //控制按钮宽度
-//     controlsH: 2, //控制按钮高度
-//     radius: 0, //控制按钮圆角度数
-//     controlsColor: "#fff", //普通控制按钮的颜色
-//     controlsCurrentColor: "#7f7f7f", //当前控制按钮的颜色
-//     isShowNumber: false,
-//     paddingNum: 6
-// });
+$(window).pub({
+    searchItem: '想啥就啥',
+    shopCarNum: 6
+})
