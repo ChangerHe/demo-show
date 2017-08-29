@@ -1,10 +1,26 @@
-$('#item >li').hover(function() {
-    $(this).addClass('hoverLi')
-    $(this).find('.content').show()
-}, function() {
-    $(this).removeClass('hoverLi')
-    $(this).find('.content').hide()
-})
+// $('#item >li').hover(function() {
+//     $(this).addClass('hoverLi')
+//     $(this).find('.content').show()
+// }, function() {
+//     $(this).removeClass('hoverLi')
+//     $(this).find('.content').hide()
+// })
+function activeAni(tag) {
+    console.log(tag)
+    $(tag).addClass('hoverLi')
+    $(tag).find('.content').show()
+}
+
+function reactiveAni(tag) {
+    console.log(tag)
+    $(tag).removeClass('hoverLi')
+    $(tag).find('.content').hide()
+}
+
+$('#item').menuAim({
+    activate: activeAni, // fired on row activation
+    deactivate: reactiveAni // fired on row deactivation
+});
 
 $("#slideBoxSmall").tyslide({
     boxh: 430, //盒子的高度
