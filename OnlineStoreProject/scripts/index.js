@@ -19,10 +19,10 @@ $("#slideBoxSmall").tyslide({
     controlsColor: "#d8d8d8", //普通控制按钮的颜色
     controlsCurrentColor: "#ff6600", //当前控制按钮的颜色
     isShowNumber: true,
-    paddingNum: 6
+    marginNum: 2
 });
 
-$("#sevenCountBanner").tyslide({
+$("#sevenCountBanner,#sevenCountBanner1,#sevenCountBanner2").tyslide({
     boxh: 216, //盒子的高度
     w: 330, //盒子的宽度
     h: 216, //图片的高度
@@ -35,7 +35,7 @@ $("#sevenCountBanner").tyslide({
     controlsColor: "#fff", //普通控制按钮的颜色
     controlsCurrentColor: "#7f7f7f", //当前控制按钮的颜色
     isShowNumber: false,
-    paddingNum: 6
+    marginNum: 6
 });
 
 $("#ruibikaSell,#outDoorBanner,#childrensBanner").tyslide({
@@ -51,10 +51,41 @@ $("#ruibikaSell,#outDoorBanner,#childrensBanner").tyslide({
     controlsColor: "#fff", //普通控制按钮的颜色
     controlsCurrentColor: "#7f7f7f", //当前控制按钮的颜色
     isShowNumber: false,
-    paddingNum: 6
+    marginNum: 6
 });
 
 $(window).pub({
-    searchItem: '想啥就啥',
-    shopCarNum: 6
+    searchItem: '想啥就啥', // 提供搜索栏的默认显示值
+    shopCarNum: 5 // 提供购物车的数量
 })
+
+
+
+// $('.eBooks .headTitle span').mouseover(function() {
+//     $('.eBooks .headTitle span').removeClass('active')
+//     for (var i = 0; i < $('.eBook .headTitle span').length; i++) {
+//         $('.eBooks .headTitle span').eq(i).attr('index', i)
+//     }
+//     $(this).addClass('active')
+//     $('.eBooks .btnContent').hide();
+//     $('.eBooks .btnContent').eq($(this).attr('index')).show()
+// })
+
+// 添加相应的hover效果
+function hoverAnimate(fatherTag) {
+    console.log(1)
+    $(fatherTag + ' .headTitle span').mouseover(function() {
+        $(fatherTag + ' .headTitle span').removeClass('active')
+        for (var i = 0; i < $('.eBook .headTitle span').length; i++) {
+            $(fatherTag + ' .headTitle span').eq(i).attr('index', i)
+        }
+        $(this).addClass('active')
+        $(fatherTag + ' .btnContent').hide();
+        $(fatherTag + ' .btnContent').eq($(this).attr('index')).show()
+    })
+
+}
+hoverAnimate('.eBooks')
+hoverAnimate('.clothes')
+hoverAnimate('.outDoors')
+hoverAnimate('.childClothes')

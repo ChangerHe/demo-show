@@ -8,6 +8,10 @@
     padding: 0;
 }
 
+img {
+    border: none;
+}
+
 ul {
     list-style: none;
 }
@@ -64,6 +68,10 @@ a:hover {
 .headTitle .active {
     background: #ff6600;
     color: #fff;
+}
+
+.btnContent {
+    display: none;
 }
 
 

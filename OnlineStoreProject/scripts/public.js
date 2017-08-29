@@ -8,7 +8,9 @@
             var prams = $.extend({}, defaults, opts);
             var searchText = prams.searchItem;
             var shopCarNum = prams.shopCarNum;
+            // 将值先显示到页面上
             $('.searchItem input[type=text]').prop('value', searchText)
+                // 提供相应的点击隐藏效果
             $('.searchItem input[type=text]').focus(function() {
                 if ($(this).prop('value') == searchText) {
                     $(this).prop('value', '')
@@ -19,7 +21,7 @@
                         $(this).prop('value', searchText)
                     }
                 })
-                // console.log($('#shopCarNum').html())
+                // 将json的值解析至屏幕
             $('#shopCarNum').html(shopCarNum)
 
         }

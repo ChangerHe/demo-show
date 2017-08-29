@@ -14,7 +14,7 @@
                     controlsColor: "#ff6600", //普通控制按钮的颜色
                     controlsCurrentColor: "#00ff00", //当前控制按钮的颜色
                     isShowNumber: true,
-                    paddingNum: 6
+                    marginNum: 6
                 };
 
                 var prams = $.extend({}, defaults, opts); //用opts里面的属性去覆盖defaults里面的属性，最后放到空对象{}里面，prams就是合并之后的对象
@@ -24,7 +24,9 @@
                     var boxwidth = prams.w; //视窗盒子的宽度
                     var boxheight = prams.h; //视窗盒子的高度
                     var isShowNumber = prams.isShowNumber; //是否显示数字
+                    var marginNum = prams.marginNum
                     var boxsount = $(item).find(".innerwrapper>li").length; //获取li的个数，是在拷贝节点之前获取的
+
 
                     $(item).css({ "width": boxwidth, "height": prams.boxh }); //修改轮播最外层盒子的宽度和高度
                     $(item).find(".innerwrapper").css({ "left": -boxwidth, "height": boxheight }); //修改innerwrapper初始位置的坐标
@@ -41,14 +43,15 @@
                     var w1 = (boxsount + 2) * boxwidth; //此宽度是innerwrapper的宽度
                     $(item).find(".innerwrapper").css({ "width": w1 + "px" });
 
-                    var w2 = boxsount * (prams.controlsW + 2); //此宽度是controls的宽度
+                    var w2 = boxsount * (prams.controlsW + marginNum * 2); //此宽度是controls的宽度
                     var left2 = ((boxwidth - w2) / 2); //计算的控制按钮的x坐标
-                    $(item).find(".controls").css({ "width": w2 + prams.paddingNum * 2 + "px", "position": "absolute", "height": prams.controlsH, "left": left2, "bottom": prams.controltop, "background-color": "transparent" });
+                    console.log(w2, left2)
+                    $(item).find(".controls").css({ "width": w2 + "px", "position": "absolute", "height": prams.controlsH, "left": left2, "bottom": prams.controltop, "background-color": "transparent" });
 
                     if (isShowNumber) {
-                        $(item).find(".controls>li").css({ "width": prams.controlsW, "height": prams.controlsH, "border-radius": prams.radius, "padding": "0", "display": "block", "border": "0" });
+                        $(item).find(".controls>li").css({ "width": prams.controlsW, "height": prams.controlsH, "border-radius": prams.radius, "margin": "0 " + marginNum + "px", "padding": "0", "display": "block", "border": "0" });
                     } else {
-                        $(item).find(".controls>li").text("").css({ "width": prams.controlsW, "height": prams.controlsH, "border-radius": prams.radius, "padding": "0", "display": "block", "border": "0" });
+                        $(item).find(".controls>li").text("").css({ "width": prams.controlsW, "height": prams.controlsH, "border-radius": prams.radius, "margin": "0 " + marginNum + "px", "padding": "0", "display": "block", "border": "0" });
                     }
 
                     //默认设置控制按钮的颜色

@@ -382,7 +382,7 @@
     height: 286px;
 }
 
-.eBook {
+.eBooks .eBook {
     width: 900px;
 }
 
@@ -390,6 +390,11 @@
     width: 163px;
     height: 216px;
     border: 1px solid #ccc;
+}
+
+.eBook .carnival img {
+    width: 158px;
+    height: 116px;
 }
 
 .eBook .carnival .title {
