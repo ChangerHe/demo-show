@@ -22,7 +22,7 @@
                     }
                 })
                 // 将json的值解析至屏幕
-            $('#shopCarNum').html(shopCarNum)
+            $('.shopCarNum').html(shopCarNum)
 
         }
     })

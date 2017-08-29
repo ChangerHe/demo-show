@@ -156,3 +156,13 @@ $('.leftFloor li').on('click', function() {
         scrollTop: a + $(this).index() * 610
     }, 1000)
 })
+
+$('.rightFloor .discount').on('click', function() {
+    $(this).find('span').animate({
+        right: '40px'
+    })
+}).on('mouseout', function() {
+    $(this).find('span').animate({
+        right: '-60px'
+    })
+})
