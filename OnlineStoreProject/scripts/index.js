@@ -85,22 +85,22 @@ hoverAnimate('.popularize')
 // 为新书畅销榜,从你的全世界路过部分,添加相应的hover样式
 
 $('.wellSell').hover(function() {
-    console.log($(this).is(':animated'))
+    // 因为出现了没有固定块的高度而导致每个书籍下方的横线出现变短的情况,因此在这里将每个盒子的高度固定
+    $('.wellSell').css('height', '42px')
+        // 将所有wellSell中的wellBook类隐藏
     $('.wellSell').find('.wellBook').slideUp('fast')
+        // 将所有wellSell中的anitherText类隐藏
     $('.wellSell').find('.anotherText').slideUp('fast')
-    if ($(this).is(':animated')) {
-        $(this).find('.wellBook').stop(true, true)
-        $(this).find('.anotherText').stop(true, true)
-    }
-    $(this).find('.wellBook').slideDown('fast')
-    $(this).find('.anotherText').slideDown('fast')
+        // 将当前wellSell中的wellBook类显现
+    $(this).find('.wellBook').stop(true, false).slideDown('fast')
+        // 将当前wellSell中的anitherText类显现
+    $(this).find('.anotherText').stop(true, false).slideDown('fast')
+        // 设置当前wellSell的高度
+    $(this).css('height', '148px')
 }, function() {
-    // if ($(this).is(':animated')) {
-    //     $(this).find('.wellBook').stop(true, true)
-    //     $(this).find('.anotherText').stop(true, true)
-    // }
-    // $(this).find('.wellBook').slideUp('fast')
-    // $(this).find('.anotherText').slideUp('fast')
+    // $(this).find('.wellBook').stop(true, true).slideUp('fast')
+    // $(this).find('.anotherText').stop(true, true).slideUp('fast')
+    // $(this).css('height', '42px')
 })
 
 // 为奶嘴部分添加hover效果
@@ -117,7 +117,35 @@ $(window).on('scroll', function() {
     var a = $(this).scrollTop()
     if (a >= 600) {
         $('.searchFxedBar').slideDown('slow')
+        $('.leftFloor').show()
     } else {
         $('.searchFxedBar').slideUp('slow')
+        $('.leftFloor').hide()
     }
+})
+
+
+// 为左侧楼层增加相应的效果
+$('.leftFloor li').hover(function() {
+    // 为鼠标移入的span标签添加active
+    $(this).addClass('active')
+        // 定义一个leftFloorCurr,存储背景定位的X轴位置
+    var leftFloorCurr = parseInt($('.leftFloor .active').css('backgroundPositionX'))
+        // X轴位置交给本身
+    $(this).css('backgroundPositionX', leftFloorCurr - 40 + 'px')
+        // 为右侧内容设置滑动上去之后显示的效果
+    $(this).stop(true, false).animate({
+        width: '80px'
+    }, 100)
+}, function() {
+    //定义一个leftFloorCurr,存储背景定位的X轴位置
+    var leftFloorCurr = parseInt($('.leftFloor .active').css('backgroundPositionX'))
+        // X轴位置交给本身
+    $(this).css('backgroundPositionX', leftFloorCurr + 40 + 'px')
+        // 移除身上的active
+    $('.leftFloor li').removeClass('active')
+        // 为右侧内容设置滑动上去之后隐藏的效果
+    $(this).stop(true, true).animate({
+        width: '40px'
+    }, 100)
 })

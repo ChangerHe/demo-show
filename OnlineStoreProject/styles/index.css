@@ -425,7 +425,9 @@
 
 .eBooks .wellSells {
     width: 280px;
+    height: 438px;
     margin-top: 34px;
+    overflow: hidden;
     color: #808080;
     border: 2px solid #ccc;
 }
@@ -433,8 +435,10 @@
 .wellSells .head {
     font-size: 22px;
     text-align: center;
-    line-height: 30px;
+    line-height: 40px;
 }
+
+.wellSells .wellSell {}
 
 .wellSells .wellSell .detail {
     border-bottom: 2px solid #eee;
@@ -448,11 +452,14 @@
 }
 
 .wellSells .wellSell P {
-    padding: 6px 0 14px;
+    padding: 9px 0;
 }
 
 .wellSells .wellSell .red {
-    color: red;
+    color: rgb(255, 0, 0);
+}
+
+.wellSells .wellSell .rank {
     line-height: 30px;
 }
 
@@ -665,7 +672,8 @@
 .searchFxedBar .searchItem {
     position: absolute;
     top: 7px;
-    left: 600px;
+    left: 500px;
+    width: 552px;
 }
 
 .searchFxedBar .searchItem input[type=text] {
@@ -686,4 +694,55 @@
     float: left;
     border: 1px solid #ff6600;
     background: #ff6600 url(../images/icon_shop.png) -191px -6px;
+}
+
+.leftFloor {
+    position: fixed;
+    top: 300px;
+    left: 0;
+}
+
+.leftFloor li {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.leftFloor li span {
+    position: absolute;
+    left: 40px;
+    display: block;
+    float: right;
+    width: 40px;
+    height: 40px;
+    background-color: #93d470;
+    text-align: center;
+    line-height: 40px;
+    color: #fff;
+}
+
+.leftFloor .book {
+    background: #f2f2f2 url(../images/icon_shop.png) 0 0px;
+}
+
+.leftFloor .clothes {
+    background: #f2f2f2 url(../images/icon_shop.png) 0 -80px;
+}
+
+.leftFloor .sport {
+    background: #f2f2f2 url(../images/icon_shop.png) 0 -160px;
+}
+
+.leftFloor .baby {
+    background: #f2f2f2 url(../images/icon_shop.png) 0 -200px;
+}
+
+.leftFloor .home {
+    background: #f2f2f2 url(../images/icon_shop.png) 0 -280px;
+}
+
+.leftFloor .active {
+    background-color: #93d470;
 }
