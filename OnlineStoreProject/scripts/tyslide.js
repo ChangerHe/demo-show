@@ -45,7 +45,6 @@
 
                     var w2 = boxsount * (prams.controlsW + marginNum * 2); //此宽度是controls的宽度
                     var left2 = ((boxwidth - w2) / 2); //计算的控制按钮的x坐标
-                    console.log(w2, left2)
                     $(item).find(".controls").css({ "width": w2 + "px", "position": "absolute", "height": prams.controlsH, "left": left2, "bottom": prams.controltop, "background-color": "transparent" });
 
                     if (isShowNumber) {

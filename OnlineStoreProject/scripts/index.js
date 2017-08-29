@@ -1,6 +1,6 @@
 $('#item >li').hover(function() {
     $(this).addClass('hoverLi')
-    console.log($(this).find('.content').show())
+    $(this).find('.content').show()
 }, function() {
     $(this).removeClass('hoverLi')
     $(this).find('.content').hide()
@@ -54,6 +54,8 @@ $("#ruibikaSell,#outDoorBanner,#childrensBanner").tyslide({
     marginNum: 6
 });
 
+
+// 为文中的样式及文字提供默认显示效果
 $(window).pub({
     searchItem: '想啥就啥', // 提供搜索栏的默认显示值
     shopCarNum: 5 // 提供购物车的数量
@@ -61,19 +63,8 @@ $(window).pub({
 
 
 
-// $('.eBooks .headTitle span').mouseover(function() {
-//     $('.eBooks .headTitle span').removeClass('active')
-//     for (var i = 0; i < $('.eBook .headTitle span').length; i++) {
-//         $('.eBooks .headTitle span').eq(i).attr('index', i)
-//     }
-//     $(this).addClass('active')
-//     $('.eBooks .btnContent').hide();
-//     $('.eBooks .btnContent').eq($(this).attr('index')).show()
-// })
-
-// 添加相应的hover效果
+// 添加相应的hover效果,为标题右边的三栏菜单
 function hoverAnimate(fatherTag) {
-    console.log(1)
     $(fatherTag + ' .headTitle span').mouseover(function() {
         $(fatherTag + ' .headTitle span').removeClass('active')
         for (var i = 0; i < $('.eBook .headTitle span').length; i++) {
@@ -89,3 +80,44 @@ hoverAnimate('.eBooks')
 hoverAnimate('.clothes')
 hoverAnimate('.outDoors')
 hoverAnimate('.childClothes')
+hoverAnimate('.popularize')
+
+// 为新书畅销榜,从你的全世界路过部分,添加相应的hover样式
+
+$('.wellSell').hover(function() {
+    console.log($(this).is(':animated'))
+    $('.wellSell').find('.wellBook').slideUp('fast')
+    $('.wellSell').find('.anotherText').slideUp('fast')
+    if ($(this).is(':animated')) {
+        $(this).find('.wellBook').stop(true, true)
+        $(this).find('.anotherText').stop(true, true)
+    }
+    $(this).find('.wellBook').slideDown('fast')
+    $(this).find('.anotherText').slideDown('fast')
+}, function() {
+    // if ($(this).is(':animated')) {
+    //     $(this).find('.wellBook').stop(true, true)
+    //     $(this).find('.anotherText').stop(true, true)
+    // }
+    // $(this).find('.wellBook').slideUp('fast')
+    // $(this).find('.anotherText').slideUp('fast')
+})
+
+// 为奶嘴部分添加hover效果
+
+$('.btnContent .item').hover(function() {
+    $('.btnContent .item').removeClass('active')
+    $(this).addClass('active')
+}, function() {
+    $('.btnContent .item').removeClass('active')
+})
+
+$(window).on('scroll', function() {
+    console.log($(this).scrollTop())
+    var a = $(this).scrollTop()
+    if (a >= 600) {
+        $('.searchFxedBar').slideDown('slow')
+    } else {
+        $('.searchFxedBar').slideUp('slow')
+    }
+})
