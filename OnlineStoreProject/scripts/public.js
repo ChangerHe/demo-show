@@ -47,6 +47,12 @@ $(window).pub({
     shopCarNum: 5 // 提供购物车的数量
 })
 
+// 为菜单设置点击上啦和下降的效果
+$('.allItem').on('click', function(e) {
+    e.preventDefault();
+    $('.item').slideToggle()
+})
+
 // 以下是无延迟高容差的菜单效果的封装代码插件部分
 ;
 (function($) {

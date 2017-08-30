@@ -1,0 +1,82 @@
+.header .navBar .allItem {
+    background: #92d56e;
+}
+
+.header .topBar .logo .title1,
+.header .topBar .logo .title2 {
+    font-size: 20px;
+}
+
+.bannerAndItem {
+    position: relative;
+}
+
+#item {
+    position: absolute;
+}
+
+.bannerAndItem .goodSale {
+    width: 200px;
+    height: 400px;
+    border-bottom: 1px solid #b3b3b3;
+}
+
+.bannerAndItem .goodSale .botmBook {
+    height: 370px;
+    position: relative;
+    z-index: 999;
+    overflow: hidden;
+}
+
+.bannerAndItem .goodSale .title {
+    height: 30px;
+    color: #fff;
+    font-size: 16px;
+    text-align: center;
+    background: #92d56e;
+}
+
+.bannerAndItem .goodSale .hotBooksRecommend {
+    position: absolute;
+    z-index: 1;
+    height: 139px;
+    width: 200px;
+    border-bottom: 1px solid #b3b3b3;
+    border-top: 1px solid #b3b3b3;
+    background: #fff;
+}
+
+.goodSale .hotBooksRecommend .rank {
+    display: block;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    font-size: 16px;
+    color: #fff;
+    background: #b2b2b2;
+}
+
+.goodSale .hotBooksRecommend img {
+    float: left;
+    width: 100px;
+    margin: 5px 10px 0 0;
+}
+
+.goodSale .hotBooksRecommend p {
+    padding: 21px 0px 10px;
+    line-height: 20px;
+}
+
+.goodSale .hotBooksRecommend .orange {
+    background: #ff6600;
+}
+
+
+/* adBanner area */
+
+.adBanner img {
+    -webkit-transition: transform 1000s;
+    transition: transform 1000s;
+    -ms-transition: transform 1000s;
+    -o-transition: transform 1000s;
+}

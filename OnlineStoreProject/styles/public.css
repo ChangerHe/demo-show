@@ -43,6 +43,13 @@ a:hover {
 }
 
 
+/* 设置border类 */
+
+.border {
+    border: 1px solid #ccc;
+}
+
+
 /* 为所有图片设置轻微挪动的效果 */
 
 img {
@@ -63,6 +70,9 @@ img:hover {
     -ms-transition: transform 1000s;
     -o-transition: transform 1000s;
 }
+
+
+/* 抽取出来的公共类 */
 
 
 /* 抽取了标签的headtitle部分，标题的导航栏 */
@@ -219,16 +229,6 @@ img:hover {
 }
 
 
-/* 设置border类 */
-
-.border {
-    border: 1px solid #ccc;
-}
-
-
-/* 抽取出来的公共类 */
-
-
 /* 头部样式部分开始------------------------------ */
 
 .header {
@@ -348,6 +348,7 @@ img:hover {
 /* navbar area */
 
 .header .navBar .allItem {
+    position: relative;
     margin-top: 50px;
     height: 30px;
     width: 200px;
@@ -362,9 +363,17 @@ img:hover {
     color: #fff;
 }
 
+.header .navBar .allItem .downArrow {
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    top: 0px;
+    right: 10px;
+    background: url(../images/icon_shop.png) -450px -86px;
+}
+
 .header .navBar .nav {
     margin: 14px 70px 0 0;
-    ;
 }
 
 .header .navBar .nav li {
@@ -390,6 +399,11 @@ img:hover {
 
 .bannerAndItem {
     margin-top: 84px;
+    height: 430px;
+}
+
+.bannerAndItem .itemPlaceholder {
+    width: 200px;
     height: 430px;
 }
 
@@ -442,7 +456,11 @@ img:hover {
 }
 
 .bannerAndItem .item .content .library {
-    padding: 4px 0;
+    padding: 2px 0;
+}
+
+.bannerAndItem .item .content ul {
+    line-height: 2px;
 }
 
 .bannerAndItem .item .content li {
