@@ -54,8 +54,10 @@ a:hover {
 /* 为所有图片设置轻微挪动的效果 */
 
 img {
-    -o-transition: transform .5s;
     -webkit-transition: transform .5s;
+    transition: transform .5s;
+    -ms-transition: transform .5s;
+    -o-transition: transform .5s;
 }
 
 img:hover {
