@@ -47,6 +47,14 @@ $(window).pub({
     shopCarNum: 5 // 提供购物车的数量
 })
 
+// 设置所有图片进行懒加载
+$(function() {
+    $("img").lazyload({
+        effect: "fadeIn",
+        threshold: 0
+    });
+});
+
 // 为菜单设置点击上啦和下降的效果
 $('.allItem').on('click', function(e) {
     e.preventDefault();
