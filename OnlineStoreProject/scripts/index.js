@@ -5,23 +5,29 @@
 //     $(this).removeClass('hoverLi')
 //     $(this).find('.content').hide()
 // })
+
+// 实现无延迟高容差的菜单效果
+
+// 定义激活的li的jQuery效果
 function activeAni(tag) {
-    console.log(tag)
     $(tag).addClass('hoverLi')
     $(tag).find('.content').show()
 }
 
+// 定义移除的li的jQuery效果
 function reactiveAni(tag) {
-    console.log(tag)
     $(tag).removeClass('hoverLi')
     $(tag).find('.content').hide()
 }
 
+// 将方法写入插件,执行
 $('#item').menuAim({
     activate: activeAni, // fired on row activation
-    deactivate: reactiveAni // fired on row deactivation
+    deactivate: reactiveAni, // fired on row deactivation
+    exitMenu: function() { return true; }
 });
 
+// 顶部最大的轮播图效果
 $("#slideBoxSmall").tyslide({
     boxh: 430, //盒子的高度
     w: 1000, //盒子的宽度
@@ -38,6 +44,7 @@ $("#slideBoxSmall").tyslide({
     marginNum: 2
 });
 
+// 整个页面的第二个轮播图,也就是最小到的那个轮播图的效果
 $("#sevenCountBanner,#sevenCountBanner1,#sevenCountBanner2").tyslide({
     boxh: 216, //盒子的高度
     w: 330, //盒子的宽度
@@ -54,6 +61,7 @@ $("#sevenCountBanner,#sevenCountBanner1,#sevenCountBanner2").tyslide({
     marginNum: 6
 });
 
+// 下方的三个轮播图的效果
 $("#ruibikaSell,#outDoorBanner,#childrensBanner").tyslide({
     boxh: 338, //盒子的高度
     w: 426, //盒子的宽度
@@ -71,7 +79,7 @@ $("#ruibikaSell,#outDoorBanner,#childrensBanner").tyslide({
 });
 
 
-// 为文中的样式及文字提供默认显示效果
+// 为文中的样式及文字提供默认显示效果,对应接上了相应的接口
 $(window).pub({
     searchItem: '想啥就啥', // 提供搜索栏的默认显示值
     shopCarNum: 5 // 提供购物车的数量
@@ -173,12 +181,27 @@ $('.leftFloor li').on('click', function() {
     }, 1000)
 })
 
+
+// 定义右侧楼策的效果,
 $('.rightFloor .discount').on('click', function() {
-    $(this).find('span').animate({
+    // 点击时,右侧的span移除
+    $(this).find('span').stop(true, false).animate({
         right: '40px'
     })
 }).on('mouseout', function() {
+    // 鼠标移出,则右侧的二维码隐藏
     $(this).find('span').animate({
+        right: '-60px'
+    })
+})
+
+// 为二维码增加hover则暂时不隐藏的效果,并解决了动画一直在播放的bug
+$('.rightFloor .discount span').hover(function() {
+    $(this).stop(true, false).animate({
+        right: '40px'
+    })
+}, function() {
+    $(this).stop(true, true).animate({
         right: '-60px'
     })
 })

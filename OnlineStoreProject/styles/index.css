@@ -801,3 +801,12 @@
     border-radius: 50%;
     background: #ff1e00;
 }
+
+img {
+    -o-transition: transform .5s;
+    -webkit-transition: transform .5s;
+}
+
+img:hover {
+    transform: translateX(8px);
+}
