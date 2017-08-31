@@ -66,7 +66,7 @@ hoverAnimate('.childClothes')
     })
 }('.popularize')
 
-
+// 定义左侧的楼梯及楼层滚动特效-----------------------
 // 对两边的侧栏进行滚动的判定
 $(window).on('scroll', function() {
         var a = $(this).scrollTop()

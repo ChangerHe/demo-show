@@ -1,0 +1,117 @@
+/* header area */
+
+.header .topBar .logo .title1,
+.header .topBar .logo .title2 {
+    font-size: 20px;
+}
+
+.header .navBar .allItem {
+    background: #93d470;
+}
+
+.header .navBar .allItem .downArrow {
+    background-position-y: -140px;
+}
+
+.bannerAndItem {
+    height: 0;
+}
+
+#item {
+    display: none;
+    position: absolute;
+}
+
+
+/* bookIntro area */
+
+.bookIntro {
+    background: #f2f2f2;
+    height: 600px;
+}
+
+.bookIntro a {
+    color: #464646;
+    font-size: 16px;
+}
+
+.bookIntro a:hover {
+    color: #ff6600;
+}
+
+.bookIntro .breadNav {
+    color: #464646;
+    font-size: 16px;
+    line-height: 50px;
+}
+
+.bookIntro .breadNav .bigFont a {
+    font-size: 24px;
+}
+
+.bookIntro .bookIntroContent {
+    height: 510px;
+    background: #fff;
+}
+
+.bookIntro .bookIntroContent img {
+    -webkit-transition: transform 1000s;
+    transition: transform 1000s;
+    -ms-transition: transform 1000s;
+    -o-transition: transform 1000s;
+}
+
+.bookIntro .bookIntroContent .sidePic {
+    width: 350px;
+    padding: 10px;
+}
+
+.bookIntroContent .sidePic .bigPic {
+    border: 2px solid #fff;
+}
+
+.bookIntroContent .sidePic .bigPic:hover {
+    border: 2px solid #ff6600;
+}
+
+.bookIntroContent .sidePic .btnPic {
+    margin-top: 20px;
+}
+
+.bookIntroContent .sidePic .btnPic .leftArrow {
+    display: block;
+    float: left;
+    width: 30px;
+    height: 40px;
+    background: url(../images/icon_shop.png) -350px -200px;
+    cursor: pointer;
+}
+
+.bookIntroContent .sidePic .btnPic .rightArrow {
+    display: block;
+    float: right;
+    width: 30px;
+    height: 40px;
+    background: url(../images/icon_shop.png) -300px -200px;
+    cursor: pointer;
+}
+
+.bookIntroContent .sidePic .btnPic .books {
+    display: block;
+    float: left;
+    width: 55px;
+    height: 55px;
+    margin: 0 10px;
+    border: 2px solid #fff;
+    cursor: pointer;
+}
+
+.bookIntroContent .sidePic .btnPic .books:hover {
+    border: 2px solid #ff6600;
+}
+
+.bookIntroContent .sidePic .btnPic p {
+    padding-top: 80px;
+    text-align: center;
+    color: #666;
+}

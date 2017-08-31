@@ -85,16 +85,15 @@ $('.rightArr').on('click', function() {
     })
     // 上方文字的点击移动效果
 $('.personalProvide span').on('mouseover', function() {
-
         var thisIndex = $(this).index()
         index = thisIndex + 1
             // line()
             // move()
         $('.personalProvide span').removeClass('active')
         $(this).addClass('active')
-        box.fadeOut(200)
+        box.stop(true, false).fadeOut(200)
         box.css('left', -1200 * index + 'px')
-        box.fadeIn(200)
+        box.stop(true, true).fadeIn(200)
     })
     // 下方点点的点击切换效果
 $('.bottomDot span').on('click', function() {
