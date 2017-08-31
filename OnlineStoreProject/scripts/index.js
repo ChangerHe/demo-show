@@ -65,3 +65,59 @@ hoverAnimate('.childClothes')
         $(fatherTag + ' .btnContent').eq($(this).attr('index')).stop(true, true).fadeIn(200)
     })
 }('.popularize')
+
+
+// 对两边的侧栏进行滚动的判定
+$(window).on('scroll', function() {
+        var a = $(this).scrollTop()
+        if (a >= 600) {
+            $('.searchFxedBar').slideDown('slow')
+            $('.leftFloor').show()
+        } else {
+            $('.searchFxedBar').slideUp('slow')
+            $('.leftFloor').hide()
+        }
+    })
+    // 左侧的楼层滚动效果
+var colorArr = ['#93d470', '#f75727', '#ba9ded', '#ff7495', '#c3ec52', '#ff6600', '#5637f5', '#616161']
+$('.leftFloor li').hover(function() {
+    var index = $(this).index()
+    var styleJSON = {
+        'backgroundColor': colorArr[index],
+        'backgroundPositionX': '-40px'
+    }
+    $(this).css(styleJSON)
+    $(this).find('span').css({
+        'backgroundColor': colorArr[index],
+        'backgroundPositionX': '-40px'
+    })
+    $(this).find('p').css('display', 'block')
+    $(this).stop(true, false).animate({
+        width: '80px'
+    }, 200)
+}, function() {
+    var styleJSON = {
+        'backgroundColor': '#f2f2f2',
+        'backgroundPositionX': '0px'
+    }
+    $(this).css(styleJSON)
+    $(this).find('span').css(styleJSON)
+    $(this).find('p').css('display', 'none')
+    $(this).stop(true, true).animate({
+        width: '40px'
+    }, 200)
+})
+
+$('.leftFloor li').click(function() {
+    var thisIndex = $(this).index()
+    if (thisIndex == $('.leftFloor li').length - 1) {
+        $('html, body').animate({
+            scrollTop: 0
+        }, 500)
+        return
+    }
+    var floorPos = $('.floor').eq(thisIndex).offset().top
+    $('html, body').animate({
+        scrollTop: floorPos
+    }, 500)
+})

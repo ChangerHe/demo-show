@@ -286,64 +286,54 @@ $('.wellSell').hover(function() {
 
 // 楼层的效果------------------------------------
 
-// 对两边的侧栏进行滚动的判定
-$(window).on('scroll', function() {
-    var a = $(this).scrollTop()
-    if (a >= 600) {
-        $('.searchFxedBar').slideDown('slow')
-        $('.leftFloor').show()
-    } else {
-        $('.searchFxedBar').slideUp('slow')
-        $('.leftFloor').hide()
-    }
-})
+
 
 // 为左侧楼层增加相应的效果
-$('.leftFloor li').hover(function() {
-    // 为鼠标移入的span标签添加active
-    $(this).addClass('active')
-        // 定义一个leftFloorCurr,存储背景定位的X轴位置
-    var leftFloorCurr = parseInt($('.leftFloor .active').css('backgroundPositionX'))
-        // X轴位置交给本身
-    $(this).css('backgroundPositionX', leftFloorCurr - 40 + 'px')
-        // 为右侧内容设置滑动上去之后显示的效果
-    $(this).stop(true, false).animate({
-        width: '80px'
-    }, 100)
-}, function() {
-    //定义一个leftFloorCurr,存储背景定位的X轴位置
-    var leftFloorCurr = parseInt($('.leftFloor .active').css('backgroundPositionX'))
-        // X轴位置交给本身
-    $(this).css('backgroundPositionX', leftFloorCurr + 40 + 'px')
-        // 移除身上的active
-    $('.leftFloor li').removeClass('active')
-        // 为右侧内容设置滑动上去之后隐藏的效果
-    $(this).stop(true, true).animate({
-        width: '40px'
-    }, 100)
-})
+// $('.leftFloor li').hover(function() {
+//     // 为鼠标移入的span标签添加active
+//     $(this).addClass('active')
+//         // 定义一个leftFloorCurr,存储背景定位的X轴位置
+//     var leftFloorCurr = parseInt($('.leftFloor .active').css('backgroundPositionX'))
+//         // X轴位置交给本身
+//     $(this).css('backgroundPositionX', leftFloorCurr - 40 + 'px')
+//         // 为右侧内容设置滑动上去之后显示的效果
+//     $(this).stop(true, false).animate({
+//         width: '80px'
+//     }, 100)
+// }, function() {
+//     //定义一个leftFloorCurr,存储背景定位的X轴位置
+//     var leftFloorCurr = parseInt($('.leftFloor .active').css('backgroundPositionX'))
+//         // X轴位置交给本身
+//     $(this).css('backgroundPositionX', leftFloorCurr + 40 + 'px')
+//         // 移除身上的active
+//     $('.leftFloor li').removeClass('active')
+//         // 为右侧内容设置滑动上去之后隐藏的效果
+//     $(this).stop(true, true).animate({
+//         width: '40px'
+//     }, 100)
+// })
 
-// 定义楼层的滚动效果
-$('.leftFloor li').on('click', function() {
-    var a = 1100;
-    $('html,body').animate({
-        scrollTop: a + $(this).index() * 610
-    }, 1000)
-})
+// // 定义楼层的滚动效果
+// $('.leftFloor li').on('click', function() {
+//     var a = 1100;
+//     $('html,body').animate({
+//         scrollTop: a + $(this).index() * 610
+//     }, 1000)
+// })
 
 
-// 定义右侧楼层的效果,
-$('.rightFloor .discount').on('click', function() {
-    // 点击时,右侧的span移除
-    $(this).find('span').stop(true, false).animate({
-        right: '40px'
-    })
-}).on('mouseout', function() {
-    // 鼠标移出,则右侧的二维码隐藏
-    $(this).find('span').animate({
-        right: '-60px'
-    })
-})
+// // 定义右侧楼层的效果,
+// $('.rightFloor .discount').on('click', function() {
+//     // 点击时,右侧的span移除
+//     $(this).find('span').stop(true, false).animate({
+//         right: '40px'
+//     })
+// }).on('mouseout', function() {
+//     // 鼠标移出,则右侧的二维码隐藏
+//     $(this).find('span').animate({
+//         right: '-60px'
+//     })
+// })
 
 // 为二维码增加hover则暂时不隐藏的效果,并解决了动画一直在播放的bug
 $('.rightFloor .discount span').hover(function() {
