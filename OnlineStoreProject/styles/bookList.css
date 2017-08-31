@@ -219,6 +219,10 @@
 
 /* personal provide area */
 
+.personalPro {
+    height: 600px;
+}
+
 .personalPro .headTitle .titles {
     margin-top: 14px;
 }
@@ -239,27 +243,71 @@
 
 /* 图书的轮播区域 */
 
-.personalPro {
-    height: 600px;
-}
-
-.personalPro .content {
+.allBooksBanner {
+    position: relative;
     width: 1200px;
+    overflow: hidden;
 }
 
-.personalPro .content .bookIntroBlock {
+.allBooksBanner .booksBannerWrapper {
+    position: relative;
+    width: 10800px;
+    height: 500px;
+}
+
+.allBooksBanner .booksBannerWrapper .content {
+    width: 1200px;
+    float: left;
+}
+
+.allBooksBanner .booksBannerWrapper .content .bookIntroBlock {
     margin: 0 10px;
 }
 
-#slideBooks {
-    width: 1200px;
-    height: 500px;
-    background: #000;
+.allBooksBanner .leftArr,
+.allBooksBanner .rightArr {
+    position: absolute;
+    top: 200px;
+    width: 36px;
+    height: 70px;
+    opacity: .5;
+    filter: alpha(opacity=50);
 }
 
-#slideBooks .innerwrapper li {
+.allBooksBanner .leftArr:hover,
+.allBooksBanner .rightArr:hover {
+    opacity: 1;
+    filter: alpha(opacity=100);
+}
+
+.allBooksBanner .leftArr {
+    left: 0;
+    background: #ccc url(../images/arrowBG.png) 0px 14px no-repeat;
+}
+
+.allBooksBanner .rightArr {
+    right: 0;
+    background: #ccc url(../images/arrowBG.png) -44px 16px no-repeat;
+}
+
+.allBooksBanner .bottomDot {
+    width: 168px;
+    margin: 0 auto;
+}
+
+.allBooksBanner .bottomDot span {
+    display: block;
     float: left;
-    width: 2400px;
+    width: 16px;
+    height: 16px;
+    margin: 4px;
+    border-radius: 50%;
+    background: #ccc;
+    cursor: pointer;
+}
+
+.allBooksBanner .bottomDot .active {
+    background: #ff6600;
 }
 
 
@@ -278,7 +326,6 @@
 .guessYouLike .headTitle .titles span {
     padding: 0;
     background: url(../images/icon_shop.png) -400px 0px;
-    ;
 }
 
 .guessYouLike .content .bookIntroBlock {

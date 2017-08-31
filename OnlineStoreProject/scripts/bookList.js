@@ -28,18 +28,104 @@ $('.hotBooksRecommend').hover(function() {
 })
 
 // 下方整体图书的轮播效果-----------------
-// $("#slideBooks").tyslide({
-//     boxh: 500, //盒子的高度
-//     w: 1200, //盒子的宽度
-//     h: 480, //图片的高度
-//     isShow: true, //是否显示控制器
-//     isShowBtn: true, //是否显示左右按钮
-//     controltop: 10, //控制按钮上下偏移的位置,要将按钮向下移动   首先保证boxh 高度>图片 h
-//     controlsW: 16, //控制按钮宽度
-//     controlsH: 16, //控制按钮高度
-//     radius: 8, //控制按钮圆角度数
-//     controlsColor: "#d8d8d8", //普通控制按钮的颜色
-//     controlsCurrentColor: "#ff6600", //当前控制按钮的颜色
-//     isShowNumber: true,
-//     marginNum: 2
-// });
+// 克隆第一个和最后一个,并将其分别插入到最后一个之后和第一个之前
+var clone1 = $('.booksBannerWrapper').find('.content:first').clone()
+var clone2 = $('.booksBannerWrapper').find('.content:last').clone()
+$('.booksBannerWrapper').find('.content:last').after(clone1)
+console.log($('.booksBannerWrapper .content:last'))
+$('.booksBannerWrapper').find('.content:first').before(clone2)
+console.log($('.booksBannerWrapper .content:last'))
+var index = 0;
+// 初始化左侧值,将第一个先显示在上面
+$('.booksBannerWrapper').css('left', '-1200px')
+    // 定义一个index值,方便进行联动操作
+index = 1
+    // 定义一个box方便引用
+var box = $('.booksBannerWrapper')
+    // 定义移动的animate
+var move = function() {
+        box.animate({
+            'left': -1200 * index + 'px'
+        }, 500, function() {
+            if (index >= 8) {
+                index = 1
+                box.css('left', '-1200px')
+            } else if (index <= 0) {
+                index = 7
+                box.css('left', -1200 * index + 'px')
+            }
+        })
+    }
+    // 其他地方的联动效果
+var line = function() {
+        $('.bottomDot span').removeClass('active')
+        $('.personalPro .personalProvide span').removeClass('active')
+        $('.bottomDot span').eq(index - 1).addClass('active')
+        $('.personalPro .personalProvide span').eq(index - 1).addClass('active')
+        if (index >= 8) {
+            $('.bottomDot span').eq(0).addClass('active')
+            $('.personalPro .personalProvide span').eq(0).addClass('active')
+        }
+    }
+    // 左侧的点击效果
+$('.leftArr').click(function() {
+        if (!box.is(':animated')) {
+            index++
+            line()
+            move()
+        }
+    })
+    // 右侧的点击效果
+$('.rightArr').on('click', function() {
+        if (!box.is(':animated')) {
+            index--
+            line()
+            move()
+        }
+    })
+    // 上方文字的点击移动效果
+$('.personalProvide span').on('mouseover', function() {
+
+        var thisIndex = $(this).index()
+        index = thisIndex + 1
+            // line()
+            // move()
+        $('.personalProvide span').removeClass('active')
+        $(this).addClass('active')
+        box.fadeOut(200)
+        box.css('left', -1200 * index + 'px')
+        box.fadeIn(200)
+    })
+    // 下方点点的点击切换效果
+$('.bottomDot span').on('click', function() {
+    var thisIndex = $(this).index()
+    index = thisIndex + 1
+    line()
+    move()
+})
+
+// 设置轮播自动播放的定时器
+var timer = setInterval(function() {
+    index++
+    move()
+    line()
+}, 3000)
+
+// 鼠标移入时,将定时器取消,移除再开始
+$('.personalPro').hover(function() {
+    clearInterval(timer)
+}, function() {
+    timer = setInterval(function() {
+        index++
+        move()
+        line()
+    }, 3000)
+})
+
+// 换一批的效果
+$('.guessYouLike .change').click(function(e) {
+    e.preventDefault()
+    $('.guessYouLike .content').fadeOut(200)
+    $('.guessYouLike .content').fadeIn(200)
+
+})
