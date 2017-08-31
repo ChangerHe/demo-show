@@ -58,7 +58,15 @@ $(function() {
 // 为菜单设置点击上啦和下降的效果
 $('.allItem').on('click', function(e) {
     e.preventDefault();
-    $('.item').slideToggle()
+    var $item = $('.item')
+        // $('.item').slideToggle()
+    if ($item.css('display') == 'none') {
+        $item.slideDown(400)
+        $(this).find('.downArrow').delay(400).css({ 'backgroundPositionX': '-450px', 'backgroundPositionY': '-86px' })
+    } else {
+        $item.slideUp(400)
+        $(this).find('.downArrow').delay(400).css({ 'backgroundPositionX': '-450px', 'backgroundPositionY': '-140px' })
+    }
 })
 
 // 以下是无延迟高容差的菜单效果的封装代码插件部分
@@ -217,7 +225,7 @@ $('.allItem').on('click', function(e) {
 })(jQuery);
 // 结束,无延迟高容错导航菜单的封装源码,来自jquery-menu-aim
 
-// 实现无延迟高容差的菜单效果
+// 实现无延迟高容差的菜单效果-----------------
 
 // 定义激活的li的jQuery效果
 function activeAni(tag) {
@@ -238,7 +246,7 @@ $('#item').menuAim({
     exitMenu: function() { return true; }
 });
 
-// 顶部最大的轮播图效果
+// 顶部最大的轮播图效果-----------------
 $("#slideBoxSmall").tyslide({
     boxh: 430, //盒子的高度
     w: 1000, //盒子的宽度
@@ -256,7 +264,7 @@ $("#slideBoxSmall").tyslide({
 });
 
 
-// 为新书畅销榜,从你的全世界路过部分,添加相应的hover样式,因为还有一个地方有这个相同的样式,因此也拿到public里面来
+// 为新书畅销榜,从你的全世界路过部分,添加相应的hover样式,因为还有一个地方有这个相同的样式,因此也拿到public里面来-------------------
 
 $('.wellSell').hover(function() {
     // 因为出现了没有固定块的高度而导致每个书籍下方的横线出现变短的情况,因此在这里将每个盒子的高度固定
@@ -277,6 +285,19 @@ $('.wellSell').hover(function() {
 
 
 // 楼层的效果------------------------------------
+
+// 对两边的侧栏进行滚动的判定
+$(window).on('scroll', function() {
+    var a = $(this).scrollTop()
+    if (a >= 600) {
+        $('.searchFxedBar').slideDown('slow')
+        $('.leftFloor').show()
+    } else {
+        $('.searchFxedBar').slideUp('slow')
+        $('.leftFloor').hide()
+    }
+})
+
 // 为左侧楼层增加相应的效果
 $('.leftFloor li').hover(function() {
     // 为鼠标移入的span标签添加active
@@ -311,7 +332,7 @@ $('.leftFloor li').on('click', function() {
 })
 
 
-// 定义右侧楼策的效果,
+// 定义右侧楼层的效果,
 $('.rightFloor .discount').on('click', function() {
     // 点击时,右侧的span移除
     $(this).find('span').stop(true, false).animate({

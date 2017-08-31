@@ -78,38 +78,6 @@ img:hover {
 /* 抽取出来的公共类 */
 
 
-/* 抽取了标签的headtitle部分，标题的导航栏 */
-
-.headTitle {
-    color: #323232;
-    font-size: 18px;
-    line-height: 34px;
-    font-weight: bold;
-    border-bottom: 6px solid #ff6600;
-}
-
-.headTitle span {
-    display: block;
-    float: right;
-    width: 100px;
-    height: 34px;
-    line-height: 34px;
-    text-align: center;
-    font-size: 16px;
-    color: #323232;
-    cursor: pointer;
-}
-
-.headTitle .active {
-    background: #ff6600;
-    color: #fff;
-}
-
-.btnContent {
-    display: none;
-}
-
-
 /* 对barPrice的抽取，有三个公共部分 */
 
 .barPrice {

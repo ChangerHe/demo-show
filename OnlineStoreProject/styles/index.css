@@ -1,3 +1,38 @@
+/* 抽取了标签的headtitle部分，标题的导航栏 */
+
+
+/* 因为没有其他页面会用到这个css,因此直接提升到当前文档之前 */
+
+.headTitle {
+    color: #323232;
+    font-size: 18px;
+    line-height: 34px;
+    font-weight: bold;
+    border-bottom: 6px solid #ff6600;
+}
+
+.headTitle span {
+    display: block;
+    float: right;
+    width: 100px;
+    height: 34px;
+    line-height: 34px;
+    text-align: center;
+    font-size: 16px;
+    color: #323232;
+    cursor: pointer;
+}
+
+.headTitle .active {
+    background: #ff6600;
+    color: #fff;
+}
+
+.btnContent {
+    display: none;
+}
+
+
 /* recommend area */
 
 .recommend .headTitle p {
@@ -227,7 +262,7 @@
     margin: 10px;
 }
 
-.popularize .btnContent .active {
+.popularize .btnContent .item:hover {
     background: #f2f2f2;
 }
 

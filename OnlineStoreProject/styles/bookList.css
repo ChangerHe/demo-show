@@ -80,3 +80,22 @@
     -ms-transition: transform 1000s;
     -o-transition: transform 1000s;
 }
+
+
+/* bookDoscount area */
+
+.bookDoscount {
+    margin-top: 24px;
+}
+
+.bookDoscount .headTitle {
+    height: 40px;
+    border-bottom: 6px solid #ff6600;
+}
+
+.bookDoscount .headTitle span {
+    background: #ff6600;
+    color: #fff;
+    font-size: 24px;
+    padding: 12px;
+}

@@ -45,31 +45,23 @@ function hoverAnimate(fatherTag) {
         $(fatherTag + ' .btnContent').hide();
         $(fatherTag + ' .btnContent').eq($(this).attr('index')).show()
     })
-
 }
 hoverAnimate('.eBooks')
 hoverAnimate('.clothes')
 hoverAnimate('.outDoors')
 hoverAnimate('.childClothes')
-hoverAnimate('.popularize')
 
+// 为奶嘴部分单独写的效果,并使其自执行
+;
 
-// 为奶嘴部分添加hover效果
-
-$('.btnContent .item').hover(function() {
-    $('.btnContent .item').removeClass('active')
-    $(this).addClass('active')
-}, function() {
-    $('.btnContent .item').removeClass('active')
-})
-
-$(window).on('scroll', function() {
-    var a = $(this).scrollTop()
-    if (a >= 600) {
-        $('.searchFxedBar').slideDown('slow')
-        $('.leftFloor').show()
-    } else {
-        $('.searchFxedBar').slideUp('slow')
-        $('.leftFloor').hide()
-    }
-})
+! function(fatherTag) {
+    $(fatherTag + ' .headTitle span').mouseover(function() {
+        $(fatherTag + ' .headTitle span').removeClass('active')
+        for (var i = 0; i < $('.eBook .headTitle span').length; i++) {
+            $(fatherTag + ' .headTitle span').eq(i).attr('index', i)
+        }
+        $(this).addClass('active')
+        $(fatherTag + ' .btnContent').stop(true, false).fadeOut(200);
+        $(fatherTag + ' .btnContent').eq($(this).attr('index')).stop(true, true).fadeIn(200)
+    })
+}('.popularize')
