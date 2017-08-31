@@ -134,54 +134,6 @@
     border-left: 3px solid #ccc;
 }
 
-.eBooks .wellSells {
-    width: 280px;
-    height: 438px;
-    margin-top: 34px;
-    overflow: hidden;
-    color: #808080;
-    border: 2px solid #ccc;
-}
-
-.wellSells .head {
-    font-size: 22px;
-    text-align: center;
-    line-height: 40px;
-}
-
-.wellSells .wellSell .detail {
-    border-bottom: 2px solid #eee;
-    margin-left: 10px;
-    line-height: 22px;
-    width: 270px;
-}
-
-.wellSells .wellSell .detail .text {
-    font-size: 16px;
-}
-
-.wellSells .wellSell P {
-    padding: 9px 0;
-}
-
-.wellSells .wellSell .red {
-    color: rgb(255, 0, 0);
-}
-
-.wellSells .wellSell .rank {
-    line-height: 30px;
-}
-
-.wellSells .active .wellBook,
-.wellSells .active .anotherText {
-    display: block;
-}
-
-.wellSells .wellSell .wellBook,
-.wellSells .wellSell .anotherText {
-    display: none;
-}
-
 
 /* clothes area */
 

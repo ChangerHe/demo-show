@@ -1,3 +1,57 @@
+/* 段落的标题的公共类 */
+
+.headTitle {
+    height: 40px;
+    border-bottom: 6px solid #ff6600;
+    font-size: 18px;
+}
+
+.headTitle span {
+    font-size: 24px;
+    background: #ff6600;
+    color: #fff;
+    padding: 12px;
+}
+
+
+/* 书本具体模块公共类的抽取 */
+
+.bookIntroBlock {
+    float: left;
+    width: 180px;
+    height: 240px;
+}
+
+.bookIntroBlock:hover {
+    background: #f2f2f2;
+}
+
+.bookIntroBlock img {
+    width: 130px;
+    height: 150px;
+    margin: 20px 25px 0px;
+}
+
+.bookIntroBlock .item {
+    padding-left: 20px;
+    font-weight: bold;
+    line-height: 24px;
+}
+
+.bookIntroBlock .intro {
+    padding-left: 20px;
+}
+
+.bookIntroBlock .price {
+    padding-left: 20px;
+    font-size: 14px;
+    line-height: 24px;
+    color: red;
+}
+
+
+/* 头部样式开始 */
+
 .header .navBar .allItem {
     background: #92d56e;
 }
@@ -86,16 +140,186 @@
 
 .bookDoscount {
     margin-top: 24px;
+    height: 600px;
 }
 
-.bookDoscount .headTitle {
-    height: 40px;
-    border-bottom: 6px solid #ff6600;
+.bookDoscount .discountContent {}
+
+.discountContent .discount:hover {
+    background: #f2f2f2;
 }
 
-.bookDoscount .headTitle span {
+.discountContent .discount img {
+    width: 150px;
+    height: 150px;
+    margin: 6px 45px 0px;
+}
+
+.discountContent .discount .discountRank {
+    display: block;
+    width: 72px;
+    height: 26px;
+    background: url(../images/icon_shop.png) -204px -303px;
+}
+
+.discountContent .discount .rank6 {
+    background: url(../images/icon_shop.png) -204px -353px;
+}
+
+.discountContent .discount .item {
+    font-size: 14px;
+    padding-left: 10px;
+    line-height: 24px;
+}
+
+.discountContent .discount .intro {
+    line-height: 24px;
+    padding-left: 10px;
+    color: red;
+}
+
+.discountContent .discount .intro .star {
+    display: block;
+    float: right;
+    margin-right: 96px;
+    width: 100px;
+    height: 16px;
+    overflow: hidden;
+    background: url(../images/star_small.gif) 0px -16px;
+}
+
+.discountContent .discount .price {
+    padding-left: 10px;
+    font-size: 16px;
+    color: red;
+}
+
+.discountContent .discount .price del {
+    font-size: 16px;
+    color: #b3b3b3;
+}
+
+
+/* newBooks area */
+
+.newBooks {
+    height: 600px;
+}
+
+.newBooks .newBooksGet {
+    width: 900px;
+}
+
+.newBooks .newBooksGet .content {}
+
+.newBooks .wellSells {
+    margin-top: 40px;
+}
+
+
+/* personal provide area */
+
+.personalPro .headTitle .titles {
+    margin-top: 14px;
+}
+
+.personalPro .headTitle .titles span {
+    padding: 8px 8px 5px;
+    font-size: 16px;
+    color: #333;
+    background: #fff;
+    cursor: pointer;
+}
+
+.personalPro .headTitle .titles .active {
     background: #ff6600;
     color: #fff;
-    font-size: 24px;
-    padding: 12px;
+}
+
+
+/* 图书的轮播区域 */
+
+.personalPro {
+    height: 600px;
+}
+
+.personalPro .content {
+    width: 1200px;
+}
+
+.personalPro .content .bookIntroBlock {
+    margin: 0 10px;
+}
+
+#slideBooks {
+    width: 1200px;
+    height: 500px;
+    background: #000;
+}
+
+#slideBooks .innerwrapper li {
+    float: left;
+    width: 2400px;
+}
+
+
+/* guessYouLike area */
+
+.guessYouLike {
+    height: 550px;
+    border-bottom: 2px solid #ccc;
+}
+
+.guessYouLike .headTitle .titles a {
+    color: #458dfc;
+    font-size: 16px;
+}
+
+.guessYouLike .headTitle .titles span {
+    padding: 0;
+    background: url(../images/icon_shop.png) -400px 0px;
+    ;
+}
+
+.guessYouLike .content .bookIntroBlock {
+    margin: 0 10px;
+}
+
+
+/* bottomBestChoice area */
+
+.bottomBestChoice {
+    height: 160px;
+}
+
+.bottomBestChoice .choice {
+    width: 200px;
+    float: left;
+}
+
+.bottomBestChoice .choice p {
+    padding: 40px 0 0 20px;
+}
+
+.bottomBestChoice .choice .title {
+    font-size: 14px;
+}
+
+.bottomBestChoice .choice .desc {
+    line-height: 20px;
+    color: #b2b2b2;
+}
+
+.bottomBestChoice .choice .discount {
+    padding: 0 4px;
+    border-radius: 8px;
+    color: #fff;
+    background: #fa2e25;
+}
+
+.bottomBestChoice .choice img {
+    width: 80px;
+    height: 100px;
+    float: right;
+    margin: 40px 0 0;
 }
