@@ -79,19 +79,26 @@ $(window).on('scroll', function() {
         }
     })
     // 左侧的楼层滚动效果
+    // 定义一个数组,存储颜色的字符串值
 var colorArr = ['#93d470', '#f75727', '#ba9ded', '#ff7495', '#c3ec52', '#ff6600', '#5637f5', '#616161']
+    // 为每个li增加鼠标悬停效果
 $('.leftFloor li').hover(function() {
     var index = $(this).index()
+        // 将样式存为json
     var styleJSON = {
-        'backgroundColor': colorArr[index],
-        'backgroundPositionX': '-40px'
-    }
+            'backgroundColor': colorArr[index],
+            'backgroundPositionX': '-40px'
+        }
+        // 修改其本身的样式
     $(this).css(styleJSON)
+        // 修改雪碧图的背景图片
     $(this).find('span').css({
-        'backgroundColor': colorArr[index],
-        'backgroundPositionX': '-40px'
-    })
+            'backgroundColor': colorArr[index],
+            'backgroundPositionX': '-40px'
+        })
+        // 将文字显示出来
     $(this).find('p').css('display', 'block')
+        // 将宽度设置动画效果
     $(this).stop(true, false).animate({
         width: '80px'
     }, 200)
@@ -108,14 +115,17 @@ $('.leftFloor li').hover(function() {
     }, 200)
 })
 
+// 为楼层的楼梯添加点击事件
 $('.leftFloor li').click(function() {
     var thisIndex = $(this).index()
+        // 如果是最后一层楼梯,那么直接滚动到顶部,并返回,防止后面报错
     if (thisIndex == $('.leftFloor li').length - 1) {
         $('html, body').animate({
             scrollTop: 0
         }, 500)
         return
     }
+    // 不是最后一个楼梯,则执行滚动到相应的楼层的效果
     var floorPos = $('.floor').eq(thisIndex).offset().top
     $('html, body').animate({
         scrollTop: floorPos
