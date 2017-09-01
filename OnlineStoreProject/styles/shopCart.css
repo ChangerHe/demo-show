@@ -1,0 +1,203 @@
+.header {
+    margin-bottom: 100px;
+}
+
+.header .topBar .logo {
+    width: 260px;
+    height: 105px;
+}
+
+.header .topBar .logo img {
+    margin: 20px 0 0 20px;
+}
+
+.header .topBar .logo .title2 {
+    width: 100px;
+    margin-left: 44px;
+}
+
+.header .topBar .leftText {
+    margin-left: 300px;
+}
+
+.header .distribution {
+    margin: 100px 0 0 1000px;
+    color: #878787;
+    outline: none;
+}
+
+.header .distribution select {
+    outline: none;
+}
+
+
+/* 订单区域 */
+
+.orderForms {}
+
+.orderForms .remind {
+    font-size: 16px;
+    padding: 6px;
+    color: #878787;
+}
+
+.orderForms .formsHead {
+    height: 60px;
+    background: #f2f2f2;
+    line-height: 60px;
+}
+
+.orderForms li {
+    float: left;
+    text-align: center;
+    font-size: 14px;
+}
+
+.orderForms .check,
+.orderForms .totalCheck {
+    width: 60px;
+}
+
+.orderForms .itemMsg,
+.deleteSelectedItem {
+    width: 500px;
+}
+
+.orderForms .price,
+.orderForms .totalPrice {
+    width: 160px;
+}
+
+.orderForms .itemNum,
+.orderForms .totalItemNum {
+    width: 140px;
+}
+
+.orderForms .countPrice,
+.orderForms .totalCountPrice {
+    width: 220px;
+}
+
+.orderForms .option,
+.orderForms .totalOption {
+    width: 80px;
+}
+
+
+/* orderForms formsContent */
+
+.orderForms .itemContent {
+    width: 100%;
+    border-top: 6px solid #dfdfdf;
+    margin-top: 20px;
+}
+
+
+/* 为每个订单的ul添加的样式 */
+
+.orderForms .formsContent {
+    height: 200px;
+    padding-top: 30px;
+    line-height: 30px;
+    border-bottom: 1px solid #dfdfdf;
+}
+
+.formsContent .itemMsg p {
+    text-align: left;
+    padding-left: 200px;
+}
+
+.formsContent .itemMsg .imgCon {
+    display: block;
+    float: left;
+    width: 160px;
+    height: 160px;
+    border: 1px solid #ccc;
+}
+
+.formsContent .itemMsg .imgCon {
+    line-height: 160px;
+    text-align: center;
+}
+
+.formsContent .itemNum input {
+    margin-left: -1px;
+    outline: none;
+}
+
+.formsContent .itemNum .reduce,
+.formsContent .itemNum .add {
+    width: 24px;
+    height: 24px;
+    border: 1px solid #ccc;
+    background: #fff;
+}
+
+.formsContent .itemNum .msgInput {
+    width: 72px;
+    height: 22px;
+    border: 1px solid #ccc;
+    text-align: center;
+}
+
+.formsContent .option {
+    text-align: left;
+}
+
+
+/* 结算区域 */
+
+.settleAll {
+    margin-top: 32px;
+    width: 1198px;
+    height: 60px;
+    border: 1px solid #ccc;
+    line-height: 60px;
+}
+
+.settleAll .totalOption {
+    margin-top: 10px;
+}
+
+.settleAll .totalOption input {
+    display: block;
+    width: 80px;
+    border: none;
+    background: #ff6600;
+    height: 40px;
+    font-size: 16px;
+    color: #fff;
+    border-radius: 4px;
+}
+
+
+/* 猜你喜欢区域 */
+
+.guessULike {
+    clear: both;
+}
+
+
+/* 猜你喜欢区域 */
+
+.guessULike {
+    margin-top: 50px;
+}
+
+.headTitle {
+    height: 40px;
+    border-bottom: 6px solid #ff6600;
+    font-size: 18px;
+}
+
+.headTitle span {
+    font-size: 24px;
+    background: #ff6600;
+    color: #fff;
+    padding: 9px;
+    cursor: pointer;
+}
+
+.adBanner {
+    margin-top: 330px;
+}
