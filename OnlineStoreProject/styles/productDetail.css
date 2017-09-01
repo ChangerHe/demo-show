@@ -115,3 +115,105 @@
     text-align: center;
     color: #666;
 }
+
+
+/* bookIntro rightIntro area */
+
+.bookIntro .rightIntro {
+    width: 786px;
+    margin-right: 30px;
+}
+
+.bookIntro .rightIntro .bookTitle {
+    font-size: 22px;
+    line-height: 60px;
+    padding-top: 30px;
+}
+
+.bookIntro .rightIntro .bookDescribe {
+    font-size: 18px;
+    line-height: 28px;
+    color: #fb2f2f;
+}
+
+.bookIntro .rightIntro .author {
+    font-size: 16px;
+    line-height: 28px;
+    color: #a6a6a6;
+}
+
+.bookIntro .rightIntro .priceMsg {
+    height: 120px;
+    background: #f5f5f5;
+    padding: 10px;
+    position: relative;
+}
+
+.bookIntro .rightIntro .priceMsg p {
+    color: #6c6c6c;
+    font-size: 16px;
+}
+
+.rightIntro .priceMsg .price {
+    letter-spacing: 4px;
+}
+
+.rightIntro .priceMsg .price .truePrice {
+    font-size: 24px;
+    color: red;
+}
+
+.rightIntro .priceMsg .price .priceBefore {
+    font-size: 16px;
+    text-decoration: line-through;
+}
+
+.rightIntro .priceMsg .discountMsg {
+    letter-spacing: 2px;
+    padding-top: 6px;
+    line-height: 30px;
+}
+
+.rightIntro .priceMsg .discountMsg .red {
+    font-size: 16px;
+    color: red;
+}
+
+.rightIntro .priceMsg .getTicket {
+    padding-top: 20px;
+}
+
+.rightIntro .priceMsg .getTicket .title {
+    float: left;
+    font-size: 16px;
+    letter-spacing: 2px;
+    padding-right: 20px;
+}
+
+.rightIntro .priceMsg .getTicket .ticket {
+    display: block;
+    float: left;
+    margin-right: 20px;
+    width: 90px;
+    height: 26px;
+    background: url(../images/icon_shop.png) -203px -411px;
+}
+
+.rightIntro .priceMsg .totalEvaluate {
+    position: absolute;
+    display: block;
+    right: 0;
+    top: 0;
+    width: 74px;
+    height: 40px;
+    font-size: 14px;
+    margin: 10px;
+    padding-left: 10px;
+    text-align: center;
+    border-left: 2px solid #6c6c6c;
+}
+
+.rightIntro .priceMsg .totalEvaluate .red {
+    color: red;
+    font-size: 14px;
+}
