@@ -143,62 +143,6 @@
     height: 600px;
 }
 
-.bookDoscount .discountContent {}
-
-.discountContent .discount:hover {
-    background: #f2f2f2;
-}
-
-.discountContent .discount img {
-    width: 150px;
-    height: 150px;
-    margin: 6px 45px 0px;
-}
-
-.discountContent .discount .discountRank {
-    display: block;
-    width: 72px;
-    height: 26px;
-    background: url(../images/icon_shop.png) -204px -303px;
-}
-
-.discountContent .discount .rank6 {
-    background: url(../images/icon_shop.png) -204px -353px;
-}
-
-.discountContent .discount .item {
-    font-size: 14px;
-    padding-left: 10px;
-    line-height: 24px;
-}
-
-.discountContent .discount .intro {
-    line-height: 24px;
-    padding-left: 10px;
-    color: red;
-}
-
-.discountContent .discount .intro .star {
-    display: block;
-    float: right;
-    margin-right: 96px;
-    width: 100px;
-    height: 16px;
-    overflow: hidden;
-    background: url(../images/star_small.gif) 0px -16px;
-}
-
-.discountContent .discount .price {
-    padding-left: 10px;
-    font-size: 16px;
-    color: red;
-}
-
-.discountContent .discount .price del {
-    font-size: 16px;
-    color: #b3b3b3;
-}
-
 
 /* newBooks area */
 

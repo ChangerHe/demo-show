@@ -15,11 +15,19 @@
         pub: function(opts) {
             var defaults = {
                 searchItem: '创意文具',
-                shopCarNum: 5
+                shopCarNum: 5,
+                evaluateNum: 100,
+                evaluateNumGood: 90,
+                evaluateNumBetwween: 8,
+                evaluateNumBad: 2
             }
             var prams = $.extend({}, defaults, opts);
             var searchText = prams.searchItem;
             var shopCarNum = prams.shopCarNum;
+            var evaluateNum = prams.evaluateNum;
+            var evaluateNumGood = prams.evaluateNumGood;
+            var evaluateNumBetwween = prams.evaluateNumBetwween;
+            var evaluateNumBad = prams.evaluateNumBad;
             // 将值先显示到页面上
             $('.shopCarNum input[type=text]').prop('value', searchText)
                 // 提供相应的点击隐藏效果
@@ -29,12 +37,38 @@
                 }
             })
             $('.searchItem input[type=text]').blur(function() {
-                    if ($(this).prop('value') == '') {
-                        $(this).prop('value', searchText)
-                    }
-                })
+                if ($(this).prop('value') == '') {
+                    $(this).prop('value', searchText)
+                }
+            })
+
+            // 对提交的评价数量进行校验,如果校验的总评价数和各评价之和不相等则使用自定义的评价数量,不予修改
+            var tal = opts.evaluateNum, // 提交上来的评论总数
+                a = opts.evaluateNumGood, //提交上来的好评总数
+                b = opts.evaluateNumBetwween, // 提交上来的中评总数
+                c = opts.evaluateNumBad // 提交上来的差评总数
+
+            // 如果出现传入数值不正确的情况,则抛出错误
+            if (!(tal == (a + b + c))) {
+                throw new Error('evaluate number is wrong')
+            }
+            // 计算出好评所占的百分比
+            var betweenRank = parseInt(b / tal * 100)
+            var badRank = parseInt(c / tal * 100)
+            var goodRank = parseInt(a / tal * 100)
+
+            // 为了避免出现不能达到百分之百的情况,将差值加到好评上
+            goodRank = goodRank + (100 - badRank - betweenRank - goodRank)
                 // 将json的值解析至屏幕
+
             $('.shopCarNum').html(shopCarNum)
+            $('.evaluateNum').html(evaluateNum)
+            $('.evaluateNumGood').html(evaluateNumGood)
+            $('.evaluateNumBetwween').html(evaluateNumBetwween)
+            $('.evaluateNumBad').html(evaluateNumBad)
+            $('.goodRank').html(goodRank + "%")
+            $('.betweenRank').html(betweenRank + "%")
+            $('.badRank').html(badRank + "%")
 
         }
     })
@@ -44,7 +78,11 @@
 // 为文中的样式及文字提供默认显示效果,对应接上了相应的接口,插件在上面
 $(window).pub({
     searchItem: '想啥就啥', // 提供搜索栏的默认显示值
-    shopCarNum: 5 // 提供购物车的数量
+    shopCarNum: 5, // 提供购物车的数量
+    evaluateNum: 999, // 总的评价数
+    evaluateNumGood: 900, // 好评数量
+    evaluateNumBetwween: 40, // 中评数量
+    evaluateNumBad: 59 // 差评数量
 })
 
 // 设置所有图片进行懒加载

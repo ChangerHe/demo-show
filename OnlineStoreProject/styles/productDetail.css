@@ -1,3 +1,20 @@
+/* 段落的标题的公共类 */
+
+.headTitle {
+    height: 40px;
+    border-bottom: 6px solid #ff6600;
+    font-size: 18px;
+}
+
+.headTitle span {
+    font-size: 24px;
+    background: #ff6600;
+    color: #fff;
+    padding: 9px;
+    cursor: pointer;
+}
+
+
 /* header area */
 
 .header .topBar .logo .title1,
@@ -216,4 +233,216 @@
 .rightIntro .priceMsg .totalEvaluate .red {
     color: red;
     font-size: 14px;
+}
+
+.rightIntro .chooseType {
+    margin-top: 16px;
+    padding: 10px;
+    color: #5d5d5d;
+}
+
+.rightIntro .chooseType .chooseTypeLine {
+    height: 88px;
+}
+
+.rightIntro .chooseType .choose {
+    float: left;
+    line-height: 36px;
+    letter-spacing: 2px;
+    font-size: 14px;
+}
+
+.rightIntro .chooseType .simpleVersion,
+.rightIntro .chooseType .delicateVersion {
+    display: block;
+    float: left;
+    width: 89px;
+    height: 32px;
+    border: 2px solid #a6a6a6;
+    text-align: center;
+    line-height: 32px;
+    font-size: 14px;
+    margin-left: 8px;
+    cursor: pointer;
+}
+
+.rightIntro .chooseType .simpleVersion:hover,
+.rightIntro .chooseType .delicateVersion:hover {
+    background: url(../images/icon_shop.png)-128px -473px;
+    border: 2px solid #ff6600;
+}
+
+.rightIntro .chooseType .active {
+    background: url(../images/icon_shop.png)-128px -473px;
+    border: 2px solid #ff6600;
+}
+
+
+/* 计数和加入购物车区域 */
+
+.rightIntro .chooseType .numCount {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    margin-top: 10px;
+    border: 1px solid #a6a6a6;
+    line-height: 40px;
+    text-align: center;
+}
+
+.chooseType .numCount .num {
+    position: absolute;
+    z-index: 999;
+    top: -1px;
+    left: -1px;
+    width: 25px;
+    height: 40px;
+    border: 1px solid #a6a6a6;
+    padding-left: 15px;
+    outline: none;
+}
+
+.chooseType .numCount .num:hover {
+    border: 1px solid #ff6600;
+}
+
+.chooseType .numCount .add,
+.chooseType .numCount .reduce {
+    position: absolute;
+    left: 41px;
+    width: 19px;
+    height: 19px;
+    line-height: 19px;
+    background: #e6e6e6;
+    border: 1px solid #a6a6a6;
+    color: #808080;
+    cursor: pointer;
+}
+
+.chooseType .numCount .add {
+    top: -1px;
+}
+
+.chooseType .numCount .add:hover,
+.chooseType .numCount .reduce:hover {
+    border: 1px solid #ff6600;
+}
+
+.chooseType .numCount .reduce {
+    bottom: -1px;
+}
+
+.chooseType .addToCart {
+    width: 190px;
+    height: 60px;
+    margin-left: 50px;
+    border: none;
+    font-size: 16px;
+    color: #fff;
+    line-height: 60px;
+    text-align: center;
+    border-radius: 4px;
+    background: #ff6600;
+}
+
+.chooseType .remind {
+    margin-top: 80px;
+    color: #808080;
+}
+
+.singleProduct .discountContent {
+    height: 300px;
+}
+
+
+/* seeOverAndOverAgain and produce and evaluate area  */
+
+.productMsg .leftSeeOverAgain {
+    width: 316px;
+    border: 1px solid #e6e6e6;
+}
+
+.productMsg .leftSeeOverAgain .titleMsg {
+    height: 40px;
+    background: #f4f4f4;
+    text-align: center;
+    line-height: 40px;
+}
+
+.productMsg .leftSeeOverAgain .discount {
+    padding: 20px 38px 30px;
+}
+
+.productMsg .produceAndEvaluate {
+    width: 860px;
+}
+
+.produceAndEvaluate .headTitle .notActive {
+    background: #fff;
+    color: #666;
+}
+
+
+/* productMsg右侧的评价区域 */
+
+.productMsg .evaluateBanner .grade {}
+
+.evaluateBanner .grade .evaluateRank {
+    width: 180px;
+    height: 150px;
+    font-size: 50px;
+    color: red;
+    text-align: center;
+}
+
+.evaluateBanner .grade .evaluateRank .goodRank {
+    display: block;
+    margin-top: 30px;
+    font-size: 50px;
+}
+
+.evaluateBanner .grade .evaluateRank .text {
+    display: block;
+    padding-left: 30px;
+    font-size: 14px;
+    color: #666;
+}
+
+.grade .evaluateChart {
+    width: 670px;
+    margin-top: 40px;
+    font-size: 14px;
+    line-height: 32px;
+}
+
+.grade .evaluateChart .chartCon li {
+    position: relative;
+}
+
+.grade .evaluateChart .chartCon li .chart {
+    display: inline-block;
+    margin: 10px 0 0 10px;
+    width: 0px;
+    height: 16px;
+    background: red;
+}
+
+.grade .evaluateChart .chartCon .chart:after {
+    content: '';
+    position: relative;
+    z-index: -1;
+    display: block;
+    width: 150px;
+    height: 16px;
+    background: #ccc;
+}
+
+.grade .evaluateChart .evaluateMenber {
+    width: 400px;
+}
+
+.grade .evaluateChart .evaluateMenber li {
+    float: left;
+    width: 160px;
+    margin: 0 20px;
 }

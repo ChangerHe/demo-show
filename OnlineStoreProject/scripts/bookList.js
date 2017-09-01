@@ -94,6 +94,7 @@ $('.personalProvide span').on('mouseover', function() {
         box.stop(true, false).fadeOut(200)
         box.css('left', -1200 * index + 'px')
         box.stop(true, true).fadeIn(200)
+        line()
     })
     // 下方点点的点击切换效果
 $('.bottomDot span').on('click', function() {
