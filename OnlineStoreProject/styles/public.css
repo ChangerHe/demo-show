@@ -77,6 +77,19 @@ img:hover {
 }
 
 
+/* 星级评分的效果 */
+
+.star {
+    display: block;
+    float: right;
+    margin-right: 96px;
+    width: 100px;
+    height: 16px;
+    overflow: hidden;
+    background: url(../images/star_small.gif) 0px -16px;
+}
+
+
 /* 抽取出来的公共类 */
 
 
@@ -113,16 +126,6 @@ img:hover {
     line-height: 24px;
     padding-left: 10px;
     color: red;
-}
-
-.discountContent .discount .intro .star {
-    display: block;
-    float: right;
-    margin-right: 96px;
-    width: 100px;
-    height: 16px;
-    overflow: hidden;
-    background: url(../images/star_small.gif) 0px -16px;
 }
 
 .discountContent .discount .price {

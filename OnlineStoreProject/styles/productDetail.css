@@ -385,7 +385,9 @@
 
 /* productMsg右侧的评价区域 */
 
-.productMsg .evaluateBanner .grade {}
+.productMsg .evaluateBanner .grade {
+    height: 180px;
+}
 
 .evaluateBanner .grade .evaluateRank {
     width: 180px;
@@ -450,4 +452,70 @@
 
 /* 评价区域 */
 
-.productMsg .evaluateBox .evaluateHead {}
+.productMsg .evaluateBox .evaluateHead {
+    height: 30px;
+    line-height: 30px;
+    background: #f5f5f5;
+}
+
+.productMsg .evaluateBox .evaluateHead a {
+    margin: 0 15px;
+}
+
+.evaluateBox .evaluatedList .memberEvaluate {
+    width: 820px;
+    height: 145px;
+    border-bottom: 2px solid #f5f5f5;
+    padding: 20px;
+    line-height: 20px;
+    color: #acacac;
+}
+
+.evaluatedList .memberEvaluate .time {
+    width: 150px;
+}
+
+.evaluateBox .evaluatedList .star {
+    float: left;
+}
+
+.evaluatedList .memberEvaluate .evaContent {
+    width: 460px;
+}
+
+.evaluatedList .memberEvaluate .evaMemberMsg {
+    width: 130px;
+}
+
+.evaluatedList .memberEvaluate .evaMemberMsg .iconHead {
+    display: block;
+    width: 30px;
+    height: 30px;
+    background: url(../images/icon_shop.png) -320px -410px;
+}
+
+.evaluatedList .memberEvaluate .evaMemberMsg .gold {
+    color: #f4b212;
+}
+
+
+/* 页面的点击跳转下一页效果 */
+
+.evaluatedPage {
+    clear: both;
+    margin-top: 30px;
+}
+
+.evaluatedPage span {
+    display: inline-block;
+    padding: 0px 12px;
+    margin: 4px;
+    border: 1px solid #acacac;
+    line-height: 30px;
+    text-align: center;
+}
+
+.evaluatedPage .active {
+    border: 1px solid #fff;
+    color: #f8380c;
+}
