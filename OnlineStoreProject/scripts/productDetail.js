@@ -42,6 +42,7 @@ $(window).scroll(function() {
         }, 500)
         var a = 0
         var timer
+            // 滚动到相应位置启动定时器,产生数字跳动效果
         timer = setInterval(function() {
             if (a <= goodRankNum) {
                 $('.evaluateRank .goodRank ').html(a++ + '%')

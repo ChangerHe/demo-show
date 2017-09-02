@@ -111,6 +111,9 @@
     color: #ccc;
 }
 
+
+/* 
+这个是使用span的样式
 .registerArea form p .code {
     position: absolute;
     top: 2px;
@@ -123,12 +126,38 @@
     background: #1a83e5;
     text-align: center;
     cursor: pointer;
+} */
+
+
+/* 使用canvas的样式 */
+
+.registerArea form p .code {
+    position: absolute;
+    top: 2px;
+    right: 0px;
 }
 
 .registerArea form p .phoneCode {
+    position: absolute;
+    top: 2px;
+    right: 0px;
+    width: 124px;
+    height: 36px;
     color: #4d4d4d;
     background: #e6e6e6;
     font-size: 16px;
+    line-height: 36px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.registerArea form p .info {
+    position: absolute;
+    top: 0;
+    right: -210px;
+    width: 200px;
+    height: 40px;
+    color: red;
 }
 
 
