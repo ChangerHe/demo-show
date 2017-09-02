@@ -1,0 +1,148 @@
+/* 头部区域 */
+
+.header {
+    margin-bottom: 57px;
+}
+
+.header .topBar .logo {
+    width: 260px;
+    height: 85px;
+}
+
+.header .topBar .logo img {
+    margin: 4px 0 0 20px;
+}
+
+.header .topBar .logo .title2 {
+    width: 100px;
+    margin-left: 44px;
+    top: 26px;
+}
+
+.header .topBar .leftText {
+    margin-left: 300px;
+}
+
+.header .welcome {
+    font-size: 22px;
+    padding: 12px 0 16px 300px;
+    color: #666;
+    box-shadow: 0 2px 4px;
+}
+
+.header .welcome .hasId {
+    font-size: 18px;
+    float: right;
+    padding: 5px 30px 0 0;
+}
+
+.header .welcome .hasId a {
+    font-size: 18px;
+    color: #ff6600;
+}
+
+
+/* register */
+
+.registerArea {
+    margin-top: 80px;
+}
+
+.registerArea form {
+    width: 402px;
+    margin: 0 auto;
+}
+
+.registerArea form p {
+    position: relative;
+    margin-top: 30px;
+    width: 390px;
+    height: 40px;
+    border: 1px solid #d9d9d9;
+    font-size: 18px;
+    color: #666;
+    line-height: 40px;
+    padding-left: 10px;
+}
+
+.registerArea form .dealInfo {
+    font-size: 12px;
+    height: 30px;
+    margin: 0;
+    border: 0;
+}
+
+.registerArea form .dealInfo a {
+    color: #ff6600;
+}
+
+.registerArea form .dealInfo input {
+    float: left;
+    width: 12px;
+    height: 12px;
+    margin: 14px 4px 0 0;
+}
+
+.registerArea form .registSubmit {
+    margin-top: 6px;
+    padding: 0;
+}
+
+.registerArea form .registSubmit input {
+    width: 100%;
+    height: 100%;
+    background: #ff6600;
+    padding: 0;
+    font-size: 24px;
+    text-align: center;
+    color: #fff;
+}
+
+.registerArea form p input {
+    width: 270px;
+    height: 36px;
+    padding-left: 30px;
+    float: right;
+    line-height: 40px;
+    border: none;
+    outline: none;
+    background: #fff;
+    font-size: 14px;
+    color: #ccc;
+}
+
+.registerArea form p .code {
+    position: absolute;
+    top: 2px;
+    right: 0px;
+    width: 124px;
+    height: 36px;
+    font-size: 20px;
+    line-height: 36px;
+    color: #fff;
+    background: #1a83e5;
+    text-align: center;
+    cursor: pointer;
+}
+
+.registerArea form p .phoneCode {
+    color: #4d4d4d;
+    background: #e6e6e6;
+    font-size: 16px;
+}
+
+
+/* 底部信息栏 */
+
+.footLink {
+    color: #333;
+    text-align: center;
+    margin-top: 20px;
+    line-height: 20px;
+    letter-spacing: 1px;
+}
+
+.footLink a {
+    color: #333;
+    padding: 0 10px;
+}

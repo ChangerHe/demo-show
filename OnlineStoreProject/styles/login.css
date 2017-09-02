@@ -1,21 +1,22 @@
 /* 头部区域 */
 
 .header {
-    margin-bottom: 77px;
+    margin-bottom: 57px;
 }
 
 .header .topBar .logo {
     width: 260px;
-    height: 105px;
+    height: 85px;
 }
 
 .header .topBar .logo img {
-    margin: 20px 0 0 20px;
+    margin: 4px 0 0 20px;
 }
 
 .header .topBar .logo .title2 {
     width: 100px;
     margin-left: 44px;
+    top: 26px;
 }
 
 .header .topBar .leftText {
@@ -23,8 +24,8 @@
 }
 
 .header .welcome {
-    font-size: 28px;
-    margin: 17px 0 0 300px;
+    font-size: 22px;
+    padding: 12px 0 16px 300px;
     color: #666;
 }
 
@@ -106,6 +107,17 @@
     width: 290px;
     margin: 8px auto 0;
     display: none;
+    position: relative;
+}
+
+.loginContent .loginCount .clearText {
+    position: absolute;
+    top: 11px;
+    right: 8px;
+    width: 20px;
+    height: 20px;
+    background: url(../images/icon_shop.png) -350px -50px;
+    cursor: pointer;
 }
 
 .loginContent .loginCount input[type=text],
@@ -176,8 +188,10 @@
     text-align: center;
     margin-top: 20px;
     line-height: 20px;
+    letter-spacing: 1px;
 }
 
 .footLink a {
     color: #333;
+    padding: 0 10px;
 }

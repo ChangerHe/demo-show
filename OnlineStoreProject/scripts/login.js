@@ -1,21 +1,18 @@
+// 设置鼠标移入二维码时将二维码移动到左侧,手机的图片显示的效果
 $('.qr').hover(function() {
     $(this).stop(true, false).animate({
         left: '0px'
-    }, 200, function() {
-        $('.scan').stop(true, false).animate({
-            right: '0px',
-            opacity: 1
-        })
+    }).next().stop(true, false).delay(400).animate({
+        right: '0px',
+        opacity: 1
     })
 
 }, function() {
     $('.scan').stop(true, true).animate({
         right: '-20px',
         opacity: 0
-    }, 200, function() {
-        $('.qr').stop(true, true).animate({
-            left: '68px'
-        })
+    }).prev().stop(true, true).delay(400).animate({
+        left: '68px'
     })
 
 })
@@ -38,4 +35,17 @@ $('.countLogin').click(function() {
     $(this).addClass('active')
     $('.loginCount').show()
     $('.loginQRBlock').hide()
+})
+
+$('.id').keyup(function() {
+    if ($(this).val()) {
+        $('.clearText').show()
+    } else {
+        $('.clearText').hide()
+    }
+})
+
+$('.clearText').click(function() {
+    $('.id').val('')
+    $('.clearText').hide()
 })
