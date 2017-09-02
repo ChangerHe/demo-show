@@ -167,3 +167,17 @@
     line-height: 50px;
     background: url(../images/icon_shop.png) -400px -400px no-repeat;
 }
+
+
+/* 底部信息栏 */
+
+.footLink {
+    color: #333;
+    text-align: center;
+    margin-top: 20px;
+    line-height: 20px;
+}
+
+.footLink a {
+    color: #333;
+}
