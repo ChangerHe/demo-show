@@ -17,6 +17,8 @@ $('.qr').hover(function() {
 
 })
 
+
+// 点击上方文字,切换到对应的登陆方式
 $('.qrLogin').click(function() {
     if ($(this).hasClass('active')) {
         return;
@@ -37,6 +39,8 @@ $('.countLogin').click(function() {
     $('.loginQRBlock').hide()
 })
 
+
+// 当键盘抬起时,校验输入框内是否有值
 $('.id').keyup(function() {
     if ($(this).val()) {
         $('.clearText').show()
@@ -45,7 +49,28 @@ $('.id').keyup(function() {
     }
 })
 
+// 点击右侧的叉叉,就删除行内的字符
 $('.clearText').click(function() {
     $('.id').val('')
     $('.clearText').hide()
 })
+
+
+try {
+    // 解析localStorage的值
+    var memberMsg = JSON.parse(localStorage.getItem('username'))
+        // 将取到的值进行定义,方便后面进行校验
+    var username = memberMsg.username
+    var password = memberMsg.password
+        // 设置id输入框的默认值为username
+    $('.id').val(username)
+
+    $('#submitLogin').click(function(e) {
+        if ($('.id').val() != username || $('.password').val() != password) {
+            $('.id,.password').css('border', '1px solid red')
+            e.preventDefault();
+            return false;
+        }
+        alert('登陆成功')
+    })
+} catch (e) {}

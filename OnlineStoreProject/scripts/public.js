@@ -43,14 +43,14 @@
             })
 
             // 对提交的评价数量进行校验,如果校验的总评价数和各评价之和不相等则使用自定义的评价数量,不予修改
-            var tal = opts.evaluateNum, // 提交上来的评论总数
-                a = opts.evaluateNumGood, //提交上来的好评总数
-                b = opts.evaluateNumBetwween, // 提交上来的中评总数
-                c = opts.evaluateNumBad // 提交上来的差评总数
+            var tal = prams.evaluateNum, // 提交上来的评论总数
+                a = prams.evaluateNumGood, //提交上来的好评总数
+                b = prams.evaluateNumBetwween, // 提交上来的中评总数
+                c = prams.evaluateNumBad // 提交上来的差评总数
 
             // 如果出现传入数值不正确的情况,则抛出错误
             if (!(tal == (a + b + c))) {
-                throw new Error('evaluate number is wrong')
+                throw new Error('兄台,你提交的评论总数和评价数有问题啊!')
             }
             // 计算出好评所占的百分比
             var betweenRank = parseInt(b / tal * 100)

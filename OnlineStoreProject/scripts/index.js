@@ -1,3 +1,30 @@
+try {
+    // 解析localStorage的字符串
+    var memberMsg = JSON.parse(localStorage.getItem('username'))
+        // 将取到的值进行定义,方便后面进行校验
+    var username = memberMsg.username
+    var password = memberMsg.password
+    var shopCartNum = memberMsg.itemMsg.length - 1
+} catch (e) {}
+// 如果页面存在了localStorage,则欢迎页面直接显示会员的名称
+if (!!username) {
+    $('.memberInfo').html('<a href="memberCenter.html">' + username + '</a>')
+} else {
+    $('.memberInfo').html('请&nbsp;<a href="login.html">登陆</a>/<a href="register.html">注册</a>')
+}
+
+$(window).pub({
+    searchItem: '想啥就啥', // 提供搜索栏的默认显示值
+    // 如果shopCartNum为空,这里不会抛错,所以不用捕捉
+    shopCarNum: shopCartNum, // 提供购物车的数量
+})
+
+
+
+
+
+
+
 // 整个页面的第二个轮播图,也就是最小到的那个轮播图的效果
 $("#sevenCountBanner,#sevenCountBanner1,#sevenCountBanner2").tyslide({
     boxh: 216, //盒子的高度
