@@ -15,7 +15,7 @@
         pub: function(opts) {
             var defaults = {
                 searchItem: '创意文具',
-                shopCarNum: 5,
+                shopCarNum: 0,
                 evaluateNum: 100,
                 evaluateNumGood: 90,
                 evaluateNumBetwween: 8,

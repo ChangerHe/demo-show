@@ -9,7 +9,7 @@ try {
         // 密码为解析到的密码
     var password = memberMsg.password
         // 购物车的商品数量,为itemMsg的数量减一,因为第0个是之前做的模板
-    var shopCartNum = memberMsg.itemMsg.length - 1
+    var shopCartNum = memberMsg.itemMsg.length
 } catch (e) {}
 // 如果页面存在了localStorage,则欢迎页面直接显示会员的名称
 if (!!username) {
@@ -80,7 +80,7 @@ $('.J_product').click(function(e) {
         // 将memberMsg的itemMsg信息更新,也就是将相应的商品json信息更新
         memberMsg.itemMsg[memberMsg.itemMsg.length] = itemObj
             // 更新页面显示的shopCartNum,也就是购物车中的商品数量
-        shopCartNum = memberMsg.itemMsg.length - 1
+        shopCartNum = memberMsg.itemMsg.length
             // 使用插件更新页面的显示数量,将更新的商品数量增加到页面中
         $(window).pub({
             shopCarNum: shopCartNum // 提供购物车的数量

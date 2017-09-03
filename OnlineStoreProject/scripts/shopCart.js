@@ -37,14 +37,16 @@ console.log(JSON.parse(localStorage.getItem('username')))
 function freashItemList() {
     // 插入数据前,将表格中原有的数据清空
     $('.J_itemContent').html('')
-    var itemMsg = memberMsg.itemMsg
-    for (var i = 0; i < itemMsg.length; i++) {
-        var itemDesc = itemMsg[i].itemDesc
-        var itemImg = itemMsg[i].itemImg
-        var itemName = itemMsg[i].itemName
-        var itemNumber = itemMsg[i].itemNumber
-        var itemPrice = itemMsg[i].itemPrice
-        var listStr = '<ul class="formsContent J_product ">\
+
+    try {
+        var itemMsg = memberMsg.itemMsg
+        for (var i = 0; i < itemMsg.length; i++) {
+            var itemDesc = itemMsg[i].itemDesc
+            var itemImg = itemMsg[i].itemImg
+            var itemName = itemMsg[i].itemName
+            var itemNumber = itemMsg[i].itemNumber
+            var itemPrice = itemMsg[i].itemPrice
+            var listStr = '<ul class="formsContent J_product ">\
 <li class="check"><input class="selector" type="checkbox"></li>\
 <li class="itemMsg"><span class="imgCon"><img class="J_img" src=' + itemImg + ' alt=""></span>\
     <p class="intro J_name"><a href="">' + itemName + '</a></p>\
@@ -55,8 +57,9 @@ function freashItemList() {
 <li class="countPrice">' + itemPrice * itemNumber + '</li>\
 <li class="option"> <a href="">删除</a><br><a href="">移到我的关注</a> </li>\
 </ul>';
-        $('.J_itemContent').append(listStr)
-    }
+            $('.J_itemContent').append(listStr)
+        }
+    } catch (e) {}
 }
 freashItemList()
     // 购物车的逻辑交互区域---------------------------
