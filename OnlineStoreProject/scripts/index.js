@@ -44,7 +44,7 @@ $('.J_product').click(function(e) {
         // 先定义商品的数量
     var itemNumber = 1
         // 解析出商品的价格,因为之后还是要直接转为字符,所以这里就先不转为字符串格式
-    var itemPrice = ($(this).find('.J_price').html()).match(/\d+$/)[0]
+    var itemPrice = ($(this).find('.J_price').html()).match(/\d[\d.]+$/)[0]
         // 如果页面中没有商品的名称,则使用形容的第一句话作为商品名称
         // 因为子元素中没有name的时候,还是会返回一个对象,所以在find后面加上索引,以便找到匹配的值
     if ($(this).find('.J_name')[0]) {
@@ -88,39 +88,9 @@ $('.J_product').click(function(e) {
         memberStr = JSON.stringify(memberMsg)
             // 更新localStorage
         localStorage.setItem('username', memberStr)
-        console.log(localStorage.getItem('username'))
+        console.log(localStorage.getItem(memberMsg))
     } catch (e) {}
 })
-
-// 更新json的内容
-function() {
-    // 如果购物车中已有该商品,则只需要增加该商品的数量即可,不需要重复添加
-    // 所以,我们先循环存在的购物车内商品
-    for (var i in memberMsg.itemMsg) {
-        // 如果会员信息中的商品信息的商品名称和点击到的商品名称相同,则该商品数量加一
-        if (memberMsg.itemMsg[i].itemName == itemName) {
-            console.log(memberMsg)
-            memberMsg.itemMsg[i].itemNumber++;
-            // 因为这里只增加了数量,因此需要更新一下localStorage
-            var memberStr = JSON.stringify(memberMsg)
-            localStorage.setItem('username', memberStr)
-                // 加一后面就不用再写逻辑了,直接返回即可
-            return
-        }
-    }
-    // 将memberMsg的itemMsg信息更新,也就是将相应的商品json信息更新
-    memberMsg.itemMsg[memberMsg.itemMsg.length] = itemObj
-        // 更新页面显示的shopCartNum,也就是购物车中的商品数量
-    shopCartNum = memberMsg.itemMsg.length - 1
-        // 使用插件更新页面的显示数量,将更新的商品数量增加到页面中
-    $(window).pub({
-        shopCarNum: shopCartNum // 提供购物车的数量
-    })
-    memberStr = JSON.stringify(memberMsg)
-        // 更新localStorage
-    localStorage.setItem('username', memberStr)
-    console.log(localStorage.getItem('username'))
-}
 
 
 

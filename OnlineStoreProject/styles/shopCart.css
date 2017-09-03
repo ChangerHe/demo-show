@@ -153,6 +153,11 @@
     text-align: left;
 }
 
+.formsContent .itemNum .warning {
+    display: none;
+    color: red;
+}
+
 
 /* 结算区域 */
 
