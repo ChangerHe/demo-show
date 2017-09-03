@@ -92,6 +92,14 @@
     margin-top: 20px;
 }
 
+.orderForms .itemContent img {
+    cursor: pointer;
+    -webkit-transition: transform 1000s;
+    transition: transform 1000s;
+    -ms-transition: transform 1000s;
+    -o-transition: transform 1000s;
+}
+
 
 /* 为每个订单的ul添加的样式 */
 
@@ -105,6 +113,7 @@
 .formsContent .itemMsg p {
     text-align: left;
     padding-left: 200px;
+    color: #9F9F9F;
 }
 
 .formsContent .itemMsg .imgCon {

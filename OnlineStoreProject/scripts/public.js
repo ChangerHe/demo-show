@@ -22,12 +22,12 @@
                 evaluateNumBad: 2
             }
             var prams = $.extend({}, defaults, opts);
-            var searchItem = prams.searchItem;
-            var shopCarNum = prams.shopCarNum;
-            var evaluateNum = prams.evaluateNum;
-            var evaluateNumGood = prams.evaluateNumGood;
-            var evaluateNumBetwween = prams.evaluateNumBetwween;
-            var evaluateNumBad = prams.evaluateNumBad;
+            searchItem = prams.searchItem;
+            shopCarNum = prams.shopCarNum;
+            evaluateNum = prams.evaluateNum;
+            evaluateNumGood = prams.evaluateNumGood;
+            evaluateNumBetwween = prams.evaluateNumBetwween;
+            evaluateNumBad = prams.evaluateNumBad;
             // 将搜索框的推荐搜索值先显示到页面上
             $('.searchItem input[type=text]').prop('value', searchItem)
                 // 提供相应的点击隐藏效果
