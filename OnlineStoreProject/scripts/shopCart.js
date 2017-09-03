@@ -38,7 +38,7 @@ var freashItemList = function() {
     // 插入数据前,将表格中原有的数据清空
     $('.J_itemContent').html('')
     var itemMsg = memberMsg.itemMsg
-    for (var i = 0; i < itemMsg.length; i++) {
+    for (var i = 1; i < itemMsg.length; i++) {
         var itemDesc = itemMsg[i].itemDesc
         var itemImg = itemMsg[i].itemImg
         var itemName = itemMsg[i].itemName
@@ -51,7 +51,7 @@ var freashItemList = function() {
     <p class="intro J_descripe">' + itemDesc + '</p>\
 </li>\
 <li class="price J_price">' + itemPrice + '</li>\
-<li class="itemNum"><input type="button" class="reduce" value="-"><input type="text" class="msgInput" value="' + itemNumber + '"><input type="button" class="add" value="+"><span class="warning"><br>您输入的数字不合法</span></li>\
+<li class="itemNum"><input type="button" class="reduce" value="-"><input type="text" class="msgInput J_itemShopCartNumber" value="' + itemNumber + '"><input type="button" class="add" value="+"><span class="warning"><br>您输入的数字不合法</span></li>\
 <li class="countPrice">' + itemPrice * itemNumber + '</li>\
 <li class="option"> <a href="">删除</a><br><a href="">移到我的关注</a> </li>\
 </ul>';
@@ -73,7 +73,8 @@ var refreash = function() {
             // 找到商品的图片地址
         var itemImg = $('.J_itemContent .J_product').eq(i).find('.J_img').prop('src')
             // 先定义商品的数量
-        var itemNumber = 1
+        var itemNumber = $('.J_itemContent .J_product').eq(i).find('.J_itemShopCartNumber').val()
+        console.log(itemNumber)
             // 解析出商品的价格,因为之后还是要直接转为字符,所以这里就先不转为字符串格式
         var itemPrice = ($('.J_itemContent .J_product').eq(i).find('.J_price').html()).match(/\d[\d.]+$/)[0]
             // 如果页面中没有商品的名称,则使用形容的第一句话作为商品名称
@@ -106,9 +107,9 @@ var refreash = function() {
     localStorage.setItem('username', memberStr)
         // 重新解析json
     memberMsg = JSON.parse(localStorage.getItem('username'))
-    freashItemList()
+        // freashItemList()
+    console.log(memberMsg)
 }
-refreash()
 
 
 
@@ -126,11 +127,13 @@ $('.reduce').click(function() {
         if (thisItemNum > 1) {
             $(this).next().val(--thisItemNum)
         }
+        refreash()
     })
     // 点击加号,则加一
 $('.add').click(function() {
     var thisItemNum = +$(this).prev().val()
     $(this).prev().val(++thisItemNum)
+    refreash()
 })
 
 // 为商品添加点击后传输数据的效果,并更新到购物车中
@@ -192,4 +195,5 @@ $('.guessULike .J_product').click(function(e) {
         localStorage.setItem('username', memberStr)
         console.log(localStorage.getItem(memberMsg))
     } catch (e) {}
+    refreash()
 })
