@@ -63,8 +63,9 @@ $('.J_product').click(function(e) {
     }
 
     try {
-        // 如果购物车中已有该商品,则只需要增加该商品的数量即可,不需要重复添加
-        // 所以,我们先循环存在的购物车内商品
+        console.log(1)
+            // 如果购物车中已有该商品,则只需要增加该商品的数量即可,不需要重复添加
+            // 所以,我们先循环存在的购物车内商品
         for (var i in memberMsg.itemMsg) {
             // 如果会员信息中的商品信息的商品名称和点击到的商品名称相同,则该商品数量加一
             if (memberMsg.itemMsg[i].itemName == itemName) {

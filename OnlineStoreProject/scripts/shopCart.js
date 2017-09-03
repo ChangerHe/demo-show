@@ -61,6 +61,7 @@ function freashItemList() {
         }
     } catch (e) {}
 }
+// 这里要先执行一下这个函数,因为页面加载的时候商品就要渲染进来
 freashItemList()
     // 购物车的逻辑交互区域---------------------------
 
@@ -87,36 +88,40 @@ var refreash = function() {
             var itemName = itemDesc.match(/(\S+?)(?=[,，])/)[0]
         }
 
-
+        // 定义一个对象,用来接收每个商品的信息
         var itemObj = {
-                itemDesc: itemDesc,
-                itemImg: itemImg,
-                itemName: itemName,
-                itemNumber: itemNumber,
-                itemPrice: itemPrice
-            }
-            // 将数组进行拼接
+            itemDesc: itemDesc,
+            itemImg: itemImg,
+            itemName: itemName,
+            itemNumber: itemNumber,
+            itemPrice: itemPrice
+        }
+
+        // 将对象拼接成数组
         itemArray = itemArray.concat(itemObj)
 
     }
+
     // 将数组插入之前的json中
     memberMsg.itemMsg = itemArray
-        // json转字符串
 
+    // json转字符串
     memberStr = JSON.stringify(memberMsg)
-        // 更新localStorage
 
+    // 更新localStorage
     localStorage.setItem('username', memberStr)
-        // 重新解析json
+
+    // 重新解析json
     memberMsg = JSON.parse(localStorage.getItem('username'))
-    console.log(memberMsg)
+
+    // 执行封装的函数,将页面内容及localStorage的值进行更新
     freashItemList()
 }
 
 
 
 // 设置选择框,全选的效果
-$('.selectAllItem').click(function() {
+$('.orderForms').delegate(".selectAllItem", "click", function() {
     var checkBool = $(this).prop('checked')
     $('.selectAllItem').each(function() {
         $(this).prop('checked', checkBool)
