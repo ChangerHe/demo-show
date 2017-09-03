@@ -11,6 +11,7 @@ try {
         // 购物车的商品数量,为itemMsg的数量减一,因为第0个是之前做的模板
     var shopCartNum = memberMsg.itemMsg.length
 } catch (e) {}
+
 // 如果页面存在了localStorage,则欢迎页面直接显示会员的名称
 if (!!username) {
     // 取到会员信息的区域,写入会员的信息
@@ -30,7 +31,11 @@ $(window).pub({
 console.log(JSON.parse(localStorage.getItem('username')))
 
 // 公共信息更新区域结束------------------------------------------
+// 这里要先执行一下这个函数,因为页面加载的时候商品就要渲染进来
+freashItemList()
 
+// 因为出现了刷新之后金额归零的情况,所以这里将页面金额改变的函数进行一次执行
+cartPageNum()
 
 // 这里将解析的字符串进行循环,取出相应的值
 // 取到商品的数组
@@ -64,14 +69,13 @@ function freashItemList() {
         }
     } catch (e) {}
 }
-// 这里要先执行一下这个函数,因为页面加载的时候商品就要渲染进来
-freashItemList()
-    // 购物车的逻辑交互区域---------------------------
+
+// 购物车的逻辑交互区域---------------------------
 
 
 
 // 更新整个商品列表,主要的作用是取出购物车中的商品,然后将商品的数据转为json,后再将json进行解析,插回去
-var refreash = function() {
+function refreash() {
     var itemArray = [];
     // 找到商品descripe的值
     for (var i = 0; i < $('.J_itemContent .J_product').length; i++) {
@@ -88,9 +92,9 @@ var refreash = function() {
 
         // 因为出现了点击加减之后,选择框会自动取消选中,导致总金额马上归零的情况,所以这里再额外增加一个键值对,存储是否被选中
         var checkNow = $('.J_itemContent .J_product').eq(i).find('.selector').prop('checked')
-        console.log(checkNow)
-            // 如果页面中没有商品的名称,则使用形容的第一句话作为商品名称
-            // 因为子元素中没有name的时候,还是会返回一个对象,所以在find后面加上索引,以便找到匹配的值
+
+        // 如果页面中没有商品的名称,则使用形容的第一句话作为商品名称
+        // 因为子元素中没有name的时候,还是会返回一个对象,所以在find后面加上索引,以便找到匹配的值
         if ($('.J_itemContent .J_product').eq(i).find('.J_name')[0]) {
             var itemName = $('.J_itemContent .J_product').eq(i).find('.J_name').html()
         } else {
@@ -211,6 +215,7 @@ function cartPageNum() {
     })
 }
 
+
 // 为商品添加点击后传输数据的效果,并更新到购物车中
 $('.guessULike .J_product').click(function(e) {
 
@@ -248,7 +253,6 @@ $('.guessULike .J_product').click(function(e) {
         for (var i in memberMsg.itemMsg) {
             // 如果会员信息中的商品信息的商品名称和点击到的商品名称相同,则该商品数量加一
             if (memberMsg.itemMsg[i].itemName == itemName) {
-                console.log(memberMsg.itemMsg)
                 memberMsg.itemMsg[i].itemNumber++;
                 // 因为这里只增加了数量,因此需要更新一下localStorage
                 var memberStr = JSON.stringify(memberMsg)
@@ -257,18 +261,24 @@ $('.guessULike .J_product').click(function(e) {
                 return
             }
         }
+
         // 将memberMsg的itemMsg信息更新,也就是将相应的商品json信息更新
         memberMsg.itemMsg[memberMsg.itemMsg.length] = itemObj
-            // 更新页面显示的shopCartNum,也就是购物车中的商品数量
-        shopCartNum = memberMsg.itemMsg.length - 1
-            // 使用插件更新页面的显示数量,将更新的商品数量增加到页面中
+
+        // 更新页面显示的shopCartNum,也就是购物车中的商品数量
+        shopCartNum = memberMsg.itemMsg.length
+
+        // 使用插件更新页面的显示数量,将更新的商品数量增加到页面中
         $(window).pub({
             shopCarNum: shopCartNum // 提供购物车的数量
         })
         memberStr = JSON.stringify(memberMsg)
+        console.log(memberStr)
             // 更新localStorage
         localStorage.setItem('username', memberStr)
         console.log(localStorage.getItem(memberMsg))
     } catch (e) {}
-    refreash()
+
+    // 这里不需要读取出购物车列表的值,所以直接将json值渲染到页面即可
+    freashItemList()
 })
