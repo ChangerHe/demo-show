@@ -51,7 +51,7 @@ $('.J_product').click(function(e) {
     if ($(this).find('.J_name')[0]) {
         var itemName = $(this).find('.J_name').html()
     } else {
-        var itemName = itemDesc.match(/\S+(?=[,，])/)[0]
+        var itemName = itemDesc.match(/(\S+?)(?=[,，])/)[0]
     }
 
 
@@ -69,8 +69,12 @@ $('.J_product').click(function(e) {
     for (var i in memberMsg.itemMsg) {
         // 如果会员信息中的商品信息的商品名称和点击到的商品名称相同,则该商品数量加一
         if (memberMsg.itemMsg[i].itemName == itemName) {
+            console.log(memberMsg)
             memberMsg.itemMsg[i].itemNumber++;
-            // 加一后面就不用再写逻辑了,直接返回即可
+            // 因为这里只增加了数量,因此需要更新一下localStorage
+            var memberStr = JSON.stringify(memberMsg)
+            localStorage.setItem('username', memberStr)
+                // 加一后面就不用再写逻辑了,直接返回即可
             return
         }
     }
@@ -82,7 +86,7 @@ $('.J_product').click(function(e) {
     $(window).pub({
         shopCarNum: shopCartNum // 提供购物车的数量
     })
-    var memberStr = JSON.stringify(memberMsg)
+    memberStr = JSON.stringify(memberMsg)
         // 更新localStorage
     localStorage.setItem('username', memberStr)
     console.log(localStorage.getItem('username'))
