@@ -35,10 +35,11 @@
 
 .orderForms {}
 
-.orderForms .remind {
-    font-size: 16px;
+.orderForms .remind,
+.orderForms .remind .shopCarNum {
+    font-size: 24px;
     padding: 6px;
-    color: #878787;
+    color: #ff6600;
 }
 
 .orderForms .formsHead {
@@ -71,6 +72,12 @@
 .orderForms .itemNum,
 .orderForms .totalItemNum {
     width: 140px;
+}
+
+.orderForms .totalItemNum .selectedTotalNum {
+    font-size: 18px;
+    color: #ff6600;
+    padding: 0 6px;
 }
 
 .orderForms .countPrice,

@@ -52,9 +52,9 @@ function freashItemList() {
     <p class="intro J_name"><a href="">' + itemName + '</a></p>\
     <p class="intro J_descripe">' + itemDesc + '</p>\
 </li>\
-<li class="price J_price">' + itemPrice + '</li>\
+<li class="price J_price">' + parseFloat(itemPrice).toFixed(2) + '</li>\
 <li class="itemNum"><input type="button" class="reduce" value="-"><input type="text" class="msgInput J_itemShopCartNumber" value="' + itemNumber + '"><input type="button" class="add" value="+"><span class="warning"><br>您输入的数字不合法</span></li>\
-<li class="countPrice">' + itemPrice * itemNumber + '</li>\
+<li class="countPrice">&yen; : ' + parseFloat(itemPrice * itemNumber).toFixed(2) + '</li>\
 <li class="option"> <a href="">删除</a><br><a href="">移到我的关注</a> </li>\
 </ul>';
             $('.J_itemContent').append(listStr)
@@ -145,6 +145,33 @@ $('.J_itemContent').delegate(".add", "click", function() {
     console.log(memberMsg)
     refreash()
 })
+
+// 删除选中商品
+$('.deleteSelected').click(function(e) {
+    for (var i in $('.formsContent')) {
+        if ($('.formsContent').eq(i).find('.selector').is(':checked')) {
+            $('.formsContent').eq(i).remove()
+        }
+    }
+    refreash()
+})
+
+// 整体页面效果改变的封装
+function cartPageNum() {
+    var selectNum = 0,
+        totalPrice = 0;
+    $('.formsContent').each(function() {
+        if ($(this).find('.selector').is(':checked')) {
+            // 如果多选框被选中,则selectNum加一
+            selectNum++
+            // 总价是所有的选中元素的价格和的相加
+            totalPrice += parseFloat($(this).find('.countPrice').val().match(/\d[\d.]+$/)[0])
+        }
+
+    })
+    $('.selectedTotalNum').text(selectNum)
+    $('.totalCountPrice').html('&yen;' + totalPrice)
+}
 
 // 为商品添加点击后传输数据的效果,并更新到购物车中
 $('.guessULike .J_product').click(function(e) {
