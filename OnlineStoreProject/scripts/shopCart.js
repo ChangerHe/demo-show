@@ -46,10 +46,13 @@ function freashItemList() {
             var itemName = itemMsg[i].itemName
             var itemNumber = itemMsg[i].itemNumber
             var itemPrice = itemMsg[i].itemPrice
+
+            // 经过测试,checked为false的时候,仍旧会显示为选中状态,所以这里做一个三目判断
+            var checkNow = itemMsg[i].checkNow ? 'checked = ""' : "";
             var listStr = '<ul class="formsContent J_product ">\
-<li class="check"><input class="selector" type="checkbox"></li>\
+<li class="check"><input class="selector" type="checkbox" ' + checkNow + '></li>\
 <li class="itemMsg"><span class="imgCon"><img class="J_img" src=' + itemImg + ' alt=""></span>\
-    <p class="intro J_name"><a href="">' + itemName + '</a></p>\
+    <p class="intro J_name">' + itemName + '</p>\
     <p class="intro J_descripe">' + itemDesc + '</p>\
 </li>\
 <li class="price J_price">' + parseFloat(itemPrice).toFixed(2) + '</li>\
@@ -71,15 +74,21 @@ freashItemList()
 var refreash = function() {
     var itemArray = [];
     // 找到商品descripe的值
-    console.log($('.J_itemContent .J_product').length)
     for (var i = 0; i < $('.J_itemContent .J_product').length; i++) {
         var itemDesc = $('.J_itemContent .J_product').eq(i).find('.J_descripe').html()
-            // 找到商品的图片地址
+
+        // 找到商品的图片地址
         var itemImg = $('.J_itemContent .J_product').eq(i).find('.J_img').prop('src')
-            // 先定义商品的数量
+
+        // 先定义商品的数量
         var itemNumber = $('.J_itemContent .J_product').eq(i).find('.J_itemShopCartNumber').val()
-            // 解析出商品的价格,因为之后还是要直接转为字符,所以这里就先不转为字符串格式
+
+        // 解析出商品的价格,因为之后还是要直接转为字符,所以这里就先不转为字符串格式
         var itemPrice = ($('.J_itemContent .J_product').eq(i).find('.J_price').html()).match(/\d[\d.]+$/)[0]
+
+        // 因为出现了点击加减之后,选择框会自动取消选中,导致总金额马上归零的情况,所以这里再额外增加一个键值对,存储是否被选中
+        var checkNow = $('.J_itemContent .J_product').eq(i).find('.selector').prop('checked')
+        console.log(checkNow)
             // 如果页面中没有商品的名称,则使用形容的第一句话作为商品名称
             // 因为子元素中没有name的时候,还是会返回一个对象,所以在find后面加上索引,以便找到匹配的值
         if ($('.J_itemContent .J_product').eq(i).find('.J_name')[0]) {
@@ -94,7 +103,8 @@ var refreash = function() {
             itemImg: itemImg,
             itemName: itemName,
             itemNumber: itemNumber,
-            itemPrice: itemPrice
+            itemPrice: itemPrice,
+            checkNow: checkNow
         }
 
         // 将对象拼接成数组
@@ -194,6 +204,11 @@ function cartPageNum() {
     }
     $('.selectedTotalNum').text(selectNum)
     $('.totalCountPrice').html('&yen; : ' + totalPrice.toFixed(2))
+
+    // 通过插件刷新页面的购物车商品数量
+    $(window).pub({
+        shopCarNum: $('.formsContent').length // 提供购物车的数量
+    })
 }
 
 // 为商品添加点击后传输数据的效果,并更新到购物车中
@@ -218,7 +233,7 @@ $('.guessULike .J_product').click(function(e) {
         var itemName = itemDesc.match(/(\S+?)(?=[,，])/)[0]
     }
 
-
+    // 定义一个对象,存储相应的值
     var itemObj = {
         itemDesc: itemDesc,
         itemImg: itemImg,
@@ -233,7 +248,7 @@ $('.guessULike .J_product').click(function(e) {
         for (var i in memberMsg.itemMsg) {
             // 如果会员信息中的商品信息的商品名称和点击到的商品名称相同,则该商品数量加一
             if (memberMsg.itemMsg[i].itemName == itemName) {
-                console.log(memberMsg)
+                console.log(memberMsg.itemMsg)
                 memberMsg.itemMsg[i].itemNumber++;
                 // 因为这里只增加了数量,因此需要更新一下localStorage
                 var memberStr = JSON.stringify(memberMsg)
