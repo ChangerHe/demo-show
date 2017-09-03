@@ -9,7 +9,7 @@ try {
         // 密码为解析到的密码
     var password = memberMsg.password
         // 购物车的商品数量,为itemMsg的数量减一,因为第0个是之前做的模板
-    var shopCartNum = memberMsg.itemMsg.length - 1
+    var shopCartNum = memberMsg.itemMsg.length
 } catch (e) {}
 // 如果页面存在了localStorage,则欢迎页面直接显示会员的名称
 if (!!username) {
@@ -34,11 +34,11 @@ console.log(JSON.parse(localStorage.getItem('username')))
 
 // 这里将解析的字符串进行循环,取出相应的值
 // 取到商品的数组
-var freashItemList = function() {
+function freashItemList() {
     // 插入数据前,将表格中原有的数据清空
     $('.J_itemContent').html('')
     var itemMsg = memberMsg.itemMsg
-    for (var i = 1; i < itemMsg.length; i++) {
+    for (var i = 0; i < itemMsg.length; i++) {
         var itemDesc = itemMsg[i].itemDesc
         var itemImg = itemMsg[i].itemImg
         var itemName = itemMsg[i].itemName
@@ -74,7 +74,6 @@ var refreash = function() {
         var itemImg = $('.J_itemContent .J_product').eq(i).find('.J_img').prop('src')
             // 先定义商品的数量
         var itemNumber = $('.J_itemContent .J_product').eq(i).find('.J_itemShopCartNumber').val()
-        console.log(itemNumber)
             // 解析出商品的价格,因为之后还是要直接转为字符,所以这里就先不转为字符串格式
         var itemPrice = ($('.J_itemContent .J_product').eq(i).find('.J_price').html()).match(/\d[\d.]+$/)[0]
             // 如果页面中没有商品的名称,则使用形容的第一句话作为商品名称
@@ -107,32 +106,35 @@ var refreash = function() {
     localStorage.setItem('username', memberStr)
         // 重新解析json
     memberMsg = JSON.parse(localStorage.getItem('username'))
-        // freashItemList()
     console.log(memberMsg)
+    freashItemList()
 }
 
 
 
 // 设置选择框,全选的效果
 $('.selectAllItem').click(function() {
-        var checkBool = $(this).prop('checked')
-        $('.selectAllItem').each(function() {
-            $(this).prop('checked', checkBool)
-        })
-        $('.selector').prop('checked', checkBool)
+    var checkBool = $(this).prop('checked')
+    $('.selectAllItem').each(function() {
+        $(this).prop('checked', checkBool)
     })
-    // 点击减号,则减一
-$('.reduce').click(function() {
-        var thisItemNum = +$(this).next().val()
-        if (thisItemNum > 1) {
-            $(this).next().val(--thisItemNum)
-        }
-        refreash()
-    })
-    // 点击加号,则加一
-$('.add').click(function() {
+    $('.selector').prop('checked', checkBool)
+})
+
+// 点击减号,则减一
+$('.J_itemContent').delegate(".reduce", "click", function() {
+    var thisItemNum = +$(this).next().val()
+    if (thisItemNum > 1) {
+        $(this).next().val(--thisItemNum)
+    }
+    refreash()
+})
+
+// 点击加号,则加一
+$('.J_itemContent').delegate(".add", "click", function() {
     var thisItemNum = +$(this).prev().val()
     $(this).prev().val(++thisItemNum)
+    console.log(memberMsg)
     refreash()
 })
 

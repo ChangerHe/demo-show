@@ -130,13 +130,7 @@ $('#submitBar').click(function(e) {
             username: username,
             password: password,
             phoneNum: phoneNum,
-            itemMsg: [{
-                itemName: '',
-                itemNumber: '',
-                itemDesc: '',
-                itemPrice: '',
-                itemImg: ''
-            }],
+            itemMsg: {},
             sendAddress: ''
         };
         var jsonObj = JSON.stringify(memberMsg);
