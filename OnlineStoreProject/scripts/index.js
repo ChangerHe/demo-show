@@ -22,7 +22,6 @@ if (!!username) {
 
 // 使用自己写的插件对首页的内容进行统一的更改插件,主要还是起到初始化的作用,后面添加商品的时候再进行更新
 $(window).pub({
-    searchItem: '想啥就啥', // 提供搜索栏的默认显示值
     // 如果shopCartNum为空,这里不会抛错,所以不用捕捉
     shopCarNum: shopCartNum, // 提供购物车的数量
 })

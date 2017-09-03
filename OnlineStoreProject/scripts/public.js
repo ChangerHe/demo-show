@@ -22,27 +22,27 @@
                 evaluateNumBad: 2
             }
             var prams = $.extend({}, defaults, opts);
-            var searchText = prams.searchItem;
+            var searchItem = prams.searchItem;
             var shopCarNum = prams.shopCarNum;
             var evaluateNum = prams.evaluateNum;
             var evaluateNumGood = prams.evaluateNumGood;
             var evaluateNumBetwween = prams.evaluateNumBetwween;
             var evaluateNumBad = prams.evaluateNumBad;
-            // 将值先显示到页面上
-            $('.shopCarNum input[type=text]').prop('value', searchText)
+            // 将搜索框的推荐搜索值先显示到页面上
+            $('.searchItem input[type=text]').prop('value', searchItem)
                 // 提供相应的点击隐藏效果
             $('.searchItem input[type=text]').focus(function() {
-                if ($(this).prop('value') == searchText) {
+                if ($(this).prop('value') == searchItem) {
                     $(this).prop('value', '')
                 }
             })
             $('.searchItem input[type=text]').blur(function() {
                 if ($(this).prop('value') == '') {
-                    $(this).prop('value', searchText)
+                    $(this).prop('value', searchItem)
                 }
             })
 
-            // 对提交的评价数量进行校验,如果校验的总评价数和各评价之和不相等则使用自定义的评价数量,不予修改
+            // 商品详情页面中对提交的评价数量进行校验,如果校验的总评价数和各评价之和不相等则使用自定义的评价数量,不予修改
             var tal = prams.evaluateNum, // 提交上来的评论总数
                 a = prams.evaluateNumGood, //提交上来的好评总数
                 b = prams.evaluateNumBetwween, // 提交上来的中评总数
