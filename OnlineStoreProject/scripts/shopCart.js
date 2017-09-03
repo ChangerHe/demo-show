@@ -55,7 +55,7 @@ function freashItemList() {
 <li class="price J_price">' + parseFloat(itemPrice).toFixed(2) + '</li>\
 <li class="itemNum"><input type="button" class="reduce" value="-"><input type="text" class="msgInput J_itemShopCartNumber" value="' + itemNumber + '"><input type="button" class="add" value="+"><span class="warning"><br>您输入的数字不合法</span></li>\
 <li class="countPrice">&yen; : ' + parseFloat(itemPrice * itemNumber).toFixed(2) + '</li>\
-<li class="option"> <a href="">删除</a><br><a href="">移到我的关注</a> </li>\
+<li class="option"> <a class="deleteThisItem" href="javascript:void(0)">删除</a><br><a href="javascript:void(0)">移到我的关注</a> </li>\
 </ul>';
             $('.J_itemContent').append(listStr)
         }
@@ -127,6 +127,7 @@ $('.orderForms').delegate(".selectAllItem", "click", function() {
         $(this).prop('checked', checkBool)
     })
     $('.selector').prop('checked', checkBool)
+    cartPageNum()
 })
 
 // 点击减号,则减一
@@ -136,6 +137,7 @@ $('.J_itemContent').delegate(".reduce", "click", function() {
         $(this).next().val(--thisItemNum)
     }
     refreash()
+    cartPageNum()
 })
 
 // 点击加号,则加一
@@ -144,33 +146,54 @@ $('.J_itemContent').delegate(".add", "click", function() {
     $(this).prev().val(++thisItemNum)
     console.log(memberMsg)
     refreash()
+    cartPageNum()
 })
 
 // 删除选中商品
 $('.deleteSelected').click(function(e) {
+    if (!confirm('确定删除选中商品吗?')) {
+        return
+    }
     for (var i in $('.formsContent')) {
         if ($('.formsContent').eq(i).find('.selector').is(':checked')) {
             $('.formsContent').eq(i).remove()
         }
     }
     refreash()
+    cartPageNum()
+})
+
+// 删除单个商品
+$('.J_itemContent').delegate(".deleteThisItem", "click", function() {
+    if (!confirm('确定删除此商品?')) {
+        return
+    }
+    $(this).parent().parent().remove()
+    refreash()
+    cartPageNum()
+})
+
+// 使用多选框选中商品时,相应的下面的值也要改变
+$('.J_itemContent').delegate(".selector", "click", function() {
+    if ($(this).prop('checked')) {
+        cartPageNum()
+    }
 })
 
 // 整体页面效果改变的封装
 function cartPageNum() {
     var selectNum = 0,
         totalPrice = 0;
-    $('.formsContent').each(function() {
-        if ($(this).find('.selector').is(':checked')) {
+    for (var i = 0; i < $('.formsContent').length; i++) {
+        if ($('.formsContent').eq(i).find('.selector').is(':checked')) {
             // 如果多选框被选中,则selectNum加一
             selectNum++
             // 总价是所有的选中元素的价格和的相加
-            totalPrice += parseFloat($(this).find('.countPrice').val().match(/\d[\d.]+$/)[0])
+            totalPrice += parseFloat($('.formsContent').eq(i).find('.countPrice').text().match(/\d[\d.]+$/)[0])
         }
-
-    })
+    }
     $('.selectedTotalNum').text(selectNum)
-    $('.totalCountPrice').html('&yen;' + totalPrice)
+    $('.totalCountPrice').html('&yen; : ' + totalPrice.toFixed(2))
 }
 
 // 为商品添加点击后传输数据的效果,并更新到购物车中
