@@ -98,7 +98,7 @@ function refreash() {
         if ($('.J_itemContent .J_product').eq(i).find('.J_name')[0]) {
             var itemName = $('.J_itemContent .J_product').eq(i).find('.J_name').html()
         } else {
-            var itemName = itemDesc.match(/(\S+?)(?=[,，])/)[0]
+            var itemName = itemDesc.match(/(\S+?)(?=[,， ])/)[0]
         }
 
         // 定义一个对象,用来接收每个商品的信息

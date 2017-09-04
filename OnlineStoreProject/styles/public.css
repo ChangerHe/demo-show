@@ -52,6 +52,14 @@ a:hover {
 }
 
 
+/* 因为调整了价格,价格上面加了个span导致字体归为12px,所以这里加一个类 */
+
+.J_price {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+
 /* 为所有图片设置轻微挪动的效果 */
 
 img {
@@ -768,4 +776,62 @@ img:hover {
     float: left;
     border: 1px solid #ff6600;
     background: #ff6600 url(../images/icon_shop.png) -191px -6px;
+}
+
+
+/* 右侧的领券中心效果 */
+
+.rightFloor {
+    position: fixed;
+    z-index: 999;
+    top: 200px;
+    right: 0;
+    width: 40px;
+    height: 180px;
+    background: #ccc;
+    cursor: pointer;
+}
+
+.rightFloor .ticket {
+    width: 40px;
+    height: 40px;
+    background: #ffdb0d url(../images/icon_shop.png) -201px -188px;
+}
+
+.rightFloor .discount {
+    position: relative;
+    width: 40px;
+    height: 100px;
+    background: #ff6600;
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.rightFloor .discount span {
+    z-index: -1;
+    position: absolute;
+    top: 0px;
+    right: -60px;
+    width: 100px;
+    height: 100px;
+    background: #ff6600 url(../images/code.png) no-repeat center center;
+}
+
+.rightFloor .shopCart {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    background: #666 url(../images/icon_shop.png) -296px -2px;
+}
+
+.rightFloor .shopCart span {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    text-align: center;
+    color: #fff;
+    border-radius: 50%;
+    background: #ff1e00;
 }
