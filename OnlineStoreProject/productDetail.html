@@ -22,11 +22,11 @@
                     <span class="title2">读好书</span>
                 </div>
                 <span class="leftText">legochina.cn</span>
-                <span class="rightText">欢迎光临<a href="">乐购</a>,请&nbsp;<a href="">登陆</a>/<a href="">注册</a></span>
+                <span class="rightText">欢迎光临<a href="">乐购</a>,<span class="memberInfo">请&nbsp;<a href="login.html">登陆</a>/<a href="register.html">注册</a></span></span>
             </div>
             <div class="search">
                 <div class=" fr"><a href="">我的订单</a></div>
-                <div class="active fr"><a href="">购物车 <span class="shopCarNum"></span></a></div>
+                <div class="active fr"><a href="shopCart.html">购物车 <span class="shopCarNum"></span></a></div>
                 <form action="" class="searchItem">
                     <input type="submit" class="fr" value="">
                     <input type="text" class="fr" value="">
@@ -1547,7 +1547,7 @@
             <span class="bigFont"><a href="">图书</a></span>&gt;<a href="">小说</a> &gt; <a href="">情感/家庭/婚姻</a> &gt; <a href="">博集天卷</a> &gt; 他和她
         </div>
         <!-- 图书详情页 -->
-        <div class="width1200 bookIntroContent">
+        <div class="width1200 bookIntroContent J_product">
             <div class="sidePic fl">
                 <div class="bigPic">
                     <img src="images/taheta.jpg" alt="">
@@ -1555,21 +1555,21 @@
                 <div class="btnPic">
                     <!-- 下方的书籍小图片 -->
                     <span class="leftArrow"></span>
-                    <span class="books"><img src="images/taheta2.jpg" alt=""></span>
+                    <span class="books"><img  class="J_img" src="images/taheta2.jpg" alt=""></span>
                     <span class="books"><img src="images/taheta1.jpg" alt=""></span>
                     <span class="rightArrow"></span>
                     <p>商品编号:11950959</p>
                 </div>
             </div>
-            <div class="rightIntro fr">
+            <div class="rightIntro fr ">
                 <!-- 书籍的标题 -->
-                <p class="bookTitle">他和她</p>
-                <p class="bookDescribe">《偷影子的人》作者马克·李维重磅新作，法国连续60周在榜，销量突破120万册</p>
+                <p class="bookTitle J_name">他和她</p>
+                <p class="bookDescribe J_descripe">《偷影子的人》作者马克·李维重磅新作，法国连续60周在榜，销量突破120万册</p>
                 <p class="author">[法] 马克·李维 著；杨亦雨 译</p>
                 <!-- 价格的信息 -->
                 <div class="priceMsg">
                     <p class="totalEvaluate"> <a href="">累计评价<br> <span class="red evaluateNum">999999</span> </a> </p>
-                    <p class="price">乐&nbsp;购&nbsp;价: &nbsp;&yen;<span class="truePrice">26.20</span>&nbsp;[6.9折]&nbsp;[定价:&yen; <span class="priceBefore">38.00</span> ]&nbsp;(降价通知)</p>
+                    <p class="price">乐&nbsp;购&nbsp;价: &nbsp;&yen;<span class="truePrice J_price">26.20</span>&nbsp;[6.9折]&nbsp;[定价:&yen; <span class="priceBefore">38.00</span> ]&nbsp;(降价通知)</p>
                     <p class="discountMsg">促销信息：<span class="red">满减 每满150.00元，可减50.00元现金</span> <a href="">详情 &gt;&gt;</a> </p>
                     <p class="getTicket"> <span class="title">领&nbsp;券:</span> <a href=""><span class="ticket"></span></a>
                         <a href=""> <span class="ticket"></span></a>
@@ -1584,7 +1584,7 @@
                     <div class="numCount fl">
                         <input type="text" class="num" value='1'><span class="add">+</span><span class="reduce">-</span>
                     </div>
-                    <input type="button" class="addToCart fl" value="加入购物车">
+                    <input type="button" class="addToCart fl J_addToCart" value="加入购物车">
                     <p class="remind">温馨提示：支持7天无理由退货</p>
                 </div>
             </div>
@@ -1980,6 +1980,20 @@
                 <p>&copy;Copyright (C) 乐购网 2004-2016, All Rights Reserved</p>
             </div>
         </div>
+    </div>
+    <!-- rightFloor -->
+    <div class="rightFloor">
+        <ul>
+            <li class="ticket"></li>
+            <li class="discount">领<br>券<br>中<br>心<br>
+                <span></span>
+            </li>
+            <a href="shopCart.html">
+                <li class="shopCart">
+                    <span class="shopCarNum"></span>
+                </li>
+            </a>
+        </ul>
     </div>
     <!-- 顶部悬停搜索条 -->
     <div class="searchFxedBar allWidth">
