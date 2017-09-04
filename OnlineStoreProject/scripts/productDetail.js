@@ -123,7 +123,7 @@ $('.simpleVersion,.delicateVersion').click(function() {
     $(this).addClass('active').siblings().removeClass('active')
 })
 
-// 为商品的数量添加点击增加和减少的效果
+// 为商品的数量添加点击增加和减少的效果-----------
 // 点击减号,则减一
 $(".reduce").on("click", function(e) {
     var thisItemNum = +$(this).prev().prev().val()
@@ -149,7 +149,15 @@ $('.num').on('keyup', function() {
     }
 })
 
-// 滚动到对应位置数字跳动的效果
+// 商品详情和评价页面的切换效果
+$('.produceAndEvaluate .headTitle').find('span').click(function() {
+    $(this).removeClass('notActive').siblings().addClass('notActive')
+    console.log($(this).index())
+    $('.evaluateBanner').hide()
+    $('.evaluateBanner').eq($(this).index()).show()
+})
+
+// 滚动到对应位置数字跳动的效果--------------------
 var isExecute = 0
 $(window).scroll(function() {
     // 将window的scroll值存储为变量

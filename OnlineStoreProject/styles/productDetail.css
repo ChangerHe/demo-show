@@ -382,6 +382,10 @@
     color: #666;
 }
 
+.produceAndEvaluate .evaluateNum {
+    font-size: inherit;
+}
+
 
 /* productMsg右侧的评价区域 */
 
