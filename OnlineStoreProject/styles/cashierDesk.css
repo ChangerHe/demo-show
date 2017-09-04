@@ -1,0 +1,238 @@
+/* 整体字体风格不变,均为#666,因此直接统一设置 */
+
+.sendTo {
+    color: #666;
+}
+
+
+/* 头部区域 */
+
+.header {
+    margin-bottom: 100px;
+}
+
+.header .topBar .logo {
+    width: 260px;
+    height: 105px;
+}
+
+.header .topBar .logo img {
+    margin: 20px 0 0 20px;
+}
+
+.header .topBar .logo .title2 {
+    width: 100px;
+    margin-left: 44px;
+}
+
+.header .topBar .leftText {
+    margin-left: 300px;
+}
+
+.header .distribution {
+    margin: 100px 0 0 1000px;
+    color: #878787;
+    outline: none;
+}
+
+.header .distribution select {
+    outline: none;
+}
+
+
+/* 填写信息 */
+
+.confirm {
+    font-size: 18px;
+}
+
+
+/* 公用的头部信息区块 */
+
+.headMsgBlock {
+    height: 60px;
+    background: #f2f2f2;
+    line-height: 60px;
+}
+
+.headMsgBlock span {
+    padding: 0 10px;
+}
+
+.headMsgBlock a {
+    float: right;
+    padding: 0 10px;
+    color: #1080e9;
+}
+
+.payMethod {
+    height: 40px;
+    padding: 10px 0;
+}
+
+.payMethod .legoPay {
+    display: inline-block;
+    padding: 0 10px;
+    width: 150px;
+    height: 40px;
+    line-height: 40px;
+    margin-right: 20px;
+    font-size: 20px;
+    text-align: center;
+    background: #ff6600;
+    color: #fff;
+}
+
+
+/* 应付金额 */
+
+.needToPay {
+    font-size: 20px;
+}
+
+.needToPay .totalPrice {
+    color: #ff6600;
+    font-size: 20px;
+}
+
+
+/* 支付银行 */
+
+.payBank {
+    height: 250px;
+}
+
+.payBank .headMsgBlock {
+    padding: 30px 0;
+}
+
+.payBank .headMsgBlock .card {
+    display: block;
+    float: left;
+    width: 120px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    margin: 0 0 0 20px;
+    border: 2px solid #ff6600;
+    background: url(../images/icon_shop.png) -97px -475px;
+}
+
+.payBank .headMsgBlock .zsBank {
+    display: block;
+    float: left;
+    height: 30px;
+    width: 250px;
+    text-align: center;
+    line-height: 30px;
+    border: 2px solid #ccc;
+    margin-left: 30px;
+}
+
+.headMsgBlock .zsBank .spendBefore {
+    color: #ccc;
+}
+
+.payBank .headMsgBlock .addCard {
+    display: block;
+    float: left;
+    height: 30px;
+    width: 120px;
+    background: #999;
+    color: #fff;
+    text-align: center;
+    line-height: 30px;
+    margin-left: 30px;
+}
+
+.payBank .payNow {
+    width: 220px;
+    height: 60px;
+    border: none;
+    float: right;
+    border-radius: 8px;
+    margin: 10px 0;
+    font-size: 24px;
+    text-align: center;
+    line-height: 60px;
+    background: #ff6600;
+    color: #fff;
+}
+
+
+/* 其他支付使用了上面支付方式的效果 */
+
+.payBank .legoPay {
+    margin-top: 50px;
+    background: #76aff5;
+}
+
+
+/* 页面蒙层 */
+
+.fillAllPage {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, .4);
+}
+
+.outWindow {
+    position: fixed;
+    width: 470px;
+    height: 280px;
+    background: #fff;
+    box-shadow: 2px 2px 4px;
+}
+
+.outWindow .head {
+    width: 450px;
+    height: 40px;
+    background: #e6e6e6;
+    font-size: 16px;
+    line-height: 40px;
+    padding: 0 10px;
+}
+
+.outWindow .confirm {
+    margin: 72px 102px;
+}
+
+.outWindow .confirm .confText {
+    font-size: 24px;
+    display: block;
+    float: left;
+    margin: 10px 0;
+}
+
+.outWindow .confirm .iconMsg {
+    display: block;
+    float: left;
+    width: 50px;
+    height: 50px;
+    background: url(../images/icon_shop.png) -400px -460px;
+}
+
+.clickBlock input {
+    display: block;
+    float: left;
+    width: 120px;
+    height: 40px;
+    border: none;
+    margin: 64px 40px 0 55px;
+    text-align: center;
+    font-size: 24px;
+    line-height: 40px;
+    cursor: pointer;
+}
+
+.clickBlock .cancelBlock {
+    background: #e6e6e6;
+}
+
+.clickBlock .confirmBlock {
+    background: #ff6600;
+    color: #fff;
+}

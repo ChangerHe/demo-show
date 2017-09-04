@@ -74,3 +74,36 @@ $('.J_totalItemPrice').text(totalItemPrice.toFixed(2))
 // 算出包括运费的应付价格
 var a = totalItemPrice + parseFloat($('.J_sendPrice').text())
 $('.J_iNeedToPay').text(a.toFixed(2))
+
+
+// 为提交按钮绑定事件
+$('.J_sendItem').click(function() {
+    $('.J_fillAllPage,.J_outWindow').css('display', 'block')
+    center('.outWindow')
+})
+
+$('.cancelBlock').click(function() {
+    $('.J_fillAllPage,.J_outWindow').css('display', 'none')
+})
+
+$('.J_fillAllPage').click(function() {
+    $('.J_fillAllPage,.J_outWindow').css('display', 'none')
+})
+
+$('.confirmBlock').click(function() {
+    var totalItemPrice = $('.J_totalItemPrice').text()
+    var iNeedToPay = $('.J_iNeedToPay').text()
+    console.log(totalItemPrice, iNeedToPay)
+    memberMsg.totalItemPrice = totalItemPrice
+    memberMsg.iNeedToPay = iNeedToPay
+    console.log(memberMsg)
+    var memberMsgStr = JSON.stringify(memberMsg)
+    localStorage.setItem('username', memberMsgStr)
+})
+
+
+// 将蒙层居中
+// 为了保证调用时就是居中的,添加一个窗口移动时间,窗口移动就会自动居中
+$(window).resize(function() {
+    center('.outWindow')
+})

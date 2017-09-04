@@ -78,7 +78,7 @@
 // 为文中的样式及文字提供默认显示效果,对应接上了相应的接口,插件在上面
 $(window).pub({
     searchItem: '想啥就啥', // 提供搜索栏的默认显示值
-    shopCarNum: 5, // 提供购物车的数量
+    shopCarNum: 0, // 提供购物车的数量
     evaluateNum: 999, // 总的评价数
     evaluateNumGood: 900, // 好评数量
     evaluateNumBetwween: 40, // 中评数量
@@ -331,3 +331,11 @@ $('.rightFloor .discount span').hover(function() {
         right: '-60px'
     })
 })
+
+// 定义一个居中的方法,以便复用
+// 直接传参相应的id或类名即可,但若想随时居中,记得调用onresize
+function center(tag) {
+    var top = (document.documentElement.clientHeight - $(tag)[0].clientHeight) / 2;
+    var left = (document.documentElement.clientWidth - $(tag)[0].clientWidth) / 2;
+    $(tag).css({ 'top': top, 'left': left })
+}
