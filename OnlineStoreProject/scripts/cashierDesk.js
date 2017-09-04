@@ -30,12 +30,21 @@ $(window).pub({
 console.log(JSON.parse(localStorage.getItem('username')))
 
 // 公共信息更新区域结束------------------------------------------
-// 解析出商品的总价
-var totalItemPrice = memberMsg.totalItemPrice
+
+try {
+
+    // 解析出商品的总价
+    var totalItemPrice = memberMsg.totalItemPrice
+
+    // 解析出我需要支付的金额
+    var iNeedToPay = memberMsg.iNeedToPay
+} catch (error) {
+
+}
 
 
-// 解析出我需要支付的金额
-var iNeedToPay = memberMsg.iNeedToPay
+
+
 
 // 赋值到相应位置
 $('.J_iNeedToPay').text(iNeedToPay)

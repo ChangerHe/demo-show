@@ -292,14 +292,20 @@ $('.guessULike .J_product').click(function(e) {
     // 这里不需要读取出购物车列表的值,所以直接将json值渲染到页面即可
     freashItemList()
 })
-
-// 为去结算区域添加相应的效果: 若金额非零,则跳转到结算页面
+console.log(memberMsg == null)
+    // 为去结算区域添加相应的效果: 若金额非零,则跳转到结算页面
 $('.J_goPay').click(function() {
     var totalCountPrice = parseFloat($('.totalCountPrice').text().match(/[\d.]+/)[0])
+    if (memberMsg == null) {
+        alert('请先登录再结算!')
+        window.open('login.html')
+        return false;
+    }
     if (totalCountPrice == 0) {
         alert('请选中商品再结算')
         return false;
     }
+
 
 
     memberMsg.sendAddress = $('#address').val()
