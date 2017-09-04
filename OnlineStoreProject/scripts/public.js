@@ -1,14 +1,4 @@
-/**
- * 这里为为后端提供相应的接口处
- *      .shopCarNum  购物车的数量,此类可直接写在需要写入购物车数量的地方
- *      .searchItem  搜索框的内容区域,一般建议使用form作为标签,以此名称作为类名
- *      
- *      
- */
-
-
-
-// 以下是自己封装的插件部分
+// 以下是自己的jQuery扩展部分
 ;
 (function($) {
     $.fn.extend({
@@ -107,7 +97,7 @@ $('.allItem').on('click', function(e) {
     }
 })
 
-// 以下是无延迟高容差的菜单效果的封装代码插件部分
+// 以下是无延迟高容差的菜单效果的封装代码插件部分来自jquery-menu-aim
 ;
 (function($) {
     $.fn.menuAim = function(opts) {
