@@ -91,7 +91,7 @@
 .loginContent .loginQRBlock .scan {
     position: absolute;
     top: 0px;
-    right: -20px;
+    right: 0px;
     margin-top: 56px;
     opacity: 0;
     filter: alpha(opacity=0);

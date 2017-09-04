@@ -1,7 +1,14 @@
 // 因为后面的逻辑需要取得相应的code值,所以将code定义到全局变量中
 var code = ''
+
+// 页面加载时就要渲染出验证码,所以这里要先执行一次
 changCode()
 
+
+// 校验码点击之后进行更换
+$('.letterCode').click(function() {
+    changCode()
+})
 
 // 定义一个随机改变二维码的函数
 function changCode() {
@@ -35,11 +42,24 @@ function changCode() {
     context.fillText(code, 40, 20)
 }
 
-// 校验码点击之后进行更换
-$('.letterCode').click(function() {
-    changCode()
-})
+// 点击获取手机验证码,即开始六十秒倒计时
+$('.J_phoneCode').click(function() {
+    var time = 60;
+    var timer = setInterval(function() {
+        if (time == 0) {
+            clearInterval(timer)
+            $('.J_phoneCode').val('获取验证码')
+            $('.J_phoneCode').prop('disabled', false)
+            $('.J_phoneCode').css({ 'backgroundColor': '#ff6600', 'color': '#fff' })
+            return;
+        }
+        $('.J_phoneCode').css({ 'backgroundColor': '#e6e6e6', 'color': '#4d4d4d' })
+        time--;
+        $('.J_phoneCode').val('(' + time + ')秒后重新获取 ')
+        $('.J_phoneCode').prop('disabled', true)
+    }, 1000)
 
+})
 
 // 信息校验区域-------------------------------------------------
 // 因为信息较复杂,所以这里直接放到全局变量,方便进行校验
@@ -49,7 +69,7 @@ var username,
     phoneNum,
     letterCode,
     phoneCode,
-    agree
+    agree;
 
 // 定义对应的匹配条件
 var usernameRE,

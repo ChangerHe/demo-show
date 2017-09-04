@@ -3,15 +3,15 @@ $('.qr').hover(function() {
     $(this).stop(true, false).animate({
         left: '0px'
     }).next().stop(true, false).delay(400).animate({
-        right: '0px',
+
         opacity: 1
     })
 
 }, function() {
-    $('.scan').stop(true, true).animate({
-        right: '-20px',
+    $('.scan').stop(true, false).animate({
+
         opacity: 0
-    }).prev().stop(true, true).delay(400).animate({
+    }).prev().stop(true, false).delay(400).animate({
         left: '68px'
     })
 

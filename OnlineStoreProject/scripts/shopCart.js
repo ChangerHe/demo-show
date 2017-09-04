@@ -282,3 +282,6 @@ $('.guessULike .J_product').click(function(e) {
     // 这里不需要读取出购物车列表的值,所以直接将json值渲染到页面即可
     freashItemList()
 })
+
+// 为去结算区域添加相应的效果: 若金额非零,则跳转到结算页面
+console.log($('#address').val())

@@ -70,7 +70,7 @@ var line = function() {
     // 左侧的点击效果
 $('.leftArr').click(function() {
         if (!box.is(':animated')) {
-            index++
+            index--
             line()
             move()
         }
@@ -78,7 +78,7 @@ $('.leftArr').click(function() {
     // 右侧的点击效果
 $('.rightArr').on('click', function() {
         if (!box.is(':animated')) {
-            index--
+            index++
             line()
             move()
         }
