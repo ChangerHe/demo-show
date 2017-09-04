@@ -1,0 +1,31 @@
+.header {
+    margin-bottom: 100px;
+}
+
+.header .topBar .logo {
+    width: 260px;
+    height: 105px;
+}
+
+.header .topBar .logo img {
+    margin: 20px 0 0 20px;
+}
+
+.header .topBar .logo .title2 {
+    width: 100px;
+    margin-left: 44px;
+}
+
+.header .topBar .leftText {
+    margin-left: 300px;
+}
+
+.header .distribution {
+    margin: 100px 0 0 1000px;
+    color: #878787;
+    outline: none;
+}
+
+.header .distribution select {
+    outline: none;
+}

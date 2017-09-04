@@ -63,9 +63,8 @@ $('.J_product').click(function(e) {
     }
 
     try {
-        console.log(1)
-            // 如果购物车中已有该商品,则只需要增加该商品的数量即可,不需要重复添加
-            // 所以,我们先循环存在的购物车内商品
+        // 如果购物车中已有该商品,则只需要增加该商品的数量即可,不需要重复添加
+        // 所以,我们先循环存在的购物车内商品
         for (var i in memberMsg.itemMsg) {
             // 如果会员信息中的商品信息的商品名称和点击到的商品名称相同,则该商品数量加一
             if (memberMsg.itemMsg[i].itemName == itemName) {
@@ -130,9 +129,7 @@ $('.hotBooksRecommend').hover(function() {
 var clone1 = $('.booksBannerWrapper').find('.content:first').clone()
 var clone2 = $('.booksBannerWrapper').find('.content:last').clone()
 $('.booksBannerWrapper').find('.content:last').after(clone1)
-console.log($('.booksBannerWrapper .content:last'))
 $('.booksBannerWrapper').find('.content:first').before(clone2)
-console.log($('.booksBannerWrapper .content:last'))
 var index = 0;
 // 初始化左侧值,将第一个先显示在上面
 $('.booksBannerWrapper').css('left', '-1200px')
