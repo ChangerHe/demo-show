@@ -158,14 +158,13 @@ $('.produceAndEvaluate .headTitle').find('span').click(function() {
 })
 
 // 滚动到对应位置数字跳动的效果--------------------
-var isExecute = 0
 $(window).scroll(function() {
     // 将window的scroll值存储为变量
     var scrollVal = $(this).scrollTop()
         // 监控楼层的距离
     var goodRankNum = parseInt($('.chartCon .goodRank').html())
     if (scrollVal >= 700 && scrollVal <= 800) {
-        isExecute++
+
         // 先算出好评的值
         // 计算出评价的百分比,并将值对应到宽度上,刚好数据条的宽度是150,所以这里直接乘1.5
         var width1 = parseInt(goodRankNum * 1.5),
@@ -176,16 +175,22 @@ $(window).scroll(function() {
             // 计算出评价的百分比,并将值对应到宽度上
             width3 = parseInt(badRankNum * 1.5)
         console.log(goodRankNum)
-            // 将计算出的好评的长度转为滚动条的长度
-        $('.evaluateChart .rankGood ').animate({
+
+        // 实现滚动条的滚动效果,需要先将滚动条的值设置为0
+        $('.evaluateChart .rankGood ').css('width', '0px')
+        $('.evaluateChart .rankBetween ').css('width', '0px')
+        $('.evaluateChart .rankBad ').css('width', '0px')
+
+        // 将计算出的好评的长度转为滚动条的长度
+        $('.evaluateChart .rankGood ').stop(true, false).animate({
                 width: width1
             }, 500)
             // 将计算出的中评的长度转为滚动条的长度
-        $('.evaluateChart .rankBetween ').animate({
+        $('.evaluateChart .rankBetween ').stop(true, false).animate({
                 width: width2
             }, 500)
             // 将计算出的差评的长度转为滚动条的长度
-        $('.evaluateChart .rankBad ').animate({
+        $('.evaluateChart .rankBad ').stop(true, false).animate({
             width: width3
         }, 500)
         var a = 0
@@ -200,7 +205,3 @@ $(window).scroll(function() {
         }, 10)
     }
 })
-if (isExecute == 1) {
-    console.log(1)
-    $(window).off('scroll')
-}

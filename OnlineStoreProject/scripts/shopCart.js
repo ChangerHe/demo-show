@@ -192,6 +192,16 @@ $('.J_itemContent').delegate(".selector", "click", function() {
     if ($(this).prop('checked')) {
         cartPageNum()
     }
+    refreash()
+})
+
+// 不允许页面的购物车数值为非数字,如果输入非数字字符,则自动转为1
+$('.J_itemShopCartNumber').on('keyup', function() {
+    var val = $(this).val()
+    if (/\D/.test(val)) {
+        $(this).val(1)
+    }
+    refreash()
 })
 
 // 整体页面效果改变的封装
