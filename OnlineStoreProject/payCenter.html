@@ -25,7 +25,7 @@
             </div>
             <div class="search">
                 <div class=" fr"><a href="">我的订单</a></div>
-                <div class="active fr"><a href="">购物车 <span class="shopCarNum"></span></a></div>
+                <div class="active fr"><a href="shopCart.html">购物车 <span class="shopCarNum"></span></a></div>
                 <form action="" class="searchItem">
                     <input type="submit" class="fr" value="">
                     <input type="text" class="fr" value="">
@@ -33,8 +33,88 @@
             </div>
         </div>
     </div>
+    <!-- 订单确认区域 -->
+    <p class="confirm width1200">填写并核对订单信息</p>
+    <!-- 标题信息块 -->
+    <div class="sendTo width1200">
+        <div class="headMsgBlock">
+            <span>收货人信息</span>
+            <a href="">新增收货信息</a>
+        </div>
+        <div class="memberAddressMsg">
+            <p class="sendAddress fl"><span class="sendProvince">运送: 四川</span> <span class="J_sendAddress">成都市高新区天府新谷11号楼1101</span></p>
+            <p class="fl memberName">收货人: <span class="J_username username">X某某</span></p>
+            <p class="fl memberPhone">联系电话: <span class="memberPhoneNum">136******88</span></p><span class="defaultAddress">默认收货地址</span><br>
+        </div>
+        <p>更多收货地址</p>
+        <div class="memberAddressMsg">
+            <p class="sendAddress fl"><span class="sendProvince">运送: 四川</span> <span class="J_sendAddress">成都市高新区天府新谷11号楼1101</span></p>
+            <p class="fl memberName">收货人: <span class="J_username username">X某某</span></p>
+            <p class="fl memberPhone">联系电话: <span class="memberPhoneNum">136******88</span></p><br>
+        </div>
+    </div>
+    <!-- 送货清单 -->
+    <div class="itemList width1200">
+        <div class="headMsgBlock">
+            <span>支付方式</span>
+        </div>
+        <div class="payMethod">
+            <span class="methodList active blockStyle">货到付款</span>
+            <span class="methodList blockStyle">微信支付</span>
+            <span class="methodList blockStyle">信用卡</span>
+            <span class="methodList blockStyle">银行卡</span>
+            <a href="">更多&gt;&gt;</a>
+        </div>
+    </div>
+    <!-- 支付方式 -->
+    <div class="payMethodBlock width1200">
+        <div class="headMsgBlock">
+            <span>送货清单</span>
+            <a href="">价格说明</a>
+            <a href="shopCart.html">返回购物车修改</a>
+        </div>
+        <div class="sendList">
+            <div class="sendMethod fl">
+                配送方式:
+                <span class="sendShunfeng payMethod blockStyle active">顺丰快递</span>
+                <p class="payPattern">付款方式: 现金<a href="">修改</a> </p>
+                <p class="payPattern">配送时间: 预计8月30日12：00-16：00送达<a href="">修改</a> </p>
+            </div>
+            <div class="itemList fr J_itemContent">
+                <!-- 导入的商品详情 -->
+                <ul class="item J_product">
+                    <li class="img"><img class="J_img" src="" alt=""></li>
+                    <li class="name J_name">从你的全世界路过</li>
+                    <li class="price J_price">41.00</li>
+                    <li class="itemNum J_itemShopCartNumber">1</li>
+                    <li class="haveGoods">有货</li>
 
-
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- receiptMsg -->
+    <div class="receiptMsg width1200">
+        <p>发票信息:</p>
+        <p class="payPattern">普通发票（电子） 个人 明细<a href="">修改</a> </p>
+    </div>
+    <!-- 付款信息 -->
+    <div class="payMsg width1200">
+        <p><span class="itemNum orange J_totalItemNum">1</span>件商品</p>
+        <p>总商品金额: <span class="totalPrice orange J_totalItemPrice">41:00</span> </p>
+        <p>运费: <span class="totalPrice orange J_sendPrice">6.00</span> </p>
+        <p class="totalItemPrice ">应付总金额: <span class="totalPrice orange J_iNeedToPay">47:00</span> </p>
+    </div>
+    <!-- 提交订单 -->
+    <div class="sendTicket width1200">
+        <div class="distribution fl">
+            配送至: <select name="address" id="address">
+                <option value="深圳市宝安区西部硅谷">深圳市宝安区西部硅谷</option>
+                <option value="深圳市南山区高新科技园">深圳市南山区高新科技园</option>
+            </select>
+        </div>
+        <input class="sendItem" type="button" value="提交订单">
+    </div>
     <!-- adBanner area -->
     <div class="adBanner width1200">
         <a href="">

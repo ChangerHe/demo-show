@@ -1,3 +1,12 @@
+/* 整体字体风格不变,均为#666,因此直接统一设置 */
+
+.sendTo {
+    color: #666;
+}
+
+
+/* 头部区域 */
+
 .header {
     margin-bottom: 100px;
 }
@@ -28,4 +37,258 @@
 
 .header .distribution select {
     outline: none;
+}
+
+
+/* 填写信息 */
+
+.confirm {
+    font-size: 18px;
+}
+
+
+/* 公用的头部信息区块 */
+
+.headMsgBlock {
+    height: 60px;
+    background: #f2f2f2;
+    line-height: 60px;
+}
+
+.headMsgBlock span {
+    padding: 0 10px;
+}
+
+.headMsgBlock a {
+    float: right;
+    padding: 0 10px;
+    color: #1080e9;
+}
+
+.sendTo .memberAddressMsg {
+    padding: 0 30px;
+    width: 1000px;
+    margin: 30px auto 0;
+    line-height: 30px;
+    height: 80px;
+}
+
+.sendTo .memberAddressMsg .sendProvince {
+    display: inline-block;
+    width: 120px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    padding: 0;
+    border: 2px solid #ff6600;
+    background: url(../images/icon_shop.png) -97px -475px;
+}
+
+.sendTo * {
+    font-size: 14px;
+}
+
+.memberAddressMsg .sendAddress span {
+    padding: 0 40px;
+}
+
+.sendTo .memberAddressMsg .memberName {
+    padding: 0 40px;
+}
+
+.memberAddressMsg .memberName,
+.memberAddressMsg .memberName .username,
+.memberAddressMsg .memberPhone,
+.memberAddressMsg .memberPhone .memberPhoneNum {
+    font-size: 12px;
+}
+
+.sendTo .memberAddressMsg .defaultAddress {
+    display: block;
+    float: right;
+    height: 30px;
+    padding: 2px 4px;
+    text-align: center;
+    background: #999;
+    color: #fff;
+}
+
+
+/* 支付方式模块 */
+
+.itemList .payMethod {
+    padding-left: 40px;
+}
+
+.blockStyle {
+    display: inline-block;
+    width: 120px;
+    height: 30px;
+    border: 2px solid #ccc;
+    line-height: 30px;
+    text-align: center;
+    margin: 20px 10px 50px 0;
+    cursor: pointer;
+}
+
+.blockStyle:hover,
+.payMethod .active {
+    border: 2px solid #ff6600;
+    background: url(../images/icon_shop.png) -97px -475px;
+}
+
+.payMethodBlock .sendList {
+    height: 300px;
+    border-bottom: 2px solid #ccc;
+}
+
+.payMethodBlock .sendList .sendMethod {
+    width: 420px;
+    padding: 20px;
+}
+
+.sendList * {
+    font-size: 14px;
+}
+
+.sendList .payMethod {
+    display: block;
+}
+
+.sendList .sendMethod .active {
+    border: 2px solid #ff6600;
+    background: url(../images/icon_shop.png) -97px -475px;
+}
+
+.sendList .payPattern {
+    line-height: 32px;
+}
+
+.sendList .payPattern a {
+    float: right;
+    color: #1080e9;
+}
+
+.sendList .itemList {
+    width: 740px;
+    float: right;
+    margin: 20px 0;
+    height: 250px;
+    background: #f2f2f2;
+    overflow: auto;
+}
+
+.sendList .itemList .item {
+    padding: 10px;
+    overflow: auto;
+}
+
+.itemList .item li {
+    float: left;
+    height: 110px;
+    text-align: center;
+    line-height: 110px;
+}
+
+.itemList .item .img {
+    width: 110px;
+    height: 110px;
+    border: 1px solid #ccc;
+    background: #fff;
+}
+
+.itemList .item .img img {
+    height: 110px;
+}
+
+.itemList .item .name {
+    width: 240px;
+}
+
+.itemList .item .price {
+    width: 100px;
+}
+
+.itemList .item .itemNum {
+    width: 150px;
+}
+
+.itemList .item .haveGoods {
+    width: 100px;
+}
+
+
+/* 发票信息区域 */
+
+.receiptMsg {
+    padding: 30px 0;
+    border-bottom: 2px solid #ccc;
+}
+
+.receiptMsg * {
+    font-size: 14px;
+}
+
+.receiptMsg p {
+    line-height: 30px;
+}
+
+.receiptMsg p a {
+    color: #1080e9;
+    padding-left: 100px;
+}
+
+
+/* 付款信息区域 */
+
+.payMsg {
+    height: 60px;
+    border-bottom: 2px solid #ccc;
+}
+
+.payMsg p {
+    float: left;
+    font-size: 14px;
+    height: 60px;
+    line-height: 60px;
+    padding: 0 50px 0 10px;
+}
+
+.payMsg .orange {
+    font-size: 18px;
+    font-weight: bold;
+    color: #ff6600;
+    padding: 0 4px;
+}
+
+.payMsg .totalItemPrice {
+    padding: 0 50px 0 10px;
+    float: right;
+}
+
+.payMsg .totalItemPrice {
+    padding: 0 50px 0 10px;
+}
+
+
+/* 提交订单 */
+
+.sendTicket {
+    height: 110px;
+}
+
+.sendTicket .distribution {
+    padding-top: 10px;
+}
+
+.sendTicket .sendItem {
+    float: right;
+    width: 140px;
+    height: 60px;
+    background: #ff6600;
+    color: #fff;
+    line-height: 60px;
+    text-align: center;
+    border: none;
+    border-radius: 8px;
 }

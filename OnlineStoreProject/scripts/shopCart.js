@@ -294,4 +294,19 @@ $('.guessULike .J_product').click(function(e) {
 })
 
 // 为去结算区域添加相应的效果: 若金额非零,则跳转到结算页面
-console.log($('#address').val())
+$('.J_goPay').click(function() {
+    var totalCountPrice = parseFloat($('.totalCountPrice').text().match(/[\d.]+/)[0])
+    if (totalCountPrice == 0) {
+        alert('请选中商品再结算')
+        return false;
+    }
+
+
+    memberMsg.sendAddress = $('#address').val()
+        // console.log($('#address').val())
+        // json转字符串
+    memberStr = JSON.stringify(memberMsg)
+
+    // 更新localStorage
+    localStorage.setItem('username', memberStr)
+})

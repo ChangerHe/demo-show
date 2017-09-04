@@ -1,16 +1,3 @@
-// 页面的各项数据应在解析出localStorage之前渲染
-$(window).pub({
-    searchItem: '想啥就啥', // 提供搜索栏的默认显示值
-    shopCarNum: 5, // 提供购物车的数量
-    evaluateNum: 100, // 总的评价数
-    evaluateNumGood: 80, // 好评数量
-    evaluateNumBetwween: 10, // 中评数量
-    evaluateNumBad: 10 // 差评数量
-})
-
-
-
-
 // 一下区域为每个页面均可共用的公共信息更新区域-------------------
 // localStorage.clear()
 try {
