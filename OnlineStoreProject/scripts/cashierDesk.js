@@ -26,6 +26,7 @@ $(window).pub({
     shopCarNum: shopCartNum, // 提供购物车的数量
 })
 
+
 // 打印出localStorage的状态,以便随时跟进
 console.log(JSON.parse(localStorage.getItem('username')))
 
