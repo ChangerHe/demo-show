@@ -9,6 +9,10 @@
     padding: 0;
 }
 
+body {
+    min-width: 1200px;
+}
+
 img {
     border: none;
 }
