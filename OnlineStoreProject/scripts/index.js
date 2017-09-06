@@ -93,6 +93,9 @@ $('.J_product').click(function(e) {
     } catch (e) {}
 })
 
+// 懒加载
+// $("img").lazyload({ effect:   "fadeIn" });
+
 
 
 
