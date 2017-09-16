@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Calculator</title>
+  <meta charset="utf-8">
+  <meta name="author" content="xian">
+  <!--viewport适配移动端，在移动端可正常显示-->
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <link rel="stylesheet" type="text/css" href="style/calculator.css">
+  <script type="text/javascript" src="javascript/calculator.js"></script>
+</head>
+
+<body>
+  <div id="layout" name="cl" onclick="getNum();">
+  	<!--readonly="readonly"设置input为只读状态，disabled="disabled"设置input为禁用状态-->
+	  <input name="cl" id="displayRes" type="text" readonly="readonly">
+	  <button name="cl" id="AC">AC</button>
+	  <button name="cl" id="CE">CE</button>
+	  <button name="cl" id="percent">%</button>
+	  <button name="cl" id="division">/</button><br>
+	  <button name="cl" id="seven">7</button>
+	  <button name="cl" id="eight">8</button>
+	  <button name="cl" id="nine">9</button>
+	  <button name="cl" id="mul">*</button><br>
+	  <button name="cl" id="four">4</button>
+	  <button name="cl" id="five">5</button>
+	  <button name="cl" id="six">6</button>
+	  <button name="cl" id="sub">-</button><br>
+	  <button name="cl" id="one">1</button>
+	  <button name="cl" id="two">2</button>
+	  <button name="cl" id="three">3</button>
+	  <button name="cl" id="add">+</button><br>
+	  <button name="cl" id="dot">.</button>
+	  <button name="cl" id="zero">0</button>
+	  <button name="cl" id="OFF" onclick="changeColor();">OFF</button>
+	  <button name="cl" id="out" onclick="getRes();">=</button><br>
+	</div>
+	
+	<!--页脚-->
+	<footer>
+	  <p>版权所有&copy;xian
+	    <script type="text/javascript">
+	    	//获取当前年份
+	      document.write(new Date().getFullYear());
+	    </script>
+	  </p>
+	</footer>
+</body>
+</html>

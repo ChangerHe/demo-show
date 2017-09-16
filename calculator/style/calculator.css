@@ -1,0 +1,45 @@
+ body,html
+{
+  margin:0;  
+}
+#layout
+{
+  border:3px solid #d45d5c;
+  width:256px;
+  padding:20px;
+  border-radius:8px;
+  /*居中*/
+  left:50%;
+  transform:translate(-50%,30%);
+  position:relative;
+}
+#displayRes
+{
+  width:250px;
+  height:40px;
+  border:1px solid #d45d5c;
+  margin-bottom:10px;
+  border-radius:5px;
+  /*数字结果在右边显示*/
+  text-align:right;
+  font-size:18px;
+}
+button
+{
+  width:60px;
+  height:50px;
+  margin-top:5px;
+  border:2px solid #d43333;
+  background:#d45d5c;
+  color:white;
+  font-size:20px;
+  border-radius:3px;
+}
+footer
+{
+  text-align:center;
+  font-size:10px;
+  color:gray;
+  position:relative;
+  top:180px;
+}
