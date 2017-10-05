@@ -1,0 +1,59 @@
+extends ../../includes/front
+block otherStyle
+  link(href="/css/movie/search/browser-support.css", rel="stylesheet")
+  link(href="/css/movie/search/search.css", rel="stylesheet")
+block content
+    div#wrapper
+      div#root.root
+        div.sc-gqjmRU.bvGQeO
+          div._rye8n78ck
+            h1._azgor7och
+          div._3zhyndxci
+            div._cxooxcicl
+              div.sc-gzVnrw.kWMqOl
+                if movies && movies.length > 0
+                  each item in movies
+                    div.elqkLE.sc-ifAKCX.sc-bxivhb.hplSBc
+                      a(href="/movie/#{item._id}")
+                        div.cover.sc-bwzfXH.eAzoyr(style="background-image: url(#{item.poster});")
+                      div.detail
+                        div.title
+                          a(href="/movie/#{item._id}")
+                            span #{item.title} (#{item.year})
+                          span.label(style="color: rgb(0, 173, 63);")[可播放]
+                        div.rating.sc-bdVaJa.gJOkgR
+                          div(style="margin-bottom: 10px;")
+                            span.starScore(style="display:none") #{item.starScore}
+                            span.rating-stars
+                            span.rating_nums #{item.starScore}
+                          div.meta.abstract
+                            span #{item.country} / #{item.genres} / #{item.aka} 
+                          div.meta.abstract2 
+                            span #{item.casts}
+                else
+                  p 没有找到相关内容，换个搜索词试试吧
+            div._o9dqctbcm
+              div.dale_movie_subject_search_top_right
+                div(style="position: relative; margin: 0px 0px 20px; display: block; width: 300px; height: 250px;")
+                  a(href="https://dsp-click.youdao.com/clk/request.s?slot=f3798df8d024983112296167f94d86ab&k=oJzagE%2Fg8FMldCdW%2B09FOJ10Bw6r2xPspA0vI97abVnXxo%2BoRxcJpjjAgKuViCqvrwou2TfNvjWvGgTc0iLuVTZ6w5UB04yltwhnCuY9LVKNFWA4IPPMjnkuerSyFRJmysxS7gggY5KqHSMX5pm0Wr00bEExw8zjaVVaxGuPPrKkF3Ndy7LCHs0d%2FPHLO8OQs5C2r5p76LJvGV1pr0%2Fr4i5DkWltt40G4YRDOg2S20%2BOTMC86bt86i30udJzdx3ymt3ILVg%2B5MCC%2FxZkWli93J9KpOL8cXYL9FPCH%2BxSdLMJ2nbscgN9lBWtqY8T2X%2FfYvmM6yrC2gPMQlkIgisrc21xBG59UmhfTJCBUXZQRkXwwDMMLJbPPcd7J%2BAXQTzu5J2s4tPzbnVq4EgIsx%2B3bcamRdIrjBVRU5Q1BKJIxtMxDWp%2FfsKzrjuzPzOIEkTr8l%2BN9vTKqVkjVHyX8erVsAMOojMbZ4vU2T39hDWymIxlJtPKf0CvrJUznJX543fHHbbhAHDM6TvmqltUmuT6IvTQmSWzSwXmHU65vXfRL5trcWyHFGR9oqY1YGQaqvFiM7SFwNVVPxoCSVPxwe6PQiB3Jz%2BxXz36JDjQHYsfZHZILIi4BGJiuKf2O2suBm0fx3JyLeYjH6rXd3Zgho4Y49ABpSI8fc91nZsZyATM2HPfwAFpcWuB8bQ3k767xv7wOdu2oY7H4foBqpw9aSHyEeuKRBWcbdzRycM55I6MxOhhkuAmWlmWfMjfH4NkuKsDJOR5t8aXQKklWTtBewgdWpKx%2F49De2GjO4GgWZNaXhqfl0ZmtuPHQ%2BZag7aL3KeQFTsWqe3mVSeyJln2%2BBzDWT2F6rjFboFTmKyuYj%2FBB9wojYELUQ%2FcvRGglu3PwJJGYNj4ioG8LzdSEl1meKry2tfGj6hHFwmmOMCAq5WIKq%2FXxo%2BoRxcJpjjAgKuViCqv18aPqEcXCaY4wICrlYgqr%2BuEskluP%2Ba60zAlQsmc9i4%3D&youdao_bid=37b5f9e9-bd48-41a4-b678-dd18607bf632&youdao_deviceId=38bc05e3fe1760422d134436ae35e74b")
+                    img(src="https://oimagea4.ydstatic.com/image?id=1229190796194666709&product=adpublish&w=300&h=250" style="position:absolute;" width="300" height="250" border="0")
+                  div(style="line-height: 1; text-align: center; background-color: rgba(0, 0, 0, 0.3); color: rgb(255, 255, 255); font-size: 12px; position: absolute; padding: 4px; right: 0px; bottom: 0px;")广告
+        div._a16ca5ecj
+          div#dale_movie_subject_search_bottom
+            div(style="position: relative; margin: 0px 0px 20px; display: block; width: 950px; height: 90px;")
+              div#img_wrap
+                a(href="https://dsp-click.youdao.com/clk/request.s?slot=1597c0831dac9b5e684428a554fd5f46&k=ZThXeUq785kyOu%2BGyYCTXAxOykdQ1yE3VVP8KDhc2P%2FXxo%2BoRxcJpjjAgKuViCqvrwou2TfNvjWvGgTc0iLuVccvc7V5klryAwBSgPMB8GiVKdCUH%2B2jnQMTT0kisew9XwHr2b0JZFzBfzQbsbg781mqX2nOhJ5DcxXndwdykvB%2BrMhq8EVk3HqEQoOO0sR7wUINbbXm4n%2FvxqqqAZ3PjhuU3ClojZ%2BWStxSJxJZS5bViQwI4OZqfkLBo01GCBuH%2FXAUGfuCGa6YbpoxDb7UO5wV03zSfiteaZE0NKU5BIEXdE3M9DHe%2FG%2F9kiUYSHKV%2BZYTPtXAAPO%2BXhO55XkMIpiEg7epyydCZZ45nu1gl73p8WqiI9%2FCfol7pFYpZeEOQPa0xnKxCOEYqYPRLqFcTYbs%2BlgLoG0hW1cwIhsflggNxC8Q6Jf6HG%2BafA62FIREL2nknGB0c%2FUrjZtHVq3c20EycSvkfHqgQ%2Ft%2BJqImqMesmY8SOeCW6uT8FoKwBrkATEsz6NL4hR6%2FVjUcTYjbrLRB3x8l4JUFmzdT20giKxaHN5Vdst871sBIJnAsSiKuPR1X0A3IalbvL5KoxnQBDePMlpuM7Eu6a%2Bn48JoLmbey3BPXzpOv8G1QRnCZrrwKr6CFaYcA3V6x%2BzRmtI2mx9YYCGGcIUBzbItX5Ibv1jrQMcYdvtQrko1K1eq9cM%2FjpN%2BD0AhMOf1kvj6ZZm97FASUi4BgLK%2BPr2xjZRCmgVrleS588gwSAUGw31fzP7XaIPhhpFv0MAarSx3AiQw09jEisp8DuH1ieErG8fNZCmvHQT5RhZTF6cDKSHv4cBO6EPOhJLoKbBylQhoKKR7hXkz8sbAoAPBPovHaRZsXopbUZ38i2cTFlRbNt0LrJ6xuM%2BsnpJGsAfT7HB3km%2BEhy7gVAcJfK2t1BkBSruOD4cchiPENVLSZm%2FlTUx%2FI2ZwbdUJEGECndmLq%2BbNCeuYRWBoRrvPA3QA2YDf81D71CTf3ArTehhFkOjSaWW9bEd0%2Bmb7q3oanB7NyQtwwG47D3aq%2BLwvYDd32caX%2BB97kxiy0%2B0fe2EUdVQRa8JJjct5%2BgzVk%2FG8K8UooikaCwaIaHhLympAC1mhG47fkPkPfSJNGbJxf93q33k04JizgD9eK7xuty85ezmEHqEPlCOrUpQ50KPY9kApRHkTwNNnVK6iWh%2BagwXq8vb24RZdEDt5IYMA8ME0%2FAKyesFnMI7M7jj3r%2F2JP8CBpbRWYEURjjovjAx5wlkhhFahCnQJdeaO%2B34qWBEAolFLpE8SQtbxe29fGj6hHFwmmOMCAq5WIKq%2FXxo%2BoRxcJpjjAgKuViCqv3l9ys36ZCJhbCJqiX1Iipz%2FdxgTYDzULvgWbQxI1218%3D&youdao_bid=8aecbfbe-b1f8-4f26-a2a9-f0119d6fa7eb&youdao_deviceId=38bc05e3fe1760422d134436ae35e74b" target="_blank")
+                  img(style="width: 100%;" src="https://oimagea2.ydstatic.com/image?id=8015684107525147633&product=adpublish&w=950&h=90" border="0")
+              div(style="line-height: 1; text-align: center; background-color: rgba(0, 0, 0, 0.3); color: rgb(255, 255, 255); font-size: 12px; position: absolute; padding: 4px; right: 0px; bottom: 0px;") 广告
+        include ../../includes/footer
+block srcipts  
+  script.
+    var ratingStars = $('.rating-stars');
+    var len = ratingStars.length;
+    var preNode;
+    var preNodeText;
+    for(var i = 0; i < len; i++) {
+      preNode = $(ratingStars[i]).prev();
+      preNodeText = $(preNode).text();
+      $(ratingStars[i]).addClass('allstar' + preNodeText);
+    }
