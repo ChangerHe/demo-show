@@ -1,9 +1,3 @@
-/*
- * @Author: bxm09
- * @Date:   2017-07-15 15:48:46
- * @Last Modified by:   bxm09
- * @Last Modified time: 2017-07-20 19:43:56
- */
 
 const express = require('express');
 const path = require('path');

@@ -1,9 +1,3 @@
-/*
- * @Author: bxm09
- * @Date:   2017-07-18 01:00:22
- * @Last Modified by:   bxm09
- * @Last Modified time: 2017-07-20 09:32:58
- */
 
 const indexController = require('../app/controller/index');
 const movieController = require('../app/controller/movie');

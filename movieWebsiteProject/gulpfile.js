@@ -1,9 +1,4 @@
-/*
- * @Author: bxm09
- * @Date:   2017-07-20 17:35:38
- * @Last Modified by:   bxm09
- * @Last Modified time: 2017-07-20 20:54:47
- */
+
 
 const gulp = require('gulp');
 const gulpSequence = require('gulp-sequence'); // 设置 gulp task 的顺序
