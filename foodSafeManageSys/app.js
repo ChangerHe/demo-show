@@ -43,4 +43,9 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
+app.listen(80, (err) => {
+  if(err) throw err
+  console.log('服务器链接成功')
+})
+
 module.exports = app;

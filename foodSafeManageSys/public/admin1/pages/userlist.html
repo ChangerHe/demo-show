@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>学校食堂安全管理系统v1.0</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- MetisMenu CSS -->
+    <link href="../vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
+
+    <!-- DataTables CSS -->
+    <link href="../vendor/datatables-plugins/dataTables.bootstrap.css" rel="stylesheet">
+
+    <!-- DataTables Responsive CSS -->
+    <link href="../vendor/datatables-responsive/dataTables.responsive.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="../dist/css/sb-admin-2.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" type="text/css" href="../dist/css/extendcss.css"/>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+    <div id="wrapper">
+        <!-- Navigation -->
+        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+
+
+             <div class="navbar-default sidebar" role="navigation">
+                <div class="sidebar-nav navbar-collapse">
+                    <ul class="nav" id="side-menu">
+                        <!--<li class="sidebar-search">
+                            <div class="input-group custom-search-form">
+                                <input type="text" class="form-control" placeholder="Search...">
+                                <span class="input-group-btn">
+                                <button class="btn btn-default" type="button">
+                                    <i class="fa fa-search"></i>
+                                </button>
+                            </span>
+                            </div>
+                        </li>-->
+                        <li>
+                             <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> 库存管理<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="receiptplanlist.html">进货计划</a>
+                                </li>
+                                <li>
+                                    <a href="signlist.html">进货签收</a>
+                                </li>
+                                <li>
+                                    <a href="boundin.html">入库管理</a>
+                                </li>
+                                <li>
+                                    <a href="boundout.html">出库管理</a>
+                                </li>
+                                <li>
+                                    <a href="inventory.html">盘点管理</a>
+                                </li>                               
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> 供货管理<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="ghsend.html">送货单管理</a>
+                                </li>
+                                <li>
+                                    <a href="ghreceive.html">收款单管理</a>
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+                        <li>
+                        	<a href="#"><i class="fa fa-wrench fa-fw"></i> 财务管理<span class="fa arrow"></span></a>
+                        	<ul class="nav nav-second-level">
+                                <li>
+                                    <a href="cwreceive.html">收款管理</a>
+                                </li>
+                                <li>
+                                    <a href="cwpay.html">付款管理</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-wrench fa-fw"></i> 统计分析<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="tjin.html">进货单查询</a>
+                                </li>
+                                <li>
+                                    <a href="tjout.html">出库汇总表</a>
+                                </li>
+                                <li>
+                                    <a href="tjinsum.html">入库汇总表</a>
+                                </li>
+                                <li>
+                                    <a href="tjhasdetail.html">存货明细账</a>
+                                </li>
+                                <li>
+                                    <a href="tjshouldpay.html"> 应付货款报告</a>
+                                </li>
+                                <li>
+                                    <a href="tjsource.html">食材来源统计</a>
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-sitemap fa-fw"></i>基础数据<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="unitlist.html">单位管理</a>
+                                </li>
+                                <li>
+                                    <a href="supplierlist.html">供应商管理</a>
+                                </li>
+                                 <li>
+                                    <a href="foodclasslist.html">菜品类别</a>
+                                </li>
+                                <li>
+                                    <a href="foodlist.html">菜品管理</a>
+                                </li>
+                                <!--<li>
+                                    <a href="#">Third Level <span class="fa arrow"></span></a>
+                                    <ul class="nav nav-third-level">
+                                        <li>
+                                            <a href="#">Third Level Item</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Third Level Item</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Third Level Item</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Third Level Item</a>
+                                        </li>
+                                    </ul>                                   
+                                </li>-->
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-files-o fa-fw"></i> 系统管理<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="userlist.html">用户管理</a>
+                                </li>
+                                <li>
+                                    <a href="editpassword.html">修改密码</a>
+                                </li>
+                                 <li>
+                                    <a href="log.html">日志管理</a>
+                                </li>
+                                <li>
+                                    <a href="login.html">退出系统</a>
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+                    </ul>
+                </div>
+                <!-- /.sidebar-collapse -->
+            </div>
+            <!-- /.navbar-static-side -->
+        </nav>
+
+        <div id="page-wrapper">
+           <div class="row">
+                <div class="col-lg-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading row">
+                           	<div class="col-sm-6"> 当前位置: 系统管理 >用户管理</div>                           	
+                           	<div class="col-sm-6"><div class="optiondiv"><button type="button" class="btn btn-primary btn-sm" id="btncheck">审核</button>&nbsp;<button type="button" class="btn btn-primary btn-sm" id="btncreate">新增</button>&nbsp;<button type="button" class="btn btn-primary btn-sm" id="btnedit">编辑</button>&nbsp;<button type="button" class="btn btn-primary btn-sm" id="btndelete">删除</button></div></div>
+                        </div>
+                        <!-- /.panel-heading -->
+  						<div class="row panel-body">
+                           	<form class="form-inline" role="form">
+							  <div class="form-group">
+							   <div class="input-group">
+							      <div class="input-group-addon">所在部门</div>
+							       <select class="form-control">
+							       		<option>全部</option>
+							       		<option>教学部</option>
+							            <option>财务部</option>
+							            <option>市场部</option>            
+							            <option>网络部</option>
+							            <option>行政部</option>
+							        </select>
+							    </div>
+							  </div>
+							  <div class="form-group">
+							   <div class="input-group">
+							      <div class="input-group-addon">角色组</div>
+							       <select class="form-control">
+							            <option>全部</option>
+							            <option>超级管理员</option>
+							            <option>普通用户</option>
+							        </select>
+							    </div>
+							  </div>
+							  <div class="form-group">
+							    <div class="input-group">
+							      <div class="input-group-addon">登录账号：</div>
+							      <input class="form-control" type="text" placeholder="登录账号">
+							    </div>
+							  </div>
+							  <button type="submit" class="btn btn-default">查询</button>
+							</form>
+                        </div>
+                        <div class="panel-body">
+                        	
+                            <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
+                                <thead>
+                                    <tr>
+                                        <th class="center"><input type="checkbox" id="cball"/></th>
+                                        <th>用户账号</th>
+                                        <th>用户名称</th>
+                                        <th>所属角色</th>
+                                        <th>所属部门</th>
+                                        <th>是否启用</th>
+                                        <th>排序</th>
+                                        <th>状态</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="odd gradeX">
+                                    	<td class="center"><input type="checkbox" /></td>
+                                        <td>zhangsan</td>
+                                        <td>张三1</td>
+                                        <td>系统管理员</td>
+                                        <td class="center">教学部</td>
+                                        <td class="center"><input type="checkbox" checked="checked" disabled="disabled"/></td>
+                                    	<td>1</td>
+                                    	<td>有效</td>                               
+                                    </tr>
+                                    <tr class="odd gradeX">
+                                    	<td class="center"><input type="checkbox" /></td>
+                                        <td>zhangsan2</td>
+                                        <td>张三2</td>
+                                        <td>系统管理员</td>
+                                        <td class="center">教学部</td>
+                                        <td class="center"><input type="checkbox" checked="checked" disabled="disabled"/></td>
+                                    	<td>1</td>
+                                    	<td>有效</td>                               
+                                    </tr>
+                                     <tr class="odd gradeX">
+                                    	<td class="center"><input type="checkbox" /></td>
+                                        <td>zhangsan3</td>
+                                        <td>张三3</td>
+                                        <td>系统管理员</td>
+                                        <td class="center">教学部</td>
+                                        <td class="center"><input type="checkbox" checked="checked" disabled="disabled"/></td>
+                                    	<td>1</td>
+                                    	<td>有效</td>                               
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <!-- /.table-responsive -->
+                             <div class="row"><div class="col-sm-6"><div class="dataTables_info" id="dataTables-example_info" role="status" aria-live="polite">显示第 1 至 5 项记录，共 5 项</div></div><div class="col-sm-6"><div class="dataTables_paginate paging_simple_numbers" id="dataTables-example_paginate"><ul class="pagination"><li class="paginate_button previous disabled" aria-controls="dataTables-example" tabindex="0" id="dataTables-example_previous"><a href="#">上页</a></li><li class="paginate_button active" aria-controls="dataTables-example" tabindex="0"><a href="#">1</a></li><li class="paginate_button next disabled" aria-controls="dataTables-example" tabindex="0" id="dataTables-example_next"><a href="#">下页</a></li></ul></div></div></div>
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel -->
+                </div>
+                
+                <!-- /.col-lg-12 -->
+            </div>
+           
+          
+          
+        </div>
+      
+
+    </div>
+    <!-- /#wrapper -->
+
+    <!-- jQuery -->
+    <script src="../vendor/jquery/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Metis Menu Plugin JavaScript -->
+    <script src="../vendor/metisMenu/metisMenu.min.js"></script>
+
+    <!-- DataTables JavaScript -->
+    <script src="../vendor/datatables/js/jquery.dataTables.min.js"></script>
+    <script src="../vendor/datatables-plugins/dataTables.bootstrap.min.js"></script>
+    <script src="../vendor/datatables-responsive/dataTables.responsive.js"></script>
+
+    <script src="../dist/js/sb-admin-2.js"></script>
+    <script src="../dist/js/sea.js"></script>
+    <script>
+		$("#cball").click(function(){
+			$("input[type='checkbox']").not(this).prop("checked",$(this).prop("checked"));
+		});
+
+		seajs.config({
+		  alias: {
+		    "jquery": "jquery-1.10.2.js"
+		  }
+		});
+
+		seajs.use(['jquery', 'dialog-plus'], function ($, dialog) {
+			$('#btncreate').on('click', function () {
+				//构造表单
+				jQuery.get("userform.html",function(data){
+    				var d = dialog({
+						title: '创建用户',
+						content:data,
+						width:500,
+						okValue: '确 定',
+						ok: function () {
+	
+						},
+						cancelValue: '取消',
+						cancel: function () {}
+					});
+		
+					d.showModal();
+    			});				
+			});
+			
+			$('#btnedit').on('click', function () {
+				//构造表单
+				jQuery.get("userform.html",function(data){
+    				var d = dialog({
+						title: '编辑用户',
+						content:data,
+						width:500,
+						okValue: '确 定',
+						ok: function () {
+	
+						},
+						cancelValue: '取消',
+						cancel: function () {}
+					});
+		
+					d.showModal();
+    			});				
+			});
+			
+		});
+</script>
+
+
+
+</body>
+
+</html>
