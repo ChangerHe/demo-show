@@ -36,169 +36,13 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-    <script src="/validateLogState.html">
-//        var ajax = new XMLHttpRequest()
-//        ajax.open('get', '/validateLogState.html', false)
-//        ajax.send()
-//        ajax.onreadystatechange = function() {
-//          if(ajax.status == 200 && ajax.readyState == 4) {
-//            console.log(1)
-//            var data = ajax.responseText
-//            if(!+data) {
-//              alert('请先登陆再操作')
-//              location.href('./login.html')
-//            }
-//          }
-//        }
-    </script>
+    <script src="/validateLogState.html"></script>
 
 </head>
 
 <body>
     <div id="wrapper">
-        <!-- Navigation -->
-        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
-
-            <div class="navbar-default sidebar" role="navigation">
-                <div class="sidebar-nav navbar-collapse">
-                    <ul class="nav" id="side-menu">
-                        <!--<li class="sidebar-search">
-                            <div class="input-group custom-search-form">
-                                <input type="text" class="form-control" placeholder="Search...">
-                                <span class="input-group-btn">
-                                <button class="btn btn-default" type="button">
-                                    <i class="fa fa-search"></i>
-                                </button>
-                            </span>
-                            </div>
-                        </li>-->
-                        <li>
-                             <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> 库存管理<span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level">
-                                <li>
-                                    <a href="receiptplanlist.html">进货计划</a>
-                                </li>
-                                <li>
-                                    <a href="signlist.html">进货签收</a>
-                                </li>
-                                <li>
-                                    <a href="boundin.html">入库管理</a>
-                                </li>
-                                <li>
-                                    <a href="boundout.html">出库管理</a>
-                                </li>
-                                <li>
-                                    <a href="inventory.html">盘点管理</a>
-                                </li>                               
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> 供货管理<span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level">
-                                <li>
-                                    <a href="ghsend.html">送货单管理</a>
-                                </li>
-                                <li>
-                                    <a href="ghreceive.html">收款单管理</a>
-                                </li>
-                            </ul>
-                            <!-- /.nav-second-level -->
-                        </li>
-                        <li>
-                        	<a href="#"><i class="fa fa-wrench fa-fw"></i> 财务管理<span class="fa arrow"></span></a>
-                        	<ul class="nav nav-second-level">
-                                <li>
-                                    <a href="cwreceive.html">收款管理</a>
-                                </li>
-                                <li>
-                                    <a href="cwpay.html">付款管理</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa fa-wrench fa-fw"></i> 统计分析<span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level">
-                                <li>
-                                    <a href="tjin.html">进货单查询</a>
-                                </li>
-                                <li>
-                                    <a href="tjout.html">出库汇总表</a>
-                                </li>
-                                <li>
-                                    <a href="tjinsum.html">入库汇总表</a>
-                                </li>
-                                <li>
-                                    <a href="tjhasdetail.html">存货明细账</a>
-                                </li>
-                                <li>
-                                    <a href="tjshouldpay.html"> 应付货款报告</a>
-                                </li>
-                                <li>
-                                    <a href="tjsource.html">食材来源统计</a>
-                                </li>
-                            </ul>
-                            <!-- /.nav-second-level -->
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa fa-sitemap fa-fw"></i>基础数据<span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level">
-                                <li>
-                                    <a href="unitlist.html">单位管理</a>
-                                </li>
-                                <li>
-                                    <a href="supplierlist.html">供应商管理</a>
-                                </li>
-                                 <li>
-                                    <a href="foodclasslist.html">菜品类别</a>
-                                </li>
-                                <li>
-                                    <a href="foodlist.html">菜品管理</a>
-                                </li>
-                                <!--<li>
-                                    <a href="#">Third Level <span class="fa arrow"></span></a>
-                                    <ul class="nav nav-third-level">
-                                        <li>
-                                            <a href="#">Third Level Item</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Third Level Item</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Third Level Item</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Third Level Item</a>
-                                        </li>
-                                    </ul>                                   
-                                </li>-->
-                            </ul>
-                            <!-- /.nav-second-level -->
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa fa-files-o fa-fw"></i> 系统管理<span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level">
-                                <li>
-                                    <a href="userlist.html">用户管理</a>
-                                </li>
-                                <li>
-                                    <a href="editpassword.html">修改密码</a>
-                                </li>
-                                 <li>
-                                    <a href="log.html">日志管理</a>
-                                </li>
-                                <li>
-                                    <a href="/backToLogin.html">退出系统</a>
-                                </li>
-                            </ul>
-                            <!-- /.nav-second-level -->
-                        </li>
-                    </ul>
-                </div>
-                <!-- /.sidebar-collapse -->
-            </div>
-            <!-- /.navbar-static-side -->
-        </nav>
-
+        <script src="../js/menu.js"></script>
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
@@ -218,14 +62,8 @@
                                         <th>IP</th>
                                     </tr>
                                 </thead>
-                                <tbody>
-                                    <tr class="odd gradeX">
-                                        <td>Trident</td>
-                                        <td>Internet Explorer 4.0</td>
-                                        <td>Win 95+</td>
-                                        <td class="center">成功</td>
-                                        <td class="center">10.3.251.10</td>
-                                    </tr>
+                                <tbody id="logTable">
+
                                     <tr class="odd gradeX">
                                         <td>Trident</td>
                                         <td>Internet Explorer 4.0</td>
@@ -277,19 +115,33 @@
     <!-- Custom Theme JavaScript -->
     <script src="../dist/js/sb-admin-2.js"></script>
 
-    <!-- Page-Level Demo Scripts - Tables - Use for reference -->
+    <!---->
+    <script src="../js/template.js"></script>
+
+
+    <!-- 模板-->
+    <script id="listTmpl" type="text/html">
+        {{each data v i}}
+        <tr class="odd gradeX">
+            <td>{{v.username}}</td>
+            <td>{{v.optime}}</td>
+            <td>{{v.content}}</td>
+            <td class="center">{{v.result}}</td>
+            <td class="center">{{v.ip}}</td>
+        </tr>
+
+        {{/each}}
+    </script>
+
     <script>
-//  $(document).ready(function() {
-//      $('#dataTables-example').DataTable({
-//          responsive: true,
-//          oLanguage: {
-//								"sUrl": "../vendor/datatables/js/zh_CN.json"
-//			} 
-//      });
-//  });
-
-
-
+        ajax({
+            url: '/getLog.html',
+            type: 'get',
+            success(data) {
+                var tpl = template('listTmpl', {'data': data})
+                logTable.innerHTML = tpl
+            }
+        })
     </script>
 
 </body>

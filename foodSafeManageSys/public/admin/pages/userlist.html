@@ -36,6 +36,8 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
+    <script src="/validateLogState.html"></script>
+
 </head>
 
 <body>
@@ -56,7 +58,7 @@
 							  <div class="form-group">
 							   <div class="input-group">
 							      <div class="input-group-addon">所在部门</div>
-							       <select class="form-control">
+							       <select class="form-control" id="logDepartment">
 							       		<option>全部</option>
 							       		<option>教学部</option>
 							            <option>财务部</option>
@@ -69,7 +71,7 @@
 							  <div class="form-group">
 							   <div class="input-group">
 							      <div class="input-group-addon">角色组</div>
-							       <select class="form-control">
+							       <select class="form-control" id="logRole">
 							            <option>全部</option>
 							            <option>超级管理员</option>
 							            <option>普通用户</option>
@@ -79,10 +81,10 @@
 							  <div class="form-group">
 							    <div class="input-group">
 							      <div class="input-group-addon">登录账号：</div>
-							      <input class="form-control" type="text" placeholder="登录账号">
+							      <input class="form-control" type="text" id="logUsername" placeholder="登录账号">
 							    </div>
 							  </div>
-							  <button type="submit" class="btn btn-default">查询</button>
+							  <button type="button" class="btn btn-default" id="search">查询</button>
 							</form>
                         </div>
                         <div class="panel-body">
@@ -111,15 +113,7 @@
                                  <div class="col-sm-6">
                                      <div class="dataTables_paginate paging_simple_numbers" id="dataTables-example_paginate">
                                          <ul class="pagination" id="pagination">
-                                             <!--<li class="paginate_button previous disabled" aria-controls="dataTables-example" tabindex="0" id="dataTables-example_previous">-->
-                                                 <!--<a href="#">上页</a>-->
-                                             <!--</li>-->
-                                             <!--<li class="paginate_button active" aria-controls="dataTables-example" tabindex="0">-->
-                                                 <!--<a href="#">1</a>-->
-                                             <!--</li>-->
-                                             <!--<li class="paginate_button next disabled" aria-controls="dataTables-example" tabindex="0" id="dataTables-example_next">-->
-                                                 <!--<a href="#">下页</a>-->
-                                             <!--</li>-->
+                                             <!--插入分页区域-->
                                          </ul>
                                      </div>
                                  </div>
@@ -181,34 +175,34 @@
         {{/each}}
     </script>
 
-    <script id="pageTmpl" type="text/html">
-        <li class="paginate_button previous disabled" aria-controls="dataTables-example" tabindex="0" id="dataTables-example_previous">
-            <a href="#">上页</a>
-        </li>
-        {{each page v i}}
-        {{if (v === num)}}
-        <li class="paginate_button active" tabindex="0">
-        {{else}}
-        <li class="paginate_button " tabindex="0" >
-        {{/if}}
-            <a href="javascript:refreash({{v}})">
-                {{if v < 10}}
-                {{"0"+ v}}
-                {{else}}
-                {{v}}
-                {{/if}}
-            </a>
-        </li>
-        {{/each}}
+    <!--<script id="pageTmpl" type="text/html">-->
+        <!--<li class="paginate_button previous disabled" aria-controls="dataTables-example" tabindex="0" id="dataTables-example_previous">-->
+            <!--<a href="#">上页</a>-->
+        <!--</li>-->
+        <!--{{each page v i}}-->
+        <!--{{if (v === num)}}-->
+        <!--<li class="paginate_button active" tabindex="0">-->
+        <!--{{else}}-->
+        <!--<li class="paginate_button " tabindex="0" >-->
+        <!--{{/if}}-->
+            <!--<a href="javascript:refreash({{v}})">-->
+                <!--{{if v < 10}}-->
+                <!--{{"0"+ v}}-->
+                <!--{{else}}-->
+                <!--{{v}}-->
+                <!--{{/if}}-->
+            <!--</a>-->
+        <!--</li>-->
+        <!--{{/each}}-->
 
-        {{if v == page.length}}
-        <li class="paginate_button next disabled" tabindex="0" id="dataTables-example_next">
-        {{else}}
-        <li class="paginate_button next" tabindex="0" id="dataTables-example_next">
-        {{/if}}
-            <a href="javascript:refreash({{v}})">下页</a>
-        </li>
-    </script>
+        <!--{{if v == page.length}}-->
+        <!--<li class="paginate_button next disabled" tabindex="0" id="dataTables-example_next">-->
+        <!--{{else}}-->
+        <!--<li class="paginate_button next" tabindex="0" id="dataTables-example_next">-->
+        <!--{{/if}}-->
+            <!--<a href="javascript:">下页</a>-->
+        <!--</li>-->
+    <!--</script>-->
 
     <script>
 
@@ -217,78 +211,104 @@
             refreash()
         }
 
-        function refreash(num) {
+        function refreash(num, obj) {
             num = num || 1
-//            ajax({
-//                type: 'get',
-//                url: '/getList.html',
-//                success: function(data) {
-//                    var listTmpl = document.getElementById('listTmpl')
-//                    var bodyList = document.getElementById('bodyList')
-//                    var nodeList = template('listTmpl', {data: data})
-//                    bodyList.innerHTML = nodeList
-//                }
-//            })
+            window.objStr = ''
+            // 因为第一次是传入的对象, 所以要将对象转为键值对的字符串形式
+            if (obj && typeof obj == 'object') {
+                for(var i in obj ) {
+                    objStr += '&' + i + '=' + obj[i]
+                }
+//                objStr = objStr.slice(1, objStr.length)
+//                objStr = JSON.stringify(obj)
+
+                console.log(objStr)
+                // 第二次会传入字符串,因为点击下标之后就会传入查询的字符串, 所以else是处理这个情况的
+            } else if(obj && typeof obj == 'string') {
+                objStr = obj
+            }
 
             ajax({
                 url: '/countPage.html',
-                data: 'page='+num,
+                data: 'page='+num + objStr,
                 success(data) {
                     // 获取总页数的值
                     var page = data.pop()
-
+                    console.log('page='+num + objStr)
                     // 创建一个页数的数组
                     var pageArr = []
-//                    for(var i = 1; i <= page; i++) {
-//                        pageArr.push(i)
-//                    }
-
-                    if(num == 1 || num == 2) {
+                    // 如果总页面的数量小于5, 则只使用总页面数量的页面
+                    if(page < 5) {
                         pageArr = [1,2,3,4,5]
-                    } else if(num == page || num == page -1) {
-                        pageArr = [page-4, page-3, page-2, page-1, page]
+                        // 定义好pageArr的数组, 总页面数量就时pageArr的长度了
+                        pageArr.length = page
                     } else {
-                        pageArr = [num-2, num-1, num, num+1, num+2]
+                        if(num == 1 || num == 2) {
+                            pageArr = [1,2,3,4,5]
+                        } else if(num == page || num == page -1) {
+                            pageArr = [page-4, page-3, page-2, page-1, page]
+                        } else {
+                            pageArr = [num-2, num-1, num, num+1, num+2]
+                        }
                     }
-
                     var listTmpl = document.getElementById('listTmpl')
                     var bodyList = document.getElementById('bodyList')
                     var nodeList = template('listTmpl', {data: data})
                     bodyList.innerHTML = nodeList
 
-                    var tmpl = template('pageTmpl', {'page': pageArr,  num: num})
-                    pagination.innerHTML = tmpl
-
-
-
-                }
-            })
-        }
-
-
-        btndelete.onclick = () => {
-            var btndelete = document.getElementById('btndelete')
-            var checkId = document.querySelectorAll('.checkId')
-            var idArr = []
-            checkId.forEach((v, i) => {
-                if(v.checked) {
-                    idArr.push(v.value)
-                }
-            })
-            if(!idArr.length) {
-                alert('请选中需要删除的内容')
-                return false
-            }
-            var idStr = JSON.stringify(idArr)
-            ajax({
-                url: '/deleteItem.html',
-                type: 'post',
-                data: 'id=' + idStr,
-                success: (data) => {
-                    if(+data) {
-                        alert('删除成功...')
-                        refreash()
+//                    var tmpl = template('pageTmpl', {'page': pageArr,  num: num})
+                    var tmpl = '';
+                    if(num ==1) {
+                        tmpl += '<li class="paginate_button previous disabled" tabindex="0" id="dataTables-example_previous">\
+                        <a href="javascript:;">上页</a>\
+                    </li>'
+                    } else {
+                        tmpl += '<li class="paginate_button previous" tabindex="0" id="dataTables-example_previous">\
+                        <a href="javascript:refreash('+(num-1)+',\''+objStr+'\')">上页</a>\
+                    </li>'
                     }
+
+
+                    // 循环遍历所有的中间页面
+                    for(var i = 0; i < pageArr.length; i++) {
+                        // 如果数字小于10 , 则在其两边加上空格符
+                        if(pageArr[i] < 10) {
+                            // 如果数字等于当前页面数字,则添加class为active
+                            if(pageArr[i] == num) {
+                                tmpl += '<li class="paginate_button active" tabindex="0">\
+                            <a href="javascript:refreash('+pageArr[i]+',\''+objStr+'\')">'+'&nbsp;'+pageArr[i]+'&nbsp;'+' </a>\
+                            </li>'
+                            } else {
+                                tmpl += '<li class="paginate_button" tabindex="0">\
+                                <a href="javascript:refreash('+pageArr[i]+',\''+objStr+'\')">'+'&nbsp;'+pageArr[i]+'&nbsp;'+' </a>\
+                                </li>'
+                            }
+                        } else {
+                            if(pageArr[i] == num) {
+                                tmpl += '<li class="paginate_button active" tabindex="0">\
+                            <a href="javascript:refreash('+pageArr[i]+',\''+objStr+'\')">'+pageArr[i]+'</a>\
+                            </li>'
+                            } else {
+                                tmpl += '<li class="paginate_button" tabindex="0">\
+                                <a href="javascript:refreash('+pageArr[i]+',\''+objStr+'\')">'+pageArr[i]+'</a>\
+                                </li>'
+                            }
+                        }
+
+                    }
+
+                    if(num == page) {
+                        tmpl += '<li class="paginate_button next disabled" tabindex="0" id="dataTables-example_next">\
+                        <a href="javascript:;">下页</a>\
+                    </li>'
+                    } else {
+                        tmpl += '<li class="paginate_button next" tabindex="0" id="dataTables-example_next">\
+                        <a href="javascript:refreash('+(num+1)+',\''+objStr+'\')">下页</a>\
+                    </li>'
+                    }
+
+                    pagination.innerHTML = tmpl
+                    objStr = ''
                 }
             })
         }
@@ -336,10 +356,7 @@
                                 data: 'username='+username+'&password='+password+'&name='+name+'&role='+role+'&department='+department+'&sortnum='+sortnum+'&checknum='+checknum,
                                 success: function(data) {
                                     if(data) {
-                                        var listTmpl = document.getElementById('listTmpl')
-                                        var bodyList = document.getElementById('bodyList')
-                                        var msg = template('listTmpl',{data:data})
-                                        bodyList.innerHTML=(msg)
+                                        refreash()
                                     } else {
 	                                    alert('此账号已经添加过了...')
                                     }
@@ -392,14 +409,7 @@
                                 url: '/editUser.html',
                                 data: 'username='+username+'&password='+password+'&name='+name+'&role='+role+'&department='+department+'&sortnum='+sortnum+'&checknum='+checknum + '&id=' + checkId,
                                 success: function(data) {
-                                    if(data) {
-                                        var listTmpl = document.getElementById('listTmpl')
-                                        var bodyList = document.getElementById('bodyList')
-                                        var msg = template('listTmpl',{data:data})
-                                        bodyList.innerHTML=(msg)
-                                    } else {
-                                        alert('保存失败')
-                                    }
+                                    refreash()
                                 }
                             })
 						},
@@ -429,8 +439,56 @@
                     })
     			});				
 			});
-			
-		});
+
+
+            $('#btndelete').on('click', function() {
+                var btndelete = document.getElementById('btndelete')
+                var checkId = document.querySelectorAll('.checkId')
+                var idArr = []
+                checkId.forEach((v, i) => {
+                    if(v.checked) {
+                        idArr.push(v.value)
+                    }
+                })
+                if(!idArr.length) {
+                    alert('请选中需要删除的内容')
+                    return false
+                }
+                var idStr = JSON.stringify(idArr)
+                console.log(idStr)
+                ajax({
+                    url: '/deleteItem.html',
+                    type: 'post',
+                    data: 'id=' + idStr,
+                    success: (data) => {
+                        if(+data) {
+                            alert('删除成功...')
+                            refreash()
+                        }
+                    }
+                })
+            })
+
+
+
+        });
+
+
+    // 提交搜索区域
+    search.onclick = function() {
+        var department = logDepartment.value
+        var role = logRole.value
+        var username = logUsername.value
+        console.log(department, role, username)
+
+        ajax({
+            url: '/searchUser.html',
+            data: "department=" + department + "&role=" + role + "&username=" + username,
+            success(data) {
+                refreash(1, data)
+            }
+        })
+    }
 </script>
 
 

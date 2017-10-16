@@ -97,7 +97,7 @@ var txt = `<nav class="navbar navbar-default navbar-static-top" role="navigation
   <a href="log.html">日志管理</a>
   </li>
   <li>
-  <a href="login.html">退出系统</a>
+  <a href="/backToLogin.html">退出系统</a>
   </li>
   </ul>
 </li>
