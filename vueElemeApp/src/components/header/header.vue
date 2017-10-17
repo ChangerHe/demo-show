@@ -18,9 +18,26 @@
           <span class="text">{{seller.supports[0].description}}</span>
         </div>
       </div>
-      <div class="support-count" v-if="seller.supports">
+      <div class="support-count" @click="showDetail" v-if="seller.supports">
         <span class="count">{{seller.supports.length}}个</span>
         <i class="iconfont icon-rightArrow"></i>
+      </div>
+    </div>
+    <div class="bulletin-wrapper">
+        <span class="bulletin-title"></span>
+        <span class="bulletin-text">{{seller.bulletin}}</span>
+        <i class="iconfont icon-rightArrow"></i>
+    </div>
+    <div class="background">
+      <img :src="seller.avatar" alt="" width="100%" height="100%">
+    </div>
+    <div class="detail" v-show="detailShow">
+      <div class="detail-wrapper clearfix">
+        <div class="detail-main">
+        </div>
+      </div>
+      <div class="detail-close">
+        <i class="iconfont icon-close"></i>
       </div>
     </div>
   </div>
@@ -31,6 +48,16 @@ export default {
   props: {
     seller: {
       type: Object
+    }
+  },
+  data() {
+    return {
+      detailShow: false
+    }
+  },
+  methods: {
+    showDetail() {
+      this.detailShow = true
     }
   },
   created() {
@@ -44,8 +71,10 @@ export default {
   @import "../../common/stylus/mixin"
 
   .header
+    position relative
+    overflow hidden
     color: #fff
-    background: #999
+    background: rgba(7,17,27,.5)
     .content-wrapper
       position relative
       padding: 24px 12px 18px 24px
@@ -118,6 +147,60 @@ export default {
         .icon-rightArrow
           font-size 14px
 
-
-
+    .bulletin-wrapper
+      position relative
+      height 28px
+      line-height 28px
+      padding 0 22px 0 12px
+      white-space nowrap
+      overflow hidden
+      text-overflow ellipsis
+      background-color rgba(7, 17, 27, .2)
+      .bulletin-title
+        display inline-block
+        width 22px
+        height 12px
+        margin-top 8px
+        vertical-align top
+        bg-image('bulletin')
+        background-size 22px 12px
+        background-repeat no-repeat
+      .bulletin-text
+        vertical-align top
+        font-size 12px
+      .icon-rightArrow
+        position absolute
+        font-size 10px
+        right 12px
+        top 0
+    .background
+      position absolute
+      top 0
+      left 0
+      width 100%
+      height 100%
+      z-index -1
+      filter blur(10px)
+    .detail
+      position fixed
+      top 0
+      left 0
+      z-index 100
+      width 100%
+      height 100%
+      overflow auto
+      background rgba(7, 17, 27, .8)
+      .detail-wrapper
+        min-height 100%
+        .detail-main
+          margin-top 64px
+          padding-bottom 64px
+      .detail-close
+        position relative
+        width 32px
+        height 32px
+        margin -128px auto 0
+        clear both
+        font-size 32px
+        text-align center
 </style>
