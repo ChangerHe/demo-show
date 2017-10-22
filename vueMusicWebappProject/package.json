@@ -2,7 +2,7 @@
   "name": "vue-music-webapp",
   "version": "1.0.0",
   "description": "A Vue.js project",
-  "author": "",
+  "author": "ChangerHe <244737162@qq.com>",
   "private": true,
   "scripts": {
     "dev": "node build/dev-server.js",
