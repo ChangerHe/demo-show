@@ -19,7 +19,7 @@
 <script>
 import HeaderCom from './components/header/header.vue'
 
-// 错误编号, 位0 代表无错误
+// 错误编号, 为0 代表无错误
 const ERR_OK = 0
 
 export default {
