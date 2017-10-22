@@ -2,7 +2,7 @@
   <div class="goods">
     <div class="menu-wrapper" v-el:menu-wrapper>
       <ul>
-        <li v-for="item in goods" class="menu-item"  :class="{'current': currentIndex === $index}" @click="selectMenu($index)">
+        <li v-for="item in goods" class="menu-item"  :class="{'current': currentIndex === $index}" @click="selectMenu($index, $event)">
           <span class="text border-1px">
             <span v-show="item.type > 0" class="icon" :class="classMap[item.type]"></span>{{item.name}}
           </span>
@@ -29,18 +29,24 @@
                   <span class="now">&yen;{{food.price}}</span>
                   <span class="old" v-show="food.oldPrice">&yen;{{food.oldPrice}}</span>
                 </div>
+                <div class="cartcontrol-wrapper">
+                  <cart-control :food="food"></cart-control>
+                </div>
               </div>
             </li>
           </ul>
         </li>
       </ul>
     </div>
+    <shop-cart :delivery-price="seller.deliveryPrice" :min-price="seller.minPrice" :select-foods="selectFoods"></shop-cart>
   </div>
 
 </template>
 
 <script>
 import BScroll from 'better-scroll'
+import shopCart from 'components/shopCart/shopCart'
+import cartControl from 'components/cartcontrol/cartcontrol'
 
 const ERR_OK = 0
 
@@ -80,11 +86,31 @@ export default {
         }
       }
       return 0
+    },
+    selectFoods() {
+      let foods = []
+      this.goods.forEach((good) => {
+        good.foods.forEach((food) => {
+          if (food.count) {
+            foods.push(food)
+          }
+        })
+      })
+      return foods
     }
   },
   methods: {
-    selectMenu(index) {
-      console.log(index)
+    selectMenu(index, event) {
+      // 预先进行判断, 用户产生的事件时为true, 默认事件为false
+      if (!event._constructed) {
+        return
+      }
+
+      let foodList = this.$els.foodsWrapper.getElementsByClassName('food-list-hook')
+      let el = foodList[index]
+
+      // 待处理BUG, 必须等待左侧界面停稳才可点击
+      this.foodsScroll.scrollToElement(el, 300)
     },
     _initScroll() {
       this.munuScroll = new BScroll(this.$els.menuWrapper, {
@@ -92,6 +118,7 @@ export default {
       })
 
       this.foodsScroll = new BScroll(this.$els.foodsWrapper, {
+        click: true,
         probeType: 3
       })
 
@@ -109,12 +136,17 @@ export default {
         this.listHeight.push(height)
       }
     }
+  },
+  components: {
+    shopCart,
+    cartControl
   }
 }
 </script>
 
 <style lang="stylus">
   @import '../../common/stylus/mixin'
+
 
   .goods
     display flex
@@ -218,7 +250,10 @@ export default {
               text-decoration line-through
               font-size 10px
               color rgb(147, 153, 159)
-
+          .cartcontrol-wrapper
+            position absolute
+            right 0
+            bottom 12px
 
 </style>
 
