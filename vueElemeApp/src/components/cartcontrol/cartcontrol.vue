@@ -31,6 +31,7 @@ export default {
       } else {
         this.food.count++
       }
+      // 派发cart.add事件, 将事件的对象作为参数传入
       this.$dispatch('cart.add', event.target)
     },
     decreaseCart(event) {

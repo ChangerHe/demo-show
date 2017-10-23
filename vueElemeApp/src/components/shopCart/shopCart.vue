@@ -19,7 +19,7 @@
     </div>
     <div class="ball-container">
       <div transition="drop" class="ball" v-for="(index,ball) in balls" v-show="ball.show" :key="index">
-        <dov class="inner"></dov>
+        <div class="inner"></div>
       </div>
     </div>
   </div>
@@ -50,6 +50,7 @@ export default {
   },
   data() {
     return {
+      // 每个小球的当前状态, 一般来说, 每个页面最多会显示五个小球
       balls: [
         {
           show: false
@@ -66,7 +67,8 @@ export default {
         {
           show: false
         }
-      ]
+      ],
+      dropBall: []
     }
   },
   computed: {
@@ -105,6 +107,19 @@ export default {
         return 'not-enough'
       } else {
         return 'enough'
+      }
+    }
+  },
+  methods: {
+    drop(el) {
+      for (let i = 0; i < this.balls.length; i++) {
+        let ball = this.balls[i]
+
+        if (!ball.show) {
+          ball.show = true
+          ball.el = el
+          this.dropBall.push(ball)
+        }
       }
     }
   }

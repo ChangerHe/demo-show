@@ -38,7 +38,7 @@
         </li>
       </ul>
     </div>
-    <shop-cart :delivery-price="seller.deliveryPrice" :min-price="seller.minPrice" :select-foods="selectFoods"></shop-cart>
+    <shop-cart :delivery-price="seller.deliveryPrice" :min-price="seller.minPrice" :select-foods="selectFoods" v-ref:shopcart></shop-cart>
   </div>
 
 </template>
@@ -89,6 +89,9 @@ export default {
     },
     selectFoods() {
       let foods = []
+      if (JSON.stringify(this.goods) === '{}') {
+        return foods
+      }
       this.goods.forEach((good) => {
         good.foods.forEach((food) => {
           if (food.count) {
@@ -135,11 +138,20 @@ export default {
         height += item.clientHeight
         this.listHeight.push(height)
       }
+    },
+    // 子组件通过$.dispatch来进行事件的派发, 父组件通过挂载v-ref, 然后通过父组件上挂载的方法函数使用 this.$refs.shopcart.xxx来调用子组件上对应的xxx方法了
+    _drop (target) {
+      this.$refs.shopcart.drop(target)
     }
   },
   components: {
     shopCart,
     cartControl
+  },
+  events: {
+    'cart.add'(target) {
+      this._drop(target)
+    }
   }
 }
 </script>
