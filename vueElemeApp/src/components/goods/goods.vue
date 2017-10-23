@@ -141,7 +141,10 @@ export default {
     },
     // 子组件通过$.dispatch来进行事件的派发, 父组件通过挂载v-ref, 然后通过父组件上挂载的方法函数使用 this.$refs.shopcart.xxx来调用子组件上对应的xxx方法了
     _drop (target) {
-      this.$refs.shopcart.drop(target)
+      // 当两个动画执行时会出现轻微的卡顿, 所以为了体验优化, 将异步执行转为同步执行
+      this.$nextTick(() => {
+        this.$refs.shopcart.drop(target)
+      })
     }
   },
   components: {

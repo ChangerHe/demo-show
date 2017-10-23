@@ -1,7 +1,7 @@
 <template>
   <div class="shopCart">
     <div class="content">
-      <div class="content-left">
+      <div class="content-left"  @click="toggleList">
         <div class="logo-wrapper">
           <div class="logo" :class="{'highlight': totalCount > 0}">
             <span class="iconfont icon-shopCart"  :class="{'highlight': totalCount > 0}"></span>
@@ -19,7 +19,26 @@
     </div>
     <div class="ball-container">
       <div transition="drop" class="ball" v-for="(index,ball) in balls" v-show="ball.show" :key="index">
-        <div class="inner"></div>
+        <div class="inner inner-hook"></div>
+      </div>
+    </div>
+    <div class="shopcart-list" transition="fold" v-show="listShow">
+      <div class="list-header">
+        <h1 class="title">购物车</h1>
+        <span class="empty">清空</span>
+      </div>
+      <div class="list-content" v-el:list-content>
+        <ul>
+          <li class="food" v-for="(index, food) in selectFoods" :key="index">
+            <span class="name">{{food.name}}</span>
+            <div class="price">
+              <span>&yen; {{food.price * food.count}}</span>
+            </div>
+            <div class="cartcontrol-wrapper">
+              <cart-control :food="food"></cart-control>
+            </div>
+          </li>
+        </ul>`
       </div>
     </div>
   </div>
@@ -27,6 +46,9 @@
 
 
 <script>
+import cartControl from 'components/cartcontrol/cartcontrol'
+import BScroll from 'better-scroll'
+
 export default {
   props: {
     // 使用selectFoods实现父向子传参
@@ -50,7 +72,7 @@ export default {
   },
   data() {
     return {
-      // 每个小球的当前状态, 一般来说, 每个页面最多会显示五个小球
+      // 每个小球的当前状态, 一般来说, 每个页面最多会显示五个位置的五个小球
       balls: [
         {
           show: false
@@ -68,7 +90,8 @@ export default {
           show: false
         }
       ],
-      dropBall: []
+      dropBall: [],
+      fold: true
     }
   },
   computed: {
@@ -119,14 +142,90 @@ export default {
           ball.show = true
           ball.el = el
           this.dropBall.push(ball)
+          console.log(this.dropBall)
+          return
+        }
+      }
+    },
+    // 切换下方的购物车列表的显示隐藏
+    toggleList() {
+      if (!this.totalCount) {
+        return
+      }
+      this.fold = !this.fold
+    },
+    // 当总价为零的时候.令fold为true,否则零show为false
+    listShow() {
+      if (!this.totalCount) {
+        this.fold = true
+        return false
+      }
+      let show = !this.fold
+      if (show) {
+        this.nextTick(() => {
+          if (!this.scroll) {
+            this.scroll = new BScroll(this.$els.listContent, {
+              click: true
+            })
+          } else {
+            this.scroll.refreash()
+          }
+        })
+      }
+      return show
+    }
+  },
+  transitions: {
+    // 加入购物车时小球的动画效果
+    drop: {
+      beforeEnter(el) {
+        let count = this.balls.length
+        while (count--) {
+          let ball = this.balls[count]
+          if (ball.show) {
+            // 获取元素的相对视窗的位置集合
+            let rect = ball.el.getBoundingClientRect()
+            let x = rect.left - 32
+            let y = -(window.innerHeight - rect.top - 22)
+            el.style.display = ''
+            el.style.webkitTransform = `translate3d(0, ${y}px, 0)`
+            el.style.transform = `translate3d(0, ${y}px, 0)`
+            let inner = el.getElementsByClassName('inner-hook')[0]
+            inner.style.webkitTransform = `translate3d(${x}px, 0, 0)`
+            inner.style.transform = `translate3d(${x}px, 0, 0)`
+          }
+        }
+      },
+      enter(el) {
+        /* 此处主动触发一次浏览器重绘 */
+        /* eslint-disable no-unused-vars */
+        let rf = el.offsetHeight
+        this.$nextTick(() => {
+          el.style.webkitTransform = 'translate3d(0, 0, 0)'
+          el.style.transform = 'translate3d(0, 0, 0)'
+          let inner = el.getElementsByClassName('inner-hook')[0]
+          inner.style.webkitTransform = 'translate3d(0, 0, 0)'
+          inner.style.transform = 'translate3d(0, 0, 0)'
+        })
+      },
+      afterEnter(el) {
+        let ball = this.dropBall.shift()
+        if (ball) {
+          ball.show = false
+          el.style.display = 'none'
         }
       }
     }
+  },
+  components: {
+    cartControl
   }
 }
 </script>
 
 <style lang="stylus">
+@import '../../common/stylus/mixin'
+
   .shopCart
     position fixed
     left 0
@@ -224,11 +323,59 @@ export default {
         bottom 22px
         z-index 200
         &.drop-transition
-          transition all .4s
+          transition all .4s cubic-bezier(.29,-0.15,.86,.74)
           .inner
             width 16px
             height 16px
             border-radius 50%
             background rgb(0, 160, 220)
-            transition all .4s
+            transition all .4s linear
+    .shopcart-list
+      position absolute
+      left 0
+      top 0
+      z-index -1
+      width 100%
+      &.fold-transition
+        transform all .5s
+        transform translate3d(0, 100%, 0)
+      &.fold-enter, &.fold-leave
+        transform: translate3d(0,0,0)
+      .list-header
+        height 40px
+        line-height 40px
+        padding 0 18px
+        background #f3f5f7
+        border-bottom 1px solid rgba(7, 17, 27, 0.1)
+        .title
+          float left
+          font-size 14px
+          color rgb(7,17,27)
+        .empty
+          float right
+          font-size 12px
+          color rgb(0, 160, 221)
+
+      .list-content
+        padding 0 18px
+        max-height 217px
+        overflow hidden
+        background #fff
+        .food
+          position relative
+          padding 12px 0
+          box-sizing border-box
+          border-1px(rgba(7,17,27,.1))
+        .price
+          position absolute
+          right 90px
+          bottom 12px
+          line-height 24px
+          font-size 14px
+          font-weight 700
+          color rgb(240, 20, 20)
+        .cartcontrol-wrapper
+          position absolute
+          right 0
+          bottom 6px
 </style>
