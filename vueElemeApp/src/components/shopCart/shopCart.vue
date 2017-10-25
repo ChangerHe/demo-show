@@ -25,7 +25,7 @@
     <div class="shopcart-list" transition="fold" v-show="listShow">
       <div class="list-header">
         <h1 class="title">购物车</h1>
-        <span class="empty">清空</span>
+        <span class="empty" @click="emptyItem">清空</span>
       </div>
       <div class="list-content" v-el:list-content>
         <ul>
@@ -38,7 +38,7 @@
               <cart-control :food="food"></cart-control>
             </div>
           </li>
-        </ul>`
+        </ul>
       </div>
     </div>
   </div>
@@ -46,8 +46,8 @@
 
 
 <script>
-import cartControl from 'components/cartcontrol/cartcontrol'
 import BScroll from 'better-scroll'
+import cartControl from 'components/cartcontrol/cartcontrol'
 
 export default {
   props: {
@@ -95,7 +95,7 @@ export default {
     }
   },
   computed: {
-    // 计算商品的总数量
+    // 计算商品的总价格
     totalPrice() {
       let total = 0
       this.selectFoods.forEach((food, index) => {
@@ -131,6 +131,27 @@ export default {
       } else {
         return 'enough'
       }
+    },
+    // 当总价为零的时候.令fold为true,否则零show为false
+    listShow() {
+      if (!this.totalCount) {
+        this.fold = true
+        return false
+      }
+      let show = !this.fold
+      if (show) {
+        this.$nextTick(() => {
+          //
+          if (!this.scroll) {
+            this.scroll = new BScroll(this.$els.listContent, {
+              click: true
+            })
+          } else {
+            this.scroll.refresh()
+          }
+        })
+      }
+      return show
     }
   },
   methods: {
@@ -154,25 +175,10 @@ export default {
       }
       this.fold = !this.fold
     },
-    // 当总价为零的时候.令fold为true,否则零show为false
-    listShow() {
-      if (!this.totalCount) {
-        this.fold = true
-        return false
-      }
-      let show = !this.fold
-      if (show) {
-        this.nextTick(() => {
-          if (!this.scroll) {
-            this.scroll = new BScroll(this.$els.listContent, {
-              click: true
-            })
-          } else {
-            this.scroll.refreash()
-          }
-        })
-      }
-      return show
+    // 清空列表
+    emptyItem() {
+      this.selectFoods = []
+      this.$dispatch('empty.item')
     }
   },
   transitions: {
@@ -337,10 +343,10 @@ export default {
       z-index -1
       width 100%
       &.fold-transition
-        transform all .5s
-        transform translate3d(0, 100%, 0)
+        transition all .5s
+        transform translateY(-100%)
       &.fold-enter, &.fold-leave
-        transform: translate3d(0,0,0)
+        transform: translateY(0)
       .list-header
         height 40px
         line-height 40px
@@ -358,7 +364,7 @@ export default {
 
       .list-content
         padding 0 18px
-        max-height 217px
+        max-height 117px
         overflow hidden
         background #fff
         .food

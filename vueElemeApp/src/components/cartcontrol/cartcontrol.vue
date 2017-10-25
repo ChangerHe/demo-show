@@ -33,6 +33,7 @@ export default {
       }
       // 派发cart.add事件, 将事件的对象作为参数传入
       this.$dispatch('cart.add', event.target)
+      event.stopPropagation()
     },
     decreaseCart(event) {
       if (!event._constructed) {
@@ -41,6 +42,8 @@ export default {
       if (this.food.count) {
         this.food.count--
       }
+      // 因为点击会出现弹出详情页的情况,所以这里要阻止事件冒泡
+      event.stopPropagation()
     }
   }
 }

@@ -14,7 +14,7 @@
         <li v-for="(index,item) in goods" :key="index"   class="food-list food-list-hook">
           <h1 class="title">{{item.name}}</h1>
           <ul>
-            <li v-for="(index,food) in item.foods" :key="index"  class="food-item border-1px">
+            <li v-for="(index,food) in item.foods" :key="index" @click="selectFood(food, $event)"  class="food-item border-1px">
               <div class="icon">
                 <img :src="food.icon" width="57" height="57" alt="">
               </div >
@@ -40,13 +40,14 @@
     </div>
     <shop-cart :delivery-price="seller.deliveryPrice" :min-price="seller.minPrice" :select-foods="selectFoods" v-ref:shopcart></shop-cart>
   </div>
-
+  <food-com :food="selectedFood" v-ref:food></food-com>
 </template>
 
 <script>
 import BScroll from 'better-scroll'
 import shopCart from 'components/shopCart/shopCart'
 import cartControl from 'components/cartcontrol/cartcontrol'
+import foodCom from 'components/food/food'
 
 const ERR_OK = 0
 
@@ -60,7 +61,8 @@ export default {
     return {
       goods: {},
       listHeight: [],
-      scrollY: 0
+      scrollY: 0,
+      selectedFood: {}
     }
   },
   created() {
@@ -116,7 +118,7 @@ export default {
       this.foodsScroll.scrollToElement(el, 300)
     },
     _initScroll() {
-      this.munuScroll = new BScroll(this.$els.menuWrapper, {
+      this.menuScroll = new BScroll(this.$els.menuWrapper, {
         click: true
       })
 
@@ -145,15 +147,28 @@ export default {
       this.$nextTick(() => {
         this.$refs.shopcart.drop(target)
       })
+    },
+    selectFood(food, event) {
+      if (!event._constructed) {
+        return
+      }
+      this.selectedFood = food
+      this.$refs.food.show()
     }
   },
   components: {
     shopCart,
-    cartControl
+    cartControl,
+    foodCom
   },
   events: {
     'cart.add'(target) {
       this._drop(target)
+    },
+    // 从子组件dispatch过来的事件处理尚有问题, 稍后处理
+    'empty.item'() {
+      console.log(1)
+      this.goods.foods = {}
     }
   }
 }
