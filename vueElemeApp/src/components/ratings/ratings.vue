@@ -58,6 +58,7 @@ import splitCom from 'components/split/split'
 import ratingSelect from 'components/ratingSelect/ratingSelect'
 import {formatDate} from '../../common/js/date'
 import BScroll from 'better-scroll'
+import shopCart from 'components/shopCart/shopCart'
 
 // const POSITIVE = 0
 // const NEGATIVE = 1
@@ -128,7 +129,8 @@ export default {
   components: {
     starCom,
     splitCom,
-    ratingSelect
+    ratingSelect,
+    shopCart
   }
 }
 </script>
