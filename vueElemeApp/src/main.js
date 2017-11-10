@@ -41,4 +41,4 @@ router.map({
 router.start(app, '#app')
 
 // 使跳转时默认跳转到goods这个路由页面
-router.go('/goods')
+// router.go('/goods')

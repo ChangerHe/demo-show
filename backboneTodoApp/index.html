@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en" data-framework="backbonejs">
+	<head>
+		<meta charset="utf-8">
+		<title>Backbone.js • TodoMVC</title>
+		<link rel="stylesheet" href="css/base.css">
+		<link rel="stylesheet" href="css/index.css">
+	</head>
+	<body>
+		<section class="todoapp">
+			<header class="header">
+				<h1>todos</h1>
+				<input class="new-todo" placeholder="What needs to be done?" autofocus>
+			</header>
+			<section class="main">
+				<input class="toggle-all" id="toggle-all" type="checkbox">
+				<label for="toggle-all">Mark all as complete</label>
+				<ul class="todo-list"></ul>
+			</section>
+			<footer class="footer"></footer>
+		</section>
+
+		<script type="text/template" id="item-template">
+			<li class="view">
+				<input class="toggle" type="checkbox" <%= completed ? 'checked' : '' %>>
+				<label><%- title %></label>
+				<button class="destroy"></button>
+				<input class="edit" value="<%- title %>">
+			</li>
+		</script>
+
+		<script type="text/template" id="stats-template">
+			<span class="todo-count"><strong><%= remaining %></strong> <%= remaining === 1 ? 'item' : 'items' %> left</span>
+			<ul class="filters">
+				<li>
+					<a class="selected" href="#/">All</a>
+				</li>
+				<li>
+					<a href="#/active">Active</a>
+				</li>
+				<li>
+					<a href="#/completed">Completed</a>
+				</li>
+			</ul>
+			<% if (completed) { %>
+			<button class="clear-completed">Clear completed</button>
+			<% } %>
+		</script>
+
+		<script src="lib/jquery.js"></script>
+		<script src="lib/underscore.js"></script>
+		<script src="lib/backbone.js"></script>
+		<script src="lib/backbone.localStorage.js"></script>
+		<script src="js/models/todoModel.js"></script>
+		<script src="js/collections/todoCollections.js"></script>
+		<script src="js/views/todoView.js"></script>
+	</body>
+</html>

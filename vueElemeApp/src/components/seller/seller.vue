@@ -1,63 +1,65 @@
 <template>
-  <div class="seller" v-el="scroll-wrapper ">
-    <div class="overview">
-      <h1 class="title">{{seller.name}}</h1>
-      <div class="desc">
-        <star-com :size="36" :score="seller.score"></star-com>
-        <span class="text">({{seller.ratingCount}})</span>
-        <span class="text">月售{{seller.sellCount}}单</span>
+  <div class="seller" v-el="seller">
+    <div class="seller-content">
+      <div class="overview">
+        <h1 class="title">{{seller.name}}</h1>
+        <div class="desc">
+          <star-com :size="36" :score="seller.score"></star-com>
+          <span class="text">({{seller.ratingCount}})</span>
+          <span class="text">月售{{seller.sellCount}}单</span>
+        </div>
+
+        <ul class="remark">
+          <li class="block">
+            <h2>起送价</h2>
+            <div class="countent">
+              <span class="stress">{{seller.minPrice}}</span>元
+            </div>
+          </li>
+          <li class="block">
+            <h2>商家配送</h2>
+            <div class="countent">
+              <span class="stress">{{seller.deliveryPrice}}</span>元
+            </div>
+          </li>
+          <li class="block">
+            <h2>平均配送时间</h2>
+            <div class="countent">
+              <span class="stress">{{seller.deliveryTime}}</span>分钟
+            </div>
+          </li>
+        </ul>
+      </div>
+      <split-com></split-com>
+      <div class="active">
+        <h1>公告与活动</h1>
+        <p>{{seller.bulletin}}</p>
+        <ul>
+          <li v-for="(index,support) in seller.supports" :key="index" class="support">
+            <span class="pic" :class="classMap[support.type]"></span>
+            <span class="text">{{support.description}}</span>
+          </li>
+        </ul>
       </div>
 
-      <ul class="remark">
-        <li class="block">
-          <h2>起送价</h2>
-          <div class="countent">
-            <span class="stress">{{seller.minPrice}}</span>元
-          </div>
-        </li>
-        <li class="block">
-          <h2>商家配送</h2>
-          <div class="countent">
-            <span class="stress">{{seller.deliveryPrice}}</span>元
-          </div>
-        </li>
-        <li class="block">
-          <h2>平均配送时间</h2>
-          <div class="countent">
-            <span class="stress">{{seller.deliveryTime}}</span>分钟
-          </div>
-        </li>
-      </ul>
-    </div>
-    <split-com></split-com>
-    <div class="active">
-      <h1>公告与活动</h1>
-      <p>{{seller.bulletin}}</p>
-      <ul>
-        <li v-for="(index,support) in seller.supports" :key="index" class="support">
-          <span class="pic" :class="classMap[support.type]"></span>
-          <span class="text">{{support.description}}</span>
-        </li>
-      </ul>
-    </div>
-
-    <split-com></split-com>
-    <div class="true-pic">
-      <h1>商家实景</h1>
-      <ul class="sellerpic-wrapper">
-        <li v-for="(index,pic) in seller.pics" :key="index">
-          <img :src="pic" alt="" class="seller-img">
-        </li>
-      </ul>
-    </div>
-    <split-com></split-com>
-    <div class="seller-msg">
-      <h1>商家信息</h1>
-      <ul>
-        <li v-for="(index, info) in seller.infos" :key="index" class="info">
-          {{info}}
-        </li>
-      </ul>
+      <split-com></split-com>
+      <div class="true-pic">
+        <h1>商家实景</h1>
+        <ul class="sellerpic-wrapper">
+          <li v-for="(index,pic) in seller.pics" :key="index">
+            <img :src="pic" alt="" class="seller-img">
+          </li>
+        </ul>
+      </div>
+      <split-com></split-com>
+      <div class="seller-msg">
+        <h1>商家信息</h1>
+        <ul>
+          <li v-for="(index, info) in seller.infos" :key="index" class="info">
+            {{info}}
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
 </template>
@@ -88,7 +90,7 @@ export default {
   methods: {
     _initScroll() {
       if (!this.scroll) {
-        this.scroll = new BScroll(this.$els.scrollWrapper, {
+        this.scroll = new BScroll(this.$els.seller, {
           click: true
         })
       } else {
@@ -107,8 +109,8 @@ export default {
 @import '../../common/stylus/mixin'
 
   .seller
-    position relative
-    // top 174px
+    position absolute
+    top 174px
     bottom 0
     left 0
     width 100%

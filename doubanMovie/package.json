@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "npm package",
   "main": "app.js",
+  "author": "ChangerHe <244737162@qq.com>",
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.17.2",
