@@ -16,5 +16,5 @@ bill.on("change:name", (model, name) => {
   alert("Changed name from " + bill.previous("name") + " to " +name)
 })
 bill.changed.name = 'bill'
-console.log(bill.changed.name)
+// console.log(bill.changed.name)
 // bill.set({name: "Bill Jones"})

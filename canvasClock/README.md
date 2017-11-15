@@ -12,9 +12,5 @@
 * 离开页面后小球会堆砌，故需要判断当前页面的状态
 * 性能考虑，减少运算量，将出界的小球删除
 
-预览地址：
-<br/>
-
-![image](https://github.com/Kuro-P/Electronic-watch/blob/master/img/effect.jpg "效果截图")
 
 
