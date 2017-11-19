@@ -1,0 +1,12 @@
+.line {
+  padding: 5px;
+  border-top: 1px solid #c9c9c9;
+  border-bottom: 1px solid #c9c9c9;
+  background: #f5f5f5;
+}
+
+.line p {
+
+  font-size: 10px;
+  color: #c1c1c1;
+}

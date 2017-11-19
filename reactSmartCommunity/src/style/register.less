@@ -1,0 +1,85 @@
+#register {
+  height: 100%;
+  background: #f6f6f6;
+  header {
+    width: 100%;
+    height: 50px;
+    background: #18b4ed;
+    p {
+      margin: 0;
+      font-size: 16px;
+      color: #fff;
+      font-weight: 700;
+      line-height: 50px;
+      text-align: center;
+    }
+  }
+  .register-form {
+    margin-top: 10px;
+    div {
+      border-bottom: 1px solid #e5e5e5;
+      border-top: 1px solid #e5e5e5;
+      background: #fff;
+      .input-area {
+        position: relative;
+        display: flex;
+        height: 40px;
+        margin: 0 10px;
+        border-bottom: 1px solid #e5e5e5;
+        &:last-child {
+          border-bottom: none;
+        }
+        label {
+          flex: 0 0 60px;
+          display: flex;
+          justify-content: space-around;
+          line-height: 40px;
+          font-size: 14px;
+        }
+        input {
+          flex: 1 0;
+          box-sizing: border-box;
+          padding-left: 10px;
+          border: none;
+          outline: none;
+          &::-webkit-input-placeholder {
+            color: #bebebe;
+          }
+        }
+        span {
+          position: absolute;
+          top: 8px;
+          right: 10px;
+          width: 80px;
+          height: 24px;
+          background: #18b4ed;
+          line-height: 24px;
+          text-align: center;
+          color: #fff;
+          border-radius: 4px;
+        }
+      }
+    }
+    .checkbox-area {
+      input {
+        margin: 0 10px;
+      }
+      label {
+        vertical-align: top;
+      }
+    }
+    button {
+      display: block;
+      margin: 0 auto;
+      height: 38px;
+      width: 80%;
+      background: #18b4ed;
+      text-align: center;
+      line-height: 38px;
+      border: none;
+      border-radius: 8px;
+      color: #fff;
+      font-size: 16px;
+    }
+  }
+}

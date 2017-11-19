@@ -1,0 +1,83 @@
+#register {
+  height: 100%;
+  background: #f6f6f6;
+}
+#register header {
+  width: 100%;
+  height: 50px;
+  background: #18b4ed;
+}
+#register header p {
+  margin: 0;
+  font-size: 16px;
+  color: #fff;
+  font-weight: 700;
+  line-height: 50px;
+  text-align: center;
+}
+#register .register-form {
+  margin-top: 10px;
+}
+#register .register-form div {
+  border-bottom: 1px solid #e5e5e5;
+  border-top: 1px solid #e5e5e5;
+  background: #fff;
+}
+#register .register-form div .input-area {
+  position: relative;
+  display: flex;
+  height: 40px;
+  margin: 0 10px;
+  border-bottom: 1px solid #e5e5e5;
+}
+#register .register-form div .input-area:last-child {
+  border-bottom: none;
+}
+#register .register-form div .input-area label {
+  flex: 0 0 60px;
+  display: flex;
+  justify-content: space-around;
+  line-height: 40px;
+  font-size: 14px;
+}
+#register .register-form div .input-area input {
+  flex: 1 0;
+  box-sizing: border-box;
+  padding-left: 10px;
+  border: none;
+  outline: none;
+}
+#register .register-form div .input-area input::-webkit-input-placeholder {
+  color: #bebebe;
+}
+#register .register-form div .input-area span {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  width: 80px;
+  height: 24px;
+  background: #18b4ed;
+  line-height: 24px;
+  text-align: center;
+  color: #fff;
+  border-radius: 4px;
+}
+#register .register-form .checkbox-area input {
+  margin: 0 10px;
+}
+#register .register-form .checkbox-area label {
+  vertical-align: top;
+}
+#register .register-form button {
+  display: block;
+  margin: 0 auto;
+  height: 38px;
+  width: 80%;
+  background: #18b4ed;
+  text-align: center;
+  line-height: 38px;
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 16px;
+}
