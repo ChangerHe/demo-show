@@ -7,8 +7,8 @@ class Header extends React.Component {
   constructor() {
     super()
     this.state = {
-      iconName: 'left-nav',
-      iconClass: 'header-lefticon'
+      iconName: '',
+      iconClass: ''
     }
   }
   render() {

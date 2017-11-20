@@ -1,0 +1,43 @@
+
+.service-content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  /* overflow-x: hidden; */
+}
+
+.service-content header {
+  flex-grow: 0;
+}
+
+.service-content .big-content {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  overflow-y: scroll;
+  margin-right: -1px;
+}
+
+.service-content .big-content .service-ad {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.service-content .big-content .service-title {
+  padding-left: 20px;
+  font-size: 14px;
+  line-height: 36px;
+}
+
+.service-content .service-footer {
+  width: 100%;
+  flex-grow: 0;
+}
+
+/* .service-content .container {
+  width: 100%;
+} */

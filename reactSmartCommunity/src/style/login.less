@@ -10,6 +10,13 @@ html, body, #app {
   height: 100%;
 }
 
+/* 超链接常规化 */
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
+
 .ico {
   font-family: 'ico' !important;
   speak: none;
@@ -51,12 +58,14 @@ html, body, #app {
       font-size: 24px;
       // line-height: 46px;
       color: #fff;
+      margin-top: 0;
     }
   }
   .login-form {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 200px;
     .ico {
       position: absolute;
       font-size: 18px;
@@ -64,12 +73,12 @@ html, body, #app {
         margin: 16px -120px;
       }
       &.icon-lock {
-        margin: 56px -118px;
+        margin: 72px -118px;
       }
     }
     .login-input {
-      width: 240px;
-      height: 30px;
+      width: 270px;
+      height: 34px;
       outline: none;
       padding-left: 30px;
       margin-top: 8px;
